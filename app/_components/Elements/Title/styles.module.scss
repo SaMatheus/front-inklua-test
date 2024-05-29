@@ -1,0 +1,69 @@
+@use "/app/_styles/theme.scss" as *;
+
+.container {
+  &.centered > * {
+    text-align: center;
+  }
+}
+
+.subtitle {
+  display: block;
+  color: $color-biz-primary-600;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  margin-bottom: $space-xs;
+}
+
+.title {
+  color: $color-monochromatic-600;
+
+  &,
+  & > * {
+    font-weight: $font-weight-bold;
+  }
+
+  & > b {
+    color: $color-biz-primary-600;
+  }
+
+  &.linebreak > b {
+    display: block;
+  }
+
+  &.medium {
+    font-size: $font-size-xxl;
+    line-height: $line-height-xxl;
+  }
+
+  &.large {
+    font-size: $font-size-xxxxxl;
+    line-height: $line-height-xxxxxl;
+  }
+}
+
+@include breakpoint(lg) {
+  .title {
+    &.large {
+      font-size: $font-size-xxl;
+      line-height: $line-height-xxl;
+    }
+  }
+}
+
+@include breakpoint(sm) {
+  .subtitle {
+    font-size: $font-size-xxs;
+    line-height: $line-height-xs;
+    margin-bottom: $space-xxxs;
+  }
+
+  .title {
+    &.medium,
+    &.large {
+      font-size: $font-size-lg;
+      line-height: $line-height-xl;
+    }
+  }
+}

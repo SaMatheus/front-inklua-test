@@ -1,0 +1,10 @@
+@use "/app/_styles/theme.scss" as *;
+
+.spinnerWrapper {
+  margin-right: $space-xxxs;
+
+  & > span {
+    height: 1.875rem;
+    width: 1.875rem;
+  }
+}

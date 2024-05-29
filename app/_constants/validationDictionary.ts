@@ -1,0 +1,15 @@
+export const validationDictionary = {
+  INVALID_NAME: "Digite um nome válido",
+  INVALID_COMPANY_NAME: "Digite o nome da empresa",
+  INVALID_EMAIL: "Digite um e-mail válido",
+  INVALID_PHONE: "Digite um número de celular válido",
+  INVALID_MESSAGE: "Digite uma mensagem",
+  INVALID_PASSWORDS_MATCH: "As senhas não coincidem",
+  INVALID_CNPJ: "CNPJ inválido",
+  INVALID_URL: "Link inválido",
+  GENERIC_REQUIRED_FIELD: "Campo obrigatório",
+  GENERIC_MIN_LENGTH_FIELD: (minLength: number) => `Mínimo de ${minLength} caracteres`,
+  TERMS_ARE_REQUIRED: "Aceite os termos antes de continuar",
+  INVALID_APPLICATION_TYPE: "Selecione um tipo de aplicação válida",
+  INVALID_DOCUMENT: "Documento inválido",
+};

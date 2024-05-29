@@ -1,0 +1,37 @@
+[
+  {
+    "label": "Não requer inglês",
+    "constant": "NOT_REQUIRED",
+    "value": 1
+  },
+  {
+    "label": "Técnico",
+    "constant": "TECHNICAL",
+    "value": 2
+  },
+  {
+    "label": "Básico",
+    "constant": "BASIC",
+    "value": 3
+  },
+  {
+    "label": "Intermediário",
+    "constant": "INTERMEDIATE",
+    "value": 4
+  },
+  {
+    "label": "Avançado",
+    "constant": "ADVANCED",
+    "value": 5
+  },
+  {
+    "label": "Fluente",
+    "constant": "FLUENT",
+    "value": 6
+  },
+  {
+    "label": "Nativo",
+    "constant": "NATIVE",
+    "value": 7
+  }
+]

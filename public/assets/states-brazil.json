@@ -1,0 +1,176 @@
+[
+  {
+    "id": 1,
+    "name": "Acre",
+    "acronym": "AC",
+    "UF": "AC"
+  },
+  {
+    "id": 2,
+    "name": "Alagoas",
+    "acronym": "AL",
+    "UF": "AL"
+  },
+  {
+    "id": 3,
+    "name": "Amazonas",
+    "acronym": "AM",
+    "UF": "AM"
+  },
+  {
+    "id": 4,
+    "name": "Amapá",
+    "acronym": "AP",
+    "UF": "AP"
+  },
+  {
+    "id": 5,
+    "name": "Bahia",
+    "acronym": "BA",
+    "UF": "BA"
+  },
+  {
+    "id": 6,
+    "name": "Ceará",
+    "acronym": "CE",
+    "UF": "CE"
+  },
+  {
+    "id": 7,
+    "name": "Distrito Federal",
+    "acronym": "DF",
+    "UF": "DF"
+  },
+  {
+    "id": 8,
+    "name": "Espírito Santo",
+    "acronym": "ES",
+    "UF": "ES"
+  },
+  {
+    "id": 9,
+    "name": "Goiás",
+    "acronym": "GO",
+    "UF": "GO"
+  },
+  {
+    "id": 10,
+    "name": "Maranhão",
+    "acronym": "MA",
+    "UF": "MA"
+  },
+  {
+    "id": 11,
+    "name": "Minas Gerais",
+    "acronym": "MG",
+    "UF": "MG"
+  },
+  {
+    "id": 12,
+    "name": "Mato Grosso do Sul",
+    "acronym": "MS",
+    "UF": "MS"
+  },
+  {
+    "id": 13,
+    "name": "Mato Grosso",
+    "acronym": "MT",
+    "UF": "MT"
+  },
+  {
+    "id": 14,
+    "name": "Pará",
+    "acronym": "PA",
+    "UF": "PA"
+  },
+  {
+    "id": 15,
+    "name": "Paraíba",
+    "acronym": "PB",
+    "UF": "PB"
+  },
+  {
+    "id": 16,
+    "name": "Pernambuco",
+    "acronym": "PE",
+    "UF": "PE"
+  },
+  {
+    "id": 17,
+    "name": "Piauí",
+    "acronym": "PI",
+    "UF": "PI"
+  },
+  {
+    "id": 18,
+    "name": "Paraná",
+    "acronym": "PR",
+    "UF": "PR"
+  },
+  {
+    "id": 19,
+    "name": "Rio de Janeiro",
+    "acronym": "RJ",
+    "UF": "RJ"
+  },
+  {
+    "id": 20,
+    "name": "Rio Grande do Norte",
+    "acronym": "RN",
+    "UF": "RN"
+  },
+  {
+    "id": 21,
+    "name": "Rondônia",
+    "acronym": "RO",
+    "UF": "RO"
+  },
+  {
+    "id": 22,
+    "name": "Roraima",
+    "acronym": "RR",
+    "UF": "RR"
+  },
+  {
+    "id": 23,
+    "name": "Rio Grande do Sul",
+    "acronym": "RS",
+    "UF": "RS"
+  },
+  {
+    "id": 24,
+    "name": "Santa Catarina",
+    "acronym": "SC",
+    "UF": "SC"
+  },
+  {
+    "id": 25,
+    "name": "Sergipe",
+    "acronym": "SE",
+    "UF": "SE"
+  },
+  {
+    "id": 26,
+    "name": "São Paulo",
+    "acronym": "SP",
+    "UF": "SP"
+  },
+  {
+    "id": 27,
+    "name": "Tocantins",
+    "acronym": "TO",
+    "UF": "TO"
+  },
+  {
+    "id": 99,
+    "name": "Exterior",
+    "acronym": "EX",
+    "UF": "EX"
+  },
+  {
+    "id": 100,
+    "name": "Não Migrado",
+    "acronym": "--",
+    "UF": "--"
+  }
+]

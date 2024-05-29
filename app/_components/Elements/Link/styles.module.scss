@@ -1,0 +1,151 @@
+@use "/app/_styles/theme.scss" as *;
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $space-xxxxs;
+  width: 100%;
+  color: $color-white;
+  font-weight: $font-weight-bold;
+  border: 0;
+  border-radius: 5px;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-align: center;
+}
+
+.small {
+  min-height: $space-lg;
+  font-size: $font-size-xxs;
+  padding: 0 $space-xs;
+}
+
+.medium {
+  min-height: $space-xxxl;
+  font-size: $font-size-button;
+  padding: 0 $space-lg;
+}
+
+.secondary {
+  background-color: $color-alert-600;
+
+  &:hover {
+    background-color: $color-alert-700;
+  }
+}
+
+.secondary.outlined {
+  background: transparent;
+  color: $color-alert-600;
+  border: solid 2px $color-alert-600;
+
+  &:hover {
+    color: $color-alert-700;
+    border: solid 2px $color-alert-700;
+  }
+}
+
+.ghost {
+  background: transparent;
+  color: $color-basic-700;
+
+  &:hover {
+    color: $color-basic-800;
+  }
+
+  &.institutional {
+    color: $color-inst-primary-800;
+  }
+
+  &.institutional:hover {
+    color: $color-inst-primary-900;
+  }
+
+  &.business {
+    color: $color-biz-primary-700;
+  }
+
+  &.business:hover {
+    color: $color-biz-primary-800;
+  }
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.business {
+  &.primary {
+    background-color: $color-biz-primary-700;
+
+    &:hover {
+      background-color: $color-biz-primary-800;
+    }
+  }
+
+  &.primary.outlined {
+    background: transparent;
+    color: $color-biz-primary-700;
+    border: solid 2px $color-biz-primary-700;
+
+    &:hover {
+      color: $color-biz-primary-800;
+      border-color: $color-biz-primary-800;
+    }
+  }
+}
+
+.institutional {
+  &.primary {
+    background-color: $color-inst-primary-800;
+
+    &:hover {
+      background-color: $color-inst-primary-900;
+    }
+  }
+
+  &.primary.outlined {
+    background: transparent;
+    color: $color-inst-primary-800;
+    border: solid 2px $color-inst-primary-800;
+
+    &:hover {
+      color: $color-inst-primary-900;
+      border-color: $color-inst-primary-900;
+    }
+  }
+}
+
+// Remove hover on mobile
+@include breakpoint(md) {
+  .ghost:hover {
+    color: $color-basic-700;
+  }
+
+  .business {
+    &.primary:hover {
+      background-color: $color-biz-primary-700;
+    }
+
+    &.primary.outlined:hover {
+      color: $color-biz-primary-700;
+      border: solid 2px $color-biz-primary-700;
+      background-color: transparent;
+    }
+  }
+
+  .institutional {
+    &.primary:hover {
+      background-color: $color-inst-primary-800;
+    }
+
+    &.primary.outlined:hover {
+      color: $color-inst-primary-800;
+      border: solid 2px $color-inst-primary-800;
+      background-color: transparent;
+    }
+  }
+}

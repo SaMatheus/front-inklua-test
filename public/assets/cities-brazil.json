@@ -1,0 +1,3670 @@
+[
+  {
+    "label": "São Paulo - SP",
+    "id": 5270
+  },
+  {
+    "label": "Rio de Janeiro - RJ",
+    "id": 3658
+  },
+  {
+    "label": "Belo Horizonte - MG",
+    "id": 1630
+  },
+  {
+    "label": "Curitiba - PR",
+    "id": 2878
+  },
+  {
+    "label": "Guarulhos - SP",
+    "id": 4920
+  },
+  {
+    "label": "Salvador - BA",
+    "id": 616
+  },
+  {
+    "label": "Campinas - SP",
+    "id": 4814
+  },
+  {
+    "label": "Osasco - SP",
+    "id": 5095
+  },
+  {
+    "label": "São Bernardo do Campo - SP",
+    "id": 5252
+  },
+  {
+    "label": "Brasília - DF",
+    "id": 882
+  },
+  {
+    "label": "Porto Alegre - RS",
+    "id": 4174
+  },
+  {
+    "label": "Santo André - SP",
+    "id": 5242
+  },
+  {
+    "label": "São José dos Campos - SP",
+    "id": 5265
+  },
+  {
+    "label": "Recife - PE",
+    "id": 3315
+  },
+  {
+    "label": "Jundiaí - SP",
+    "id": 5001
+  },
+  {
+    "label": "Fortaleza - CE",
+    "id": 756
+  },
+  {
+    "label": "Manaus - AM",
+    "id": 256
+  },
+  {
+    "label": "Mauá - SP",
+    "id": 5038
+  },
+  {
+    "label": "Barueri - SP",
+    "id": 4770
+  },
+  {
+    "label": "Carapicuíba - SP",
+    "id": 4827
+  },
+  {
+    "label": "Contagem - MG",
+    "id": 1770
+  },
+  {
+    "label": "Diadema - SP",
+    "id": 4859
+  },
+  {
+    "label": "Duque de Caxias - RJ",
+    "id": 3615
+  },
+  {
+    "label": "São Gonçalo - RJ",
+    "id": 3663
+  },
+  {
+    "label": "Sorocaba - SP",
+    "id": 5289
+  },
+  {
+    "label": "Mogi das Cruzes - SP",
+    "id": 5051
+  },
+  {
+    "label": "Cotia - SP",
+    "id": 4851
+  },
+  {
+    "label": "Ribeirão Preto - SP",
+    "id": 5195
+  },
+  {
+    "label": "Goiânia - GO",
+    "id": 977
+  },
+  {
+    "label": "Nova Iguaçu - RJ",
+    "id": 3640
+  },
+  {
+    "label": "Santos - SP",
+    "id": 5250
+  },
+  {
+    "label": "Taboão da Serra - SP",
+    "id": 5296
+  },
+  {
+    "label": "Belém - PA",
+    "id": 2436
+  },
+  {
+    "label": "Suzano - SP",
+    "id": 5293
+  },
+  {
+    "label": "Campo Grande - MS",
+    "id": 1506
+  },
+  {
+    "label": "Niterói - RJ",
+    "id": 3638
+  },
+  {
+    "label": "Praia Grande - SP",
+    "id": 5167
+  },
+  {
+    "label": "Uberlândia - MG",
+    "id": 2389
+  },
+  {
+    "label": "Itapevi - SP",
+    "id": 4965
+  },
+  {
+    "label": "Sumaré - SP",
+    "id": 5291
+  },
+  {
+    "label": "Hortolândia - SP",
+    "id": 4925
+  },
+  {
+    "label": "Blumenau - SC",
+    "id": 4449
+  },
+  {
+    "label": "Aracaju - SE",
+    "id": 5353
+  },
+  {
+    "label": "Florianópolis - SC",
+    "id": 4500
+  },
+  {
+    "label": "São Vicente - SP",
+    "id": 5277
+  },
+  {
+    "label": "Feira de Santana - BA",
+    "id": 411
+  },
+  {
+    "label": "Betim - MG",
+    "id": 1636
+  },
+  {
+    "label": "Londrina - PR",
+    "id": 2976
+  },
+  {
+    "label": "Jaboatão dos Guararapes - PE",
+    "id": 3270
+  },
+  {
+    "label": "Canoas - RS",
+    "id": 3929
+  },
+  {
+    "label": "Jacareí - SP",
+    "id": 4985
+  },
+  {
+    "label": "Piracicaba - SP",
+    "id": 5141
+  },
+  {
+    "label": "Cuiabá - MT",
+    "id": 1383
+  },
+  {
+    "label": "Joinville - SC",
+    "id": 4549
+  },
+  {
+    "label": "Embu - SP",
+    "id": 4874
+  },
+  {
+    "label": "Guarujá - SP",
+    "id": 4919
+  },
+  {
+    "label": "São José dos Pinhais - PR",
+    "id": 3135
+  },
+  {
+    "label": "Itaquaquecetuba - SP",
+    "id": 4972
+  },
+  {
+    "label": "Taubaté - SP",
+    "id": 5312
+  },
+  {
+    "label": "Camaçari - BA",
+    "id": 350
+  },
+  {
+    "label": "São João de Meriti - RJ",
+    "id": 3665
+  },
+  {
+    "label": "São Luís - MA",
+    "id": 1314
+  },
+  {
+    "label": "São Caetano do Sul - SP",
+    "id": 5253
+  },
+  {
+    "label": "Vila Velha - ES",
+    "id": 77
+  },
+  {
+    "label": "Gravataí - RS",
+    "id": 4034
+  },
+  {
+    "label": "Serra - ES",
+    "id": 70
+  },
+  {
+    "label": "Francisco Morato - SP",
+    "id": 4894
+  },
+  {
+    "label": "Maceió - AL",
+    "id": 147
+  },
+  {
+    "label": "Belford Roxo - RJ",
+    "id": 3599
+  },
+  {
+    "label": "Itapecerica da Serra - SP",
+    "id": 4962
+  },
+  {
+    "label": "São Carlos - SP",
+    "id": 5254
+  },
+  {
+    "label": "Franco da Rocha - SP",
+    "id": 4895
+  },
+  {
+    "label": "João Pessoa - PB",
+    "id": 2655
+  },
+  {
+    "label": "Teresina - PI",
+    "id": 3582
+  },
+  {
+    "label": "Jandira - SP",
+    "id": 4991
+  },
+  {
+    "label": "Ribeirão Pires - SP",
+    "id": 5194
+  },
+  {
+    "label": "Várzea Paulista - SP",
+    "id": 5342
+  },
+  {
+    "label": "Sete Lagoas - MG",
+    "id": 2354
+  },
+  {
+    "label": "São José - SC",
+    "id": 4660
+  },
+  {
+    "label": "Americana - SP",
+    "id": 4724
+  },
+  {
+    "label": "Paulista - PE",
+    "id": 3305
+  },
+  {
+    "label": "Pouso Alegre - MG",
+    "id": 2179
+  },
+  {
+    "label": "Salto - SP",
+    "id": 5215
+  },
+  {
+    "label": "Uberaba - MG",
+    "id": 2388
+  },
+  {
+    "label": "Maringá - PR",
+    "id": 2994
+  },
+  {
+    "label": "Itajaí - SC",
+    "id": 4538
+  },
+  {
+    "label": "Caieiras - SP",
+    "id": 4807
+  },
+  {
+    "label": "Ferraz de Vasconcelos - SP",
+    "id": 4888
+  },
+  {
+    "label": "Ponta Grossa - PR",
+    "id": 3060
+  },
+  {
+    "label": "Natal - RN",
+    "id": 3770
+  },
+  {
+    "label": "Cachoeirinha - RS",
+    "id": 3911
+  },
+  {
+    "label": "Cubatão - SP",
+    "id": 4856
+  },
+  {
+    "label": "Paulínia - SP",
+    "id": 5118
+  },
+  {
+    "label": "Vitória - ES",
+    "id": 78
+  },
+  {
+    "label": "Itabira - MG",
+    "id": 1925
+  },
+  {
+    "label": "Paranaguá - PR",
+    "id": 3038
+  },
+  {
+    "label": "Bragança Paulista - SP",
+    "id": 4792
+  },
+  {
+    "label": "Cajamar - SP",
+    "id": 4809
+  },
+  {
+    "label": "Itatiba - SP",
+    "id": 4975
+  },
+  {
+    "label": "Poá - SP",
+    "id": 5152
+  },
+  {
+    "label": "Araucária - PR",
+    "id": 2806
+  },
+  {
+    "label": "Colombo - PR",
+    "id": 2863
+  },
+  {
+    "label": "São José do Rio Preto - SP",
+    "id": 5264
+  },
+  {
+    "label": "Ibirité - MG",
+    "id": 1902
+  },
+  {
+    "label": "Juiz de Fora - MG",
+    "id": 1983
+  },
+  {
+    "label": "Olinda - PE",
+    "id": 3294
+  },
+  {
+    "label": "Sapucaia do Sul - RS",
+    "id": 4268
+  },
+  {
+    "label": "Caçapava - SP",
+    "id": 4802
+  },
+  {
+    "label": "Indaiatuba - SP",
+    "id": 4943
+  },
+  {
+    "label": "Lauro de Freitas - BA",
+    "id": 511
+  },
+  {
+    "label": "Ananindeua - PA",
+    "id": 2427
+  },
+  {
+    "label": "Caxias do Sul - RS",
+    "id": 3945
+  },
+  {
+    "label": "São Leopoldo - RS",
+    "id": 4247
+  },
+  {
+    "label": "Limeira - SP",
+    "id": 5011
+  },
+  {
+    "label": "Santana de Parnaíba - SP",
+    "id": 5240
+  },
+  {
+    "label": "Itaboraí - RJ",
+    "id": 3619
+  },
+  {
+    "label": "Nilópolis - RJ",
+    "id": 3637
+  },
+  {
+    "label": "Lages - SC",
+    "id": 4553
+  },
+  {
+    "label": "Bauru - SP",
+    "id": 4773
+  },
+  {
+    "label": "Cascavel - PR",
+    "id": 2853
+  },
+  {
+    "label": "Pinhais - PR",
+    "id": 3050
+  },
+  {
+    "label": "Cabo de Santo Agostinho - PE",
+    "id": 3213
+  },
+  {
+    "label": "Franca - SP",
+    "id": 4893
+  },
+  {
+    "label": "Mogi Guaçu - SP",
+    "id": 5052
+  },
+  {
+    "label": "Ceilândia - DF",
+    "id": 5582
+  },
+  {
+    "label": "Santa Luzia - MG",
+    "id": 2239
+  },
+  {
+    "label": "Fazenda Rio Grande - PR",
+    "id": 2894
+  },
+  {
+    "label": "Volta Redonda - RJ",
+    "id": 3682
+  },
+  {
+    "label": "Alvorada - RS",
+    "id": 3861
+  },
+  {
+    "label": "Viamão - RS",
+    "id": 4333
+  },
+  {
+    "label": "Marília - SP",
+    "id": 5034
+  },
+  {
+    "label": "Rio Claro - SP",
+    "id": 5199
+  },
+  {
+    "label": "Ipatinga - MG",
+    "id": 1921
+  },
+  {
+    "label": "Ribeirão das Neves - MG",
+    "id": 2201
+  },
+  {
+    "label": "Macaé - RJ",
+    "id": 3627
+  },
+  {
+    "label": "Queimados - RJ",
+    "id": 3651
+  },
+  {
+    "label": "Porto Velho - RO",
+    "id": 4382
+  },
+  {
+    "label": "Campo Limpo Paulista - SP",
+    "id": 4815
+  },
+  {
+    "label": "Valinhos - SP",
+    "id": 5337
+  },
+  {
+    "label": "Santa Bárbara d`Oeste - SP",
+    "id": 5221
+  },
+  {
+    "label": "Varginha - MG",
+    "id": 2399
+  },
+  {
+    "label": "Balneário Camboriú - SC",
+    "id": 4440
+  },
+  {
+    "label": "Itu - SP",
+    "id": 4980
+  },
+  {
+    "label": "Votorantim - SP",
+    "id": 5348
+  },
+  {
+    "label": "Cariacica - ES",
+    "id": 17
+  },
+  {
+    "label": "Montes Claros - MG",
+    "id": 2065
+  },
+  {
+    "label": "Boa Vista - RR",
+    "id": 4400
+  },
+  {
+    "label": "São Roque - SP",
+    "id": 5273
+  },
+  {
+    "label": "Aparecida de Goiânia - GO",
+    "id": 901
+  },
+  {
+    "label": "Mesquita - RJ",
+    "id": 3633
+  },
+  {
+    "label": "Esteio - RS",
+    "id": 4006
+  },
+  {
+    "label": "Araraquara - SP",
+    "id": 4742
+  },
+  {
+    "label": "Presidente Prudente - SP",
+    "id": 5172
+  },
+  {
+    "label": "Rio Grande da Serra - SP",
+    "id": 5201
+  },
+  {
+    "label": "Samambaia - DF",
+    "id": 5585
+  },
+  {
+    "label": "Caucaia - CE",
+    "id": 741
+  },
+  {
+    "label": "Maracanaú - CE",
+    "id": 801
+  },
+  {
+    "label": "Governador Valadares - MG",
+    "id": 1879
+  },
+  {
+    "label": "Vespasiano - MG",
+    "id": 2408
+  },
+  {
+    "label": "Campina Grande - PB",
+    "id": 2610
+  },
+  {
+    "label": "Cabo Frio - RJ",
+    "id": 3602
+  },
+  {
+    "label": "Araçatuba - SP",
+    "id": 4737
+  },
+  {
+    "label": "Sertãozinho - SP",
+    "id": 5284
+  },
+  {
+    "label": "Gama - DF",
+    "id": 5575
+  },
+  {
+    "label": "Anápolis - GO",
+    "id": 898
+  },
+  {
+    "label": "Sabará - MG",
+    "id": 2223
+  },
+  {
+    "label": "Piraquara - PR",
+    "id": 3055
+  },
+  {
+    "label": "Magé - RJ",
+    "id": 3629
+  },
+  {
+    "label": "Palhoça - SC",
+    "id": 4593
+  },
+  {
+    "label": "Palmas - TO",
+    "id": 5514
+  },
+  {
+    "label": "Planaltina - DF",
+    "id": 5579
+  },
+  {
+    "label": "Alagoinhas - BA",
+    "id": 287
+  },
+  {
+    "label": "Simões Filho - BA",
+    "id": 657
+  },
+  {
+    "label": "Caruaru - PE",
+    "id": 3227
+  },
+  {
+    "label": "Arujá - SP",
+    "id": 4750
+  },
+  {
+    "label": "Atibaia - SP",
+    "id": 4753
+  },
+  {
+    "label": "Mairinque - SP",
+    "id": 5027
+  },
+  {
+    "label": "Abreu e Lima - PE",
+    "id": 3183
+  },
+  {
+    "label": "Maricá - RJ",
+    "id": 3631
+  },
+  {
+    "label": "Rio das Ostras - RJ",
+    "id": 3657
+  },
+  {
+    "label": "São Pedro da Aldeia - RJ",
+    "id": 3668
+  },
+  {
+    "label": "Mogi Mirim - SP",
+    "id": 5053
+  },
+  {
+    "label": "Santa Maria - DF",
+    "id": 5586
+  },
+  {
+    "label": "Vitória da Conquista - BA",
+    "id": 693
+  },
+  {
+    "label": "Dourados - MS",
+    "id": 1518
+  },
+  {
+    "label": "Parauapebas - PA",
+    "id": 2506
+  },
+  {
+    "label": "Novo Hamburgo - RS",
+    "id": 4137
+  },
+  {
+    "label": "Nova Odessa - SP",
+    "id": 5084
+  },
+  {
+    "label": "Valparaíso de Goiás - GO",
+    "id": 1123
+  },
+  {
+    "label": "Jaraguá do Sul - SC",
+    "id": 4546
+  },
+  {
+    "label": "Araras - SP",
+    "id": 4743
+  },
+  {
+    "label": "Vargem Grande Paulista - SP",
+    "id": 5341
+  },
+  {
+    "label": "Recanto das Emas - DF",
+    "id": 5574
+  },
+  {
+    "label": "Ilhéus - BA",
+    "id": 444
+  },
+  {
+    "label": "Conselheiro Lafaiete - MG",
+    "id": 1767
+  },
+  {
+    "label": "Nova Lima - MG",
+    "id": 2084
+  },
+  {
+    "label": "Pedro Leopoldo - MG",
+    "id": 2141
+  },
+  {
+    "label": "Almirante Tamandaré - PR",
+    "id": 2787
+  },
+  {
+    "label": "Campo Largo - PR",
+    "id": 2843
+  },
+  {
+    "label": "Araruama - RJ",
+    "id": 3593
+  },
+  {
+    "label": "Barra Mansa - RJ",
+    "id": 3598
+  },
+  {
+    "label": "Petrópolis - RJ",
+    "id": 3645
+  },
+  {
+    "label": "Pelotas - RS",
+    "id": 4160
+  },
+  {
+    "label": "Santa Maria - RS",
+    "id": 4214
+  },
+  {
+    "label": "Navegantes - SC",
+    "id": 4581
+  },
+  {
+    "label": "Itupeva - SP",
+    "id": 4981
+  },
+  {
+    "label": "Mongaguá - SP",
+    "id": 5056
+  },
+  {
+    "label": "Taguatinga - DF",
+    "id": 5576
+  },
+  {
+    "label": "Catalão - GO",
+    "id": 941
+  },
+  {
+    "label": "Resende - RJ",
+    "id": 3653
+  },
+  {
+    "label": "Teresópolis - RJ",
+    "id": 3676
+  },
+  {
+    "label": "Camboriú - SC",
+    "id": 4464
+  },
+  {
+    "label": "Assis - SP",
+    "id": 4752
+  },
+  {
+    "label": "Embu-Guaçu - SP",
+    "id": 4875
+  },
+  {
+    "label": "Jaú - SP",
+    "id": 4994
+  },
+  {
+    "label": "Ourinhos - SP",
+    "id": 5098
+  },
+  {
+    "label": "Pindamonhangaba - SP",
+    "id": 5135
+  },
+  {
+    "label": "Vinhedo - SP",
+    "id": 5344
+  },
+  {
+    "label": "Nossa Senhora do Socorro - SE",
+    "id": 5397
+  },
+  {
+    "label": "Paço do Lumiar - MA",
+    "id": 1258
+  },
+  {
+    "label": "Poços de Caldas - MG",
+    "id": 2170
+  },
+  {
+    "label": "Santarém - PA",
+    "id": 2530
+  },
+  {
+    "label": "Campos dos Goytacazes - RJ",
+    "id": 3605
+  },
+  {
+    "label": "Japeri - RJ",
+    "id": 3625
+  },
+  {
+    "label": "Montenegro - RS",
+    "id": 4108
+  },
+  {
+    "label": "Tubarão - SC",
+    "id": 4688
+  },
+  {
+    "label": "Botucatu - SP",
+    "id": 4791
+  },
+  {
+    "label": "Caraguatatuba - SP",
+    "id": 4826
+  },
+  {
+    "label": "Cosmópolis - SP",
+    "id": 4849
+  },
+  {
+    "label": "Guaratinguetá - SP",
+    "id": 4916
+  },
+  {
+    "label": "Arapiraca - AL",
+    "id": 103
+  },
+  {
+    "label": "Várzea Grande - MT",
+    "id": 1483
+  },
+  {
+    "label": "Três Lagoas - MS",
+    "id": 1563
+  },
+  {
+    "label": "Lavras - MG",
+    "id": 2000
+  },
+  {
+    "label": "Marabá - PA",
+    "id": 2483
+  },
+  {
+    "label": "Indaial - SC",
+    "id": 4526
+  },
+  {
+    "label": "Cabreúva - SP",
+    "id": 4801
+  },
+  {
+    "label": "Itanhaém - SP",
+    "id": 4960
+  },
+  {
+    "label": "Itabuna - BA",
+    "id": 457
+  },
+  {
+    "label": "Águas Lindas de Goiás - GO",
+    "id": 889
+  },
+  {
+    "label": "Imperatriz - MA",
+    "id": 1218
+  },
+  {
+    "label": "Araguari - MG",
+    "id": 1602
+  },
+  {
+    "label": "Coronel Fabriciano - MG",
+    "id": 1778
+  },
+  {
+    "label": "Esmeraldas - MG",
+    "id": 1835
+  },
+  {
+    "label": "Lagoa Santa - MG",
+    "id": 1994
+  },
+  {
+    "label": "Cambé - PR",
+    "id": 2836
+  },
+  {
+    "label": "Campina Grande do Sul - PR",
+    "id": 2840
+  },
+  {
+    "label": "Foz do Iguaçu - PR",
+    "id": 2904
+  },
+  {
+    "label": "Telêmaco Borba - PR",
+    "id": 3158
+  },
+  {
+    "label": "Camaragibe - PE",
+    "id": 3219
+  },
+  {
+    "label": "Nova Friburgo - RJ",
+    "id": 3639
+  },
+  {
+    "label": "Seropédica - RJ",
+    "id": 3672
+  },
+  {
+    "label": "Mossoró - RN",
+    "id": 3769
+  },
+  {
+    "label": "Bebedouro - SP",
+    "id": 4774
+  },
+  {
+    "label": "Ibiúna - SP",
+    "id": 4933
+  },
+  {
+    "label": "Lorena - SP",
+    "id": 5014
+  },
+  {
+    "label": "Monte Mor - SP",
+    "id": 5062
+  },
+  {
+    "label": "Peruíbe - SP",
+    "id": 5131
+  },
+  {
+    "label": "Sobradinho - DF",
+    "id": 5578
+  },
+  {
+    "label": "São Sebastião - DF",
+    "id": 5587
+  },
+  {
+    "label": "Riacho Fundo II - DF",
+    "id": 5594
+  },
+  {
+    "label": "Viana - ES",
+    "id": 74
+  },
+  {
+    "label": "Porto Seguro - BA",
+    "id": 591
+  },
+  {
+    "label": "Juazeiro do Norte - CE",
+    "id": 796
+  },
+  {
+    "label": "Luziânia - GO",
+    "id": 1017
+  },
+  {
+    "label": "Nerópolis - GO",
+    "id": 1039
+  },
+  {
+    "label": "Rio Verde - GO",
+    "id": 1080
+  },
+  {
+    "label": "Sinop - MT",
+    "id": 1473
+  },
+  {
+    "label": "Araxá - MG",
+    "id": 1608
+  },
+  {
+    "label": "Patos de Minas - MG",
+    "id": 2126
+  },
+  {
+    "label": "Três Corações - MG",
+    "id": 2378
+  },
+  {
+    "label": "Barcarena - PA",
+    "id": 2435
+  },
+  {
+    "label": "Patos - PB",
+    "id": 2695
+  },
+  {
+    "label": "Sarandi - PR",
+    "id": 3145
+  },
+  {
+    "label": "Belo Jardim - PE",
+    "id": 3201
+  },
+  {
+    "label": "São Lourenço da Mata - PE",
+    "id": 3339
+  },
+  {
+    "label": "Itaguaí - RJ",
+    "id": 3620
+  },
+  {
+    "label": "Parnamirim - RN",
+    "id": 3779
+  },
+  {
+    "label": "Guaíba - RS",
+    "id": 4036
+  },
+  {
+    "label": "Santa Cruz do Sul - RS",
+    "id": 4212
+  },
+  {
+    "label": "Uruguaiana - RS",
+    "id": 4322
+  },
+  {
+    "label": "Jaguariúna - SP",
+    "id": 4988
+  },
+  {
+    "label": "Serrana - SP",
+    "id": 5283
+  },
+  {
+    "label": "Guará - DF",
+    "id": 5583
+  },
+  {
+    "label": "Guarapari - ES",
+    "id": 29
+  },
+  {
+    "label": "Barreiras - BA",
+    "id": 318
+  },
+  {
+    "label": "Novo Gama - GO",
+    "id": 1049
+  },
+  {
+    "label": "Rondonópolis - MT",
+    "id": 1455
+  },
+  {
+    "label": "Barão de Cocais - MG",
+    "id": 1623
+  },
+  {
+    "label": "Itaúna - MG",
+    "id": 1947
+  },
+  {
+    "label": "Abaetetuba - PA",
+    "id": 2418
+  },
+  {
+    "label": "Santa Rita - PB",
+    "id": 2731
+  },
+  {
+    "label": "Guarapuava - PR",
+    "id": 2920
+  },
+  {
+    "label": "Quatro Barras - PR",
+    "id": 3074
+  },
+  {
+    "label": "Goiana - PE",
+    "id": 3251
+  },
+  {
+    "label": "Igarassu - PE",
+    "id": 3257
+  },
+  {
+    "label": "Ipojuca - PE",
+    "id": 3262
+  },
+  {
+    "label": "Rio Grande - RS",
+    "id": 4192
+  },
+  {
+    "label": "Brusque - SC",
+    "id": 4460
+  },
+  {
+    "label": "Chapecó - SC",
+    "id": 4479
+  },
+  {
+    "label": "Criciúma - SC",
+    "id": 4487
+  },
+  {
+    "label": "Gaspar - SC",
+    "id": 4508
+  },
+  {
+    "label": "Itapema - SC",
+    "id": 4539
+  },
+  {
+    "label": "Boituva - SP",
+    "id": 4784
+  },
+  {
+    "label": "Capivari - SP",
+    "id": 4825
+  },
+  {
+    "label": "Cruzeiro - SP",
+    "id": 4855
+  },
+  {
+    "label": "Ibaté - SP",
+    "id": 4929
+  },
+  {
+    "label": "Itapira - SP",
+    "id": 4966
+  },
+  {
+    "label": "Leme - SP",
+    "id": 5009
+  },
+  {
+    "label": "Matão - SP",
+    "id": 5037
+  },
+  {
+    "label": "Pirassununga - SP",
+    "id": 5147
+  },
+  {
+    "label": "Tatuí - SP",
+    "id": 5311
+  },
+  {
+    "label": "São Cristóvão - SE",
+    "id": 5416
+  },
+  {
+    "label": "Brazlândia - DF",
+    "id": 5577
+  },
+  {
+    "label": "Aracruz - ES",
+    "id": 9
+  },
+  {
+    "label": "Dias d`Ávila - BA",
+    "id": 399
+  },
+  {
+    "label": "Irecê - BA",
+    "id": 454
+  },
+  {
+    "label": "Teixeira de Freitas - BA",
+    "id": 668
+  },
+  {
+    "label": "Valença - BA",
+    "id": 685
+  },
+  {
+    "label": "Eusébio - CE",
+    "id": 753
+  },
+  {
+    "label": "Barbacena - MG",
+    "id": 1625
+  },
+  {
+    "label": "Cambuí - MG",
+    "id": 1680
+  },
+  {
+    "label": "Divinópolis - MG",
+    "id": 1812
+  },
+  {
+    "label": "Igarapé - MG",
+    "id": 1906
+  },
+  {
+    "label": "Janaúba - MG",
+    "id": 1962
+  },
+  {
+    "label": "Paracatu - MG",
+    "id": 2116
+  },
+  {
+    "label": "Patrocínio - MG",
+    "id": 2127
+  },
+  {
+    "label": "Canaã dos Carajás - PA",
+    "id": 2450
+  },
+  {
+    "label": "Garanhuns - PE",
+    "id": 3249
+  },
+  {
+    "label": "Petrolina - PE",
+    "id": 3309
+  },
+  {
+    "label": "Angra dos Reis - RJ",
+    "id": 3591
+  },
+  {
+    "label": "Barra do Piraí - RJ",
+    "id": 3597
+  },
+  {
+    "label": "Extremoz - RN",
+    "id": 3721
+  },
+  {
+    "label": "Lajeado - RS",
+    "id": 4081
+  },
+  {
+    "label": "Passo Fundo - RS",
+    "id": 4154
+  },
+  {
+    "label": "Ariquemes - RO",
+    "id": 4350
+  },
+  {
+    "label": "Biguaçu - SC",
+    "id": 4448
+  },
+  {
+    "label": "Alumínio - SP",
+    "id": 4719
+  },
+  {
+    "label": "Catanduva - SP",
+    "id": 4832
+  },
+  {
+    "label": "Cerquilho - SP",
+    "id": 4836
+  },
+  {
+    "label": "Guararema - SP",
+    "id": 4915
+  },
+  {
+    "label": "Itapetininga - SP",
+    "id": 4963
+  },
+  {
+    "label": "Jarinu - SP",
+    "id": 4993
+  },
+  {
+    "label": "Mairiporã - SP",
+    "id": 5028
+  },
+  {
+    "label": "Registro - SP",
+    "id": 5185
+  },
+  {
+    "label": "Rio das Pedras - SP",
+    "id": 5200
+  },
+  {
+    "label": "São Lourenço da Serra - SP",
+    "id": 5266
+  },
+  {
+    "label": "Tremembé - SP",
+    "id": 5321
+  },
+  {
+    "label": "Águas Claras - DF",
+    "id": 5593
+  },
+  {
+    "label": "Linhares - ES",
+    "id": 43
+  },
+  {
+    "label": "São Mateus - ES",
+    "id": 68
+  },
+  {
+    "label": "Eunápolis - BA",
+    "id": 408
+  },
+  {
+    "label": "Juazeiro - BA",
+    "id": 498
+  },
+  {
+    "label": "Sobral - CE",
+    "id": 864
+  },
+  {
+    "label": "Trindade - GO",
+    "id": 1115
+  },
+  {
+    "label": "São José de Ribamar - MA",
+    "id": 1312
+  },
+  {
+    "label": "Lucas do Rio Verde - MT",
+    "id": 1409
+  },
+  {
+    "label": "Extrema - MG",
+    "id": 1845
+  },
+  {
+    "label": "Itabirito - MG",
+    "id": 1927
+  },
+  {
+    "label": "Itajubá - MG",
+    "id": 1932
+  },
+  {
+    "label": "João Monlevade - MG",
+    "id": 1975
+  },
+  {
+    "label": "Juatuba - MG",
+    "id": 1982
+  },
+  {
+    "label": "Mariana - MG",
+    "id": 2024
+  },
+  {
+    "label": "Matozinhos - MG",
+    "id": 2040
+  },
+  {
+    "label": "Oliveira - MG",
+    "id": 2097
+  },
+  {
+    "label": "Passos - MG",
+    "id": 2124
+  },
+  {
+    "label": "Santos Dumont - MG",
+    "id": 2271
+  },
+  {
+    "label": "São João del Rei - MG",
+    "id": 2295
+  },
+  {
+    "label": "São Joaquim de Bicas - MG",
+    "id": 2303
+  },
+  {
+    "label": "São Sebastião do Paraíso - MG",
+    "id": 2325
+  },
+  {
+    "label": "Timóteo - MG",
+    "id": 2371
+  },
+  {
+    "label": "Viçosa - MG",
+    "id": 2409
+  },
+  {
+    "label": "Marituba - PA",
+    "id": 2486
+  },
+  {
+    "label": "Paragominas - PA",
+    "id": 2505
+  },
+  {
+    "label": "Ibiporã - PR",
+    "id": 2926
+  },
+  {
+    "label": "Mandaguaçu - PR",
+    "id": 2982
+  },
+  {
+    "label": "Pato Branco - PR",
+    "id": 3042
+  },
+  {
+    "label": "Palmares - PE",
+    "id": 3298
+  },
+  {
+    "label": "Vitória de Santo Antão - PE",
+    "id": 3366
+  },
+  {
+    "label": "Casimiro de Abreu - RJ",
+    "id": 3610
+  },
+  {
+    "label": "Três Rios - RJ",
+    "id": 3678
+  },
+  {
+    "label": "Capão da Canoa - RS",
+    "id": 3932
+  },
+  {
+    "label": "Nova Santa Rita - RS",
+    "id": 4134
+  },
+  {
+    "label": "Sapiranga - RS",
+    "id": 4267
+  },
+  {
+    "label": "Pomerode - SC",
+    "id": 4611
+  },
+  {
+    "label": "Porto Belo - SC",
+    "id": 4615
+  },
+  {
+    "label": "Águas de São Pedro - SP",
+    "id": 4712
+  },
+  {
+    "label": "Amparo - SP",
+    "id": 4727
+  },
+  {
+    "label": "Araçoiaba da Serra - SP",
+    "id": 4738
+  },
+  {
+    "label": "Batatais - SP",
+    "id": 4772
+  },
+  {
+    "label": "Descalvado - SP",
+    "id": 4858
+  },
+  {
+    "label": "Itirapina - SP",
+    "id": 4977
+  },
+  {
+    "label": "Louveira - SP",
+    "id": 5016
+  },
+  {
+    "label": "Morungaba - SP",
+    "id": 5065
+  },
+  {
+    "label": "Santa Isabel - SP",
+    "id": 5231
+  },
+  {
+    "label": "São José do Rio Pardo - SP",
+    "id": 5263
+  },
+  {
+    "label": "São Manuel - SP",
+    "id": 5268
+  },
+  {
+    "label": "São Pedro - SP",
+    "id": 5271
+  },
+  {
+    "label": "Ubatuba - SP",
+    "id": 5329
+  },
+  {
+    "label": "Votuporanga - SP",
+    "id": 5349
+  },
+  {
+    "label": "Itabaiana - SE",
+    "id": 5377
+  },
+  {
+    "label": "Sobradinho II - DF",
+    "id": 5599
+  },
+  {
+    "label": "Colatina - ES",
+    "id": 19
+  },
+  {
+    "label": "Rio Branco - AC",
+    "id": 94
+  },
+  {
+    "label": "Satuba - AL",
+    "id": 195
+  },
+  {
+    "label": "Macapá - AP",
+    "id": 209
+  },
+  {
+    "label": "Manacapuru - AM",
+    "id": 254
+  },
+  {
+    "label": "Amélia Rodrigues - BA",
+    "id": 291
+  },
+  {
+    "label": "Candeias - BA",
+    "id": 358
+  },
+  {
+    "label": "Conceição do Jacuípe - BA",
+    "id": 383
+  },
+  {
+    "label": "Coração de Maria - BA",
+    "id": 387
+  },
+  {
+    "label": "Fátima - BA",
+    "id": 409
+  },
+  {
+    "label": "Guanambi - BA",
+    "id": 423
+  },
+  {
+    "label": "Irará - BA",
+    "id": 453
+  },
+  {
+    "label": "Itamaraju - BA",
+    "id": 466
+  },
+  {
+    "label": "Jacobina - BA",
+    "id": 488
+  },
+  {
+    "label": "Jequié - BA",
+    "id": 493
+  },
+  {
+    "label": "Nordestina - BA",
+    "id": 554
+  },
+  {
+    "label": "Paulo Afonso - BA",
+    "id": 574
+  },
+  {
+    "label": "Santo Antônio de Jesus - BA",
+    "id": 630
+  },
+  {
+    "label": "Uruçuca - BA",
+    "id": 683
+  },
+  {
+    "label": "Aquiraz - CE",
+    "id": 709
+  },
+  {
+    "label": "Crato - CE",
+    "id": 748
+  },
+  {
+    "label": "Pacatuba - CE",
+    "id": 825
+  },
+  {
+    "label": "São Gonçalo do Amarante - CE",
+    "id": 859
+  },
+  {
+    "label": "Caldas Novas - GO",
+    "id": 930
+  },
+  {
+    "label": "Formosa - GO",
+    "id": 971
+  },
+  {
+    "label": "Goianira - GO",
+    "id": 978
+  },
+  {
+    "label": "Jataí - GO",
+    "id": 1010
+  },
+  {
+    "label": "Planaltina - GO",
+    "id": 1069
+  },
+  {
+    "label": "Açailândia - MA",
+    "id": 1129
+  },
+  {
+    "label": "Chapadinha - MA",
+    "id": 1185
+  },
+  {
+    "label": "João Lisboa - MA",
+    "id": 1224
+  },
+  {
+    "label": "Timon - MA",
+    "id": 1332
+  },
+  {
+    "label": "Sorriso - MT",
+    "id": 1474
+  },
+  {
+    "label": "Corumbá - MS",
+    "id": 1512
+  },
+  {
+    "label": "Naviraí - MS",
+    "id": 1539
+  },
+  {
+    "label": "Alfenas - MG",
+    "id": 1580
+  },
+  {
+    "label": "Arcos - MG",
+    "id": 1610
+  },
+  {
+    "label": "Caeté - MG",
+    "id": 1674
+  },
+  {
+    "label": "Conceição do Mato Dentro - MG",
+    "id": 1757
+  },
+  {
+    "label": "Confins - MG",
+    "id": 1762
+  },
+  {
+    "label": "Congonhas - MG",
+    "id": 1764
+  },
+  {
+    "label": "Guanhães - MG",
+    "id": 1882
+  },
+  {
+    "label": "Guaxupé - MG",
+    "id": 1890
+  },
+  {
+    "label": "Jeceaba - MG",
+    "id": 1966
+  },
+  {
+    "label": "Mateus Leme - MG",
+    "id": 2034
+  },
+  {
+    "label": "Nanuque - MG",
+    "id": 2075
+  },
+  {
+    "label": "Ouro Branco - MG",
+    "id": 2102
+  },
+  {
+    "label": "Ouro Preto - MG",
+    "id": 2104
+  },
+  {
+    "label": "Rio Acima - MG",
+    "id": 2203
+  },
+  {
+    "label": "Santana do Paraíso - MG",
+    "id": 2259
+  },
+  {
+    "label": "Santo Antônio do Amparo - MG",
+    "id": 2262
+  },
+  {
+    "label": "São José da Lapa - MG",
+    "id": 2305
+  },
+  {
+    "label": "Sarzedo - MG",
+    "id": 2334
+  },
+  {
+    "label": "Teófilo Otoni - MG",
+    "id": 2370
+  },
+  {
+    "label": "Benevides - PA",
+    "id": 2438
+  },
+  {
+    "label": "Conceição do Araguaia - PA",
+    "id": 2456
+  },
+  {
+    "label": "Tucuruí - PA",
+    "id": 2554
+  },
+  {
+    "label": "Cabedelo - PB",
+    "id": 2600
+  },
+  {
+    "label": "Apucarana - PR",
+    "id": 2801
+  },
+  {
+    "label": "Arapongas - PR",
+    "id": 2802
+  },
+  {
+    "label": "Cornélio Procópio - PR",
+    "id": 2869
+  },
+  {
+    "label": "Paiçandu - PR",
+    "id": 3031
+  },
+  {
+    "label": "Paraíso do Norte - PR",
+    "id": 3036
+  },
+  {
+    "label": "Rio Branco do Sul - PR",
+    "id": 3094
+  },
+  {
+    "label": "Rio Negro - PR",
+    "id": 3095
+  },
+  {
+    "label": "Santo Antônio da Platina - PR",
+    "id": 3119
+  },
+  {
+    "label": "Aliança - PE",
+    "id": 3190
+  },
+  {
+    "label": "Bezerros - PE",
+    "id": 3203
+  },
+  {
+    "label": "Carpina - PE",
+    "id": 3226
+  },
+  {
+    "label": "Salgueiro - PE",
+    "id": 3321
+  },
+  {
+    "label": "Serra Talhada - PE",
+    "id": 3341
+  },
+  {
+    "label": "Altos - PI",
+    "id": 3374
+  },
+  {
+    "label": "Picos - PI",
+    "id": 3526
+  },
+  {
+    "label": "Armação dos Búzios - RJ",
+    "id": 3595
+  },
+  {
+    "label": "Itaperuna - RJ",
+    "id": 3623
+  },
+  {
+    "label": "Paracambi - RJ",
+    "id": 3641
+  },
+  {
+    "label": "Porto Real - RJ",
+    "id": 3649
+  },
+  {
+    "label": "Rio Bonito - RJ",
+    "id": 3654
+  },
+  {
+    "label": "Saquarema - RJ",
+    "id": 3671
+  },
+  {
+    "label": "São Gonçalo do Amarante - RN",
+    "id": 3812
+  },
+  {
+    "label": "São José de Mipibu - RN",
+    "id": 3814
+  },
+  {
+    "label": "Arroio dos Ratos - RS",
+    "id": 3874
+  },
+  {
+    "label": "Bagé - RS",
+    "id": 3879
+  },
+  {
+    "label": "Bento Gonçalves - RS",
+    "id": 3892
+  },
+  {
+    "label": "Eldorado do Sul - RS",
+    "id": 3990
+  },
+  {
+    "label": "Farroupilha - RS",
+    "id": 4011
+  },
+  {
+    "label": "Igrejinha - RS",
+    "id": 4050
+  },
+  {
+    "label": "Portão - RS",
+    "id": 4173
+  },
+  {
+    "label": "São Jerônimo - RS",
+    "id": 4235
+  },
+  {
+    "label": "Serafina Corrêa - RS",
+    "id": 4276
+  },
+  {
+    "label": "Taquara - RS",
+    "id": 4290
+  },
+  {
+    "label": "Triunfo - RS",
+    "id": 4311
+  },
+  {
+    "label": "Concórdia - SC",
+    "id": 4481
+  },
+  {
+    "label": "Forquilhinha - SC",
+    "id": 4502
+  },
+  {
+    "label": "Laguna - SC",
+    "id": 4554
+  },
+  {
+    "label": "Mafra - SC",
+    "id": 4565
+  },
+  {
+    "label": "Águas de Santa Bárbara - SP",
+    "id": 4711
+  },
+  {
+    "label": "Agudos - SP",
+    "id": 4713
+  },
+  {
+    "label": "Aparecida - SP",
+    "id": 4733
+  },
+  {
+    "label": "Bariri - SP",
+    "id": 4764
+  },
+  {
+    "label": "Barretos - SP",
+    "id": 4768
+  },
+  {
+    "label": "Birigui - SP",
+    "id": 4779
+  },
+  {
+    "label": "Cedral - SP",
+    "id": 4834
+  },
+  {
+    "label": "Cordeirópolis - SP",
+    "id": 4845
+  },
+  {
+    "label": "Cravinhos - SP",
+    "id": 4852
+  },
+  {
+    "label": "Garça - SP",
+    "id": 4898
+  },
+  {
+    "label": "Guará - SP",
+    "id": 4909
+  },
+  {
+    "label": "Iguape - SP",
+    "id": 4939
+  },
+  {
+    "label": "Ilha Solteira - SP",
+    "id": 4941
+  },
+  {
+    "label": "Ilhabela - SP",
+    "id": 4942
+  },
+  {
+    "label": "Ituverava - SP",
+    "id": 4982
+  },
+  {
+    "label": "Jardinópolis - SP",
+    "id": 4992
+  },
+  {
+    "label": "José Bonifácio - SP",
+    "id": 4998
+  },
+  {
+    "label": "Juquiá - SP",
+    "id": 5003
+  },
+  {
+    "label": "Juquitiba - SP",
+    "id": 5004
+  },
+  {
+    "label": "Mirassol - SP",
+    "id": 5048
+  },
+  {
+    "label": "Mococa - SP",
+    "id": 5050
+  },
+  {
+    "label": "Morro Agudo - SP",
+    "id": 5064
+  },
+  {
+    "label": "Olímpia - SP",
+    "id": 5090
+  },
+  {
+    "label": "Orlândia - SP",
+    "id": 5094
+  },
+  {
+    "label": "Paraguaçu Paulista - SP",
+    "id": 5107
+  },
+  {
+    "label": "Pedreira - SP",
+    "id": 5125
+  },
+  {
+    "label": "Pontal - SP",
+    "id": 5156
+  },
+  {
+    "label": "Porto Feliz - SP",
+    "id": 5161
+  },
+  {
+    "label": "Porto Ferreira - SP",
+    "id": 5162
+  },
+  {
+    "label": "Presidente Venceslau - SP",
+    "id": 5173
+  },
+  {
+    "label": "Regente Feijó - SP",
+    "id": 5183
+  },
+  {
+    "label": "Salesópolis - SP",
+    "id": 5212
+  },
+  {
+    "label": "São Miguel Arcanjo - SP",
+    "id": 5269
+  },
+  {
+    "label": "São Sebastião - SP",
+    "id": 5274
+  },
+  {
+    "label": "Tarumã - SP",
+    "id": 5310
+  },
+  {
+    "label": "Valparaíso - SP",
+    "id": 5338
+  },
+  {
+    "label": "Vargem - SP",
+    "id": 5339
+  },
+  {
+    "label": "Barra dos Coqueiros - SE",
+    "id": 5356
+  },
+  {
+    "label": "Itaporanga d`Ajuda - SE",
+    "id": 5380
+  },
+  {
+    "label": "Colinas do Tocantins - TO",
+    "id": 5463
+  },
+  {
+    "label": "Paranoá - DF",
+    "id": 5580
+  },
+  {
+    "label": "Riacho Fundo - DF",
+    "id": 5590
+  },
+  {
+    "label": "Itapoã - DF",
+    "id": 5601
+  },
+  {
+    "label": "Cachoeiro de Itapemirim - ES",
+    "id": 16
+  },
+  {
+    "label": "Castelo - ES",
+    "id": 18
+  },
+  {
+    "label": "Itarana - ES",
+    "id": 37
+  },
+  {
+    "label": "João Neiva - ES",
+    "id": 41
+  },
+  {
+    "label": "Marataízes - ES",
+    "id": 45
+  },
+  {
+    "label": "Piúma - ES",
+    "id": 57
+  },
+  {
+    "label": "Ponto Belo - ES",
+    "id": 58
+  },
+  {
+    "label": "São Gabriel da Palha - ES",
+    "id": 66
+  },
+  {
+    "label": "Atalaia - AL",
+    "id": 104
+  },
+  {
+    "label": "Canapi - AL",
+    "id": 117
+  },
+  {
+    "label": "Delmiro Gouveia - AL",
+    "id": 126
+  },
+  {
+    "label": "Marechal Deodoro - AL",
+    "id": 152
+  },
+  {
+    "label": "Mata Grande - AL",
+    "id": 154
+  },
+  {
+    "label": "Porto Real do Colégio - AL",
+    "id": 181
+  },
+  {
+    "label": "Coari - AM",
+    "id": 238
+  },
+  {
+    "label": "Bom Jesus da Lapa - BA",
+    "id": 327
+  },
+  {
+    "label": "Buerarema - BA",
+    "id": 337
+  },
+  {
+    "label": "Camacan - BA",
+    "id": 349
+  },
+  {
+    "label": "Campo Formoso - BA",
+    "id": 353
+  },
+  {
+    "label": "Cansanção - BA",
+    "id": 361
+  },
+  {
+    "label": "Catu - BA",
+    "id": 372
+  },
+  {
+    "label": "Cruz das Almas - BA",
+    "id": 396
+  },
+  {
+    "label": "Esplanada - BA",
+    "id": 406
+  },
+  {
+    "label": "Gavião - BA",
+    "id": 417
+  },
+  {
+    "label": "Ibicaraí - BA",
+    "id": 428
+  },
+  {
+    "label": "Ibotirama - BA",
+    "id": 439
+  },
+  {
+    "label": "Itaberaba - BA",
+    "id": 456
+  },
+  {
+    "label": "Itanhém - BA",
+    "id": 470
+  },
+  {
+    "label": "Jaguaquara - BA",
+    "id": 489
+  },
+  {
+    "label": "Lapão - BA",
+    "id": 510
+  },
+  {
+    "label": "Manoel Vitorino - BA",
+    "id": 526
+  },
+  {
+    "label": "Mata de São João - BA",
+    "id": 533
+  },
+  {
+    "label": "Morpará - BA",
+    "id": 541
+  },
+  {
+    "label": "Mucugê - BA",
+    "id": 544
+  },
+  {
+    "label": "Nilo Peçanha - BA",
+    "id": 553
+  },
+  {
+    "label": "Pilão Arcado - BA",
+    "id": 579
+  },
+  {
+    "label": "Poções - BA",
+    "id": 588
+  },
+  {
+    "label": "Pojuca - BA",
+    "id": 589
+  },
+  {
+    "label": "Riachão do Jacuípe - BA",
+    "id": 604
+  },
+  {
+    "label": "Riacho de Santana - BA",
+    "id": 605
+  },
+  {
+    "label": "Santa Maria da Vitória - BA",
+    "id": 623
+  },
+  {
+    "label": "Santaluz - BA",
+    "id": 626
+  },
+  {
+    "label": "Santo Estêvão - BA",
+    "id": 631
+  },
+  {
+    "label": "São Francisco do Conde - BA",
+    "id": 637
+  },
+  {
+    "label": "São Gabriel - BA",
+    "id": 638
+  },
+  {
+    "label": "Senhor do Bonfim - BA",
+    "id": 650
+  },
+  {
+    "label": "Serrinha - BA",
+    "id": 655
+  },
+  {
+    "label": "Sobradinho - BA",
+    "id": 660
+  },
+  {
+    "label": "Tanhaçu - BA",
+    "id": 663
+  },
+  {
+    "label": "Acaraú - CE",
+    "id": 700
+  },
+  {
+    "label": "Barro - CE",
+    "id": 722
+  },
+  {
+    "label": "Cariré - CE",
+    "id": 734
+  },
+  {
+    "label": "Cascavel - CE",
+    "id": 738
+  },
+  {
+    "label": "Horizonte - CE",
+    "id": 768
+  },
+  {
+    "label": "Iguatu - CE",
+    "id": 774
+  },
+  {
+    "label": "Itaitinga - CE",
+    "id": 783
+  },
+  {
+    "label": "Itapagé - CE",
+    "id": 784
+  },
+  {
+    "label": "Itapipoca - CE",
+    "id": 785
+  },
+  {
+    "label": "Maranguape - CE",
+    "id": 802
+  },
+  {
+    "label": "Marco - CE",
+    "id": 803
+  },
+  {
+    "label": "Missão Velha - CE",
+    "id": 811
+  },
+  {
+    "label": "Morada Nova - CE",
+    "id": 814
+  },
+  {
+    "label": "Moraújo - CE",
+    "id": 815
+  },
+  {
+    "label": "Morrinhos - CE",
+    "id": 816
+  },
+  {
+    "label": "Quixeramobim - CE",
+    "id": 848
+  },
+  {
+    "label": "Reriutaba - CE",
+    "id": 851
+  },
+  {
+    "label": "Água Fria de Goiás - GO",
+    "id": 887
+  },
+  {
+    "label": "Alexânia - GO",
+    "id": 890
+  },
+  {
+    "label": "Alto Paraíso de Goiás - GO",
+    "id": 893
+  },
+  {
+    "label": "Aragarças - GO",
+    "id": 905
+  },
+  {
+    "label": "city Ocidental - GO",
+    "id": 947
+  },
+  {
+    "label": "Cocalzinho de Goiás - GO",
+    "id": 948
+  },
+  {
+    "label": "Goianápolis - GO",
+    "id": 974
+  },
+  {
+    "label": "Goianésia - GO",
+    "id": 976
+  },
+  {
+    "label": "Inhumas - GO",
+    "id": 992
+  },
+  {
+    "label": "Itauçu - GO",
+    "id": 1005
+  },
+  {
+    "label": "Itumbiara - GO",
+    "id": 1006
+  },
+  {
+    "label": "Niquelândia - GO",
+    "id": 1040
+  },
+  {
+    "label": "Nova Veneza - GO",
+    "id": 1047
+  },
+  {
+    "label": "Porangatu - GO",
+    "id": 1071
+  },
+  {
+    "label": "Santa Rita do Araguaia - GO",
+    "id": 1088
+  },
+  {
+    "label": "Senador Canedo - GO",
+    "id": 1106
+  },
+  {
+    "label": "Urutaí - GO",
+    "id": 1122
+  },
+  {
+    "label": "Paraibano - MA",
+    "id": 1260
+  },
+  {
+    "label": "Pedreiras - MA",
+    "id": 1266
+  },
+  {
+    "label": "Pio XII - MA",
+    "id": 1273
+  },
+  {
+    "label": "São Luís Gonzaga do Maranhão - MA",
+    "id": 1315
+  },
+  {
+    "label": "Zé Doca - MA",
+    "id": 1345
+  },
+  {
+    "label": "Água Boa - MT",
+    "id": 1347
+  },
+  {
+    "label": "Guarantã do Norte - MT",
+    "id": 1394
+  },
+  {
+    "label": "Nobres - MT",
+    "id": 1414
+  },
+  {
+    "label": "Poconé - MT",
+    "id": 1439
+  },
+  {
+    "label": "Ribeirãozinho - MT",
+    "id": 1452
+  },
+  {
+    "label": "Tangará da Serra - MT",
+    "id": 1476
+  },
+  {
+    "label": "Fátima do Sul - MS",
+    "id": 1520
+  },
+  {
+    "label": "Mundo Novo - MS",
+    "id": 1538
+  },
+  {
+    "label": "Abadia dos Dourados - MG",
+    "id": 1565
+  },
+  {
+    "label": "Água Comprida - MG",
+    "id": 1571
+  },
+  {
+    "label": "Araçuaí - MG",
+    "id": 1601
+  },
+  {
+    "label": "Areado - MG",
+    "id": 1611
+  },
+  {
+    "label": "Bambuí - MG",
+    "id": 1620
+  },
+  {
+    "label": "Belo Oriente - MG",
+    "id": 1631
+  },
+  {
+    "label": "Bicas - MG",
+    "id": 1638
+  },
+  {
+    "label": "Bom Despacho - MG",
+    "id": 1643
+  },
+  {
+    "label": "Bom Sucesso - MG",
+    "id": 1649
+  },
+  {
+    "label": "Cachoeira de Pajeú - MG",
+    "id": 1671
+  },
+  {
+    "label": "Campo Belo - MG",
+    "id": 1687
+  },
+  {
+    "label": "Canaã - MG",
+    "id": 1693
+  },
+  {
+    "label": "Capim Branco - MG",
+    "id": 1701
+  },
+  {
+    "label": "Carangola - MG",
+    "id": 1710
+  },
+  {
+    "label": "Carlos Chagas - MG",
+    "id": 1714
+  },
+  {
+    "label": "Cedro do Abaeté - MG",
+    "id": 1736
+  },
+  {
+    "label": "Córrego do Bom Jesus - MG",
+    "id": 1783
+  },
+  {
+    "label": "Cristina - MG",
+    "id": 1791
+  },
+  {
+    "label": "Diamantina - MG",
+    "id": 1805
+  },
+  {
+    "label": "Itapeva - MG",
+    "id": 1944
+  },
+  {
+    "label": "Machado - MG",
+    "id": 2013
+  },
+  {
+    "label": "Manhuaçu - MG",
+    "id": 2018
+  },
+  {
+    "label": "Maria da Fé - MG",
+    "id": 2023
+  },
+  {
+    "label": "Mário Campos - MG",
+    "id": 2026
+  },
+  {
+    "label": "Nova Porteirinha - MG",
+    "id": 2087
+  },
+  {
+    "label": "Pará de Minas - MG",
+    "id": 2115
+  },
+  {
+    "label": "Paraisópolis - MG",
+    "id": 2118
+  },
+  {
+    "label": "Perdões - MG",
+    "id": 2147
+  },
+  {
+    "label": "Pitangui - MG",
+    "id": 2166
+  },
+  {
+    "label": "Poço Fundo - MG",
+    "id": 2169
+  },
+  {
+    "label": "Ponte Nova - MG",
+    "id": 2173
+  },
+  {
+    "label": "Porteirinha - MG",
+    "id": 2176
+  },
+  {
+    "label": "Prudente de Morais - MG",
+    "id": 2189
+  },
+  {
+    "label": "Resplendor - MG",
+    "id": 2197
+  },
+  {
+    "label": "Santa Helena de Minas - MG",
+    "id": 2237
+  },
+  {
+    "label": "São Gonçalo do Sapucaí - MG",
+    "id": 2288
+  },
+  {
+    "label": "Sapucaí-Mirim - MG",
+    "id": 2332
+  },
+  {
+    "label": "Sem-Peixe - MG",
+    "id": 2335
+  },
+  {
+    "label": "Teixeiras - MG",
+    "id": 2369
+  },
+  {
+    "label": "Tocantins - MG",
+    "id": 2374
+  },
+  {
+    "label": "Toledo - MG",
+    "id": 2376
+  },
+  {
+    "label": "Três Marias - MG",
+    "id": 2379
+  },
+  {
+    "label": "Três Pontas - MG",
+    "id": 2380
+  },
+  {
+    "label": "Tupaciguara - MG",
+    "id": 2382
+  },
+  {
+    "label": "Várzea da Palma - MG",
+    "id": 2401
+  },
+  {
+    "label": "Visconde do Rio Branco - MG",
+    "id": 2415
+  },
+  {
+    "label": "Acará - PA",
+    "id": 2420
+  },
+  {
+    "label": "Anapu - PA",
+    "id": 2428
+  },
+  {
+    "label": "Bragança - PA",
+    "id": 2441
+  },
+  {
+    "label": "Capanema - PA",
+    "id": 2451
+  },
+  {
+    "label": "Castanhal - PA",
+    "id": 2453
+  },
+  {
+    "label": "Itaituba - PA",
+    "id": 2475
+  },
+  {
+    "label": "Mãe do Rio - PA",
+    "id": 2481
+  },
+  {
+    "label": "Oriximiná - PA",
+    "id": 2500
+  },
+  {
+    "label": "Rio Maria - PA",
+    "id": 2518
+  },
+  {
+    "label": "São Domingos do Araguaia - PA",
+    "id": 2534
+  },
+  {
+    "label": "Tailândia - PA",
+    "id": 2547
+  },
+  {
+    "label": "Tomé-Açu - PA",
+    "id": 2550
+  },
+  {
+    "label": "Alhandra - PB",
+    "id": 2568
+  },
+  {
+    "label": "Caaporã - PB",
+    "id": 2598
+  },
+  {
+    "label": "Esperança - PB",
+    "id": 2638
+  },
+  {
+    "label": "Guarabira - PB",
+    "id": 2642
+  },
+  {
+    "label": "Antonina - PR",
+    "id": 2799
+  },
+  {
+    "label": "Assis Chateaubriand - PR",
+    "id": 2809
+  },
+  {
+    "label": "Cambira - PR",
+    "id": 2837
+  },
+  {
+    "label": "Campina da Lagoa - PR",
+    "id": 2838
+  },
+  {
+    "label": "Campo Magro - PR",
+    "id": 2844
+  },
+  {
+    "label": "Dois Vizinhos - PR",
+    "id": 2883
+  },
+  {
+    "label": "Francisco Beltrão - PR",
+    "id": 2907
+  },
+  {
+    "label": "Guaratuba - PR",
+    "id": 2922
+  },
+  {
+    "label": "Ivaiporã - PR",
+    "id": 2948
+  },
+  {
+    "label": "Jaguariaíva - PR",
+    "id": 2954
+  },
+  {
+    "label": "Jandaia do Sul - PR",
+    "id": 2955
+  },
+  {
+    "label": "Mandirituba - PR",
+    "id": 2984
+  },
+  {
+    "label": "Marialva - PR",
+    "id": 2990
+  },
+  {
+    "label": "Matinhos - PR",
+    "id": 3001
+  },
+  {
+    "label": "Medianeira - PR",
+    "id": 3004
+  },
+  {
+    "label": "Palmeira - PR",
+    "id": 3033
+  },
+  {
+    "label": "Pontal do Paraná - PR",
+    "id": 3061
+  },
+  {
+    "label": "Porecatu - PR",
+    "id": 3062
+  },
+  {
+    "label": "Prudentópolis - PR",
+    "id": 3071
+  },
+  {
+    "label": "Rolândia - PR",
+    "id": 3096
+  },
+  {
+    "label": "Rondon - PR",
+    "id": 3098
+  },
+  {
+    "label": "Santa Isabel do Ivaí - PR",
+    "id": 3110
+  },
+  {
+    "label": "São Manoel do Paraná - PR",
+    "id": 3136
+  },
+  {
+    "label": "Siqueira Campos - PR",
+    "id": 3151
+  },
+  {
+    "label": "Teixeira Soares - PR",
+    "id": 3157
+  },
+  {
+    "label": "Toledo - PR",
+    "id": 3164
+  },
+  {
+    "label": "Umuarama - PR",
+    "id": 3172
+  },
+  {
+    "label": "Uraí - PR",
+    "id": 3175
+  },
+  {
+    "label": "Afogados da Ingazeira - PE",
+    "id": 3184
+  },
+  {
+    "label": "Água Preta - PE",
+    "id": 3187
+  },
+  {
+    "label": "Araçoiaba - PE",
+    "id": 3194
+  },
+  {
+    "label": "Arcoverde - PE",
+    "id": 3196
+  },
+  {
+    "label": "Caetés - PE",
+    "id": 3216
+  },
+  {
+    "label": "Escada - PE",
+    "id": 3240
+  },
+  {
+    "label": "Gravatá - PE",
+    "id": 3253
+  },
+  {
+    "label": "Ilha de Itamaracá - PE",
+    "id": 3259
+  },
+  {
+    "label": "Itapissuma - PE",
+    "id": 3268
+  },
+  {
+    "label": "Petrolândia - PE",
+    "id": 3308
+  },
+  {
+    "label": "São José da Coroa Grande - PE",
+    "id": 3336
+  },
+  {
+    "label": "São José do Egito - PE",
+    "id": 3338
+  },
+  {
+    "label": "Sertânia - PE",
+    "id": 3343
+  },
+  {
+    "label": "Surubim - PE",
+    "id": 3346
+  },
+  {
+    "label": "Beneditinos - PI",
+    "id": 3393
+  },
+  {
+    "label": "Esperantina - PI",
+    "id": 3446
+  },
+  {
+    "label": "São Raimundo Nonato - PI",
+    "id": 3572
+  },
+  {
+    "label": "Sigefredo Pacheco - PI",
+    "id": 3575
+  },
+  {
+    "label": "Areal - RJ",
+    "id": 3594
+  },
+  {
+    "label": "Arraial do Cabo - RJ",
+    "id": 3596
+  },
+  {
+    "label": "Bom Jesus do Itabapoana - RJ",
+    "id": 3601
+  },
+  {
+    "label": "Cachoeiras de Macacu - RJ",
+    "id": 3603
+  },
+  {
+    "label": "Cardoso Moreira - RJ",
+    "id": 3608
+  },
+  {
+    "label": "Guapimirim - RJ",
+    "id": 3617
+  },
+  {
+    "label": "Iguaba Grande - RJ",
+    "id": 3618
+  },
+  {
+    "label": "Itatiaia - RJ",
+    "id": 3624
+  },
+  {
+    "label": "Paty do Alferes - RJ",
+    "id": 3644
+  },
+  {
+    "label": "Santo Antônio de Pádua - RJ",
+    "id": 3660
+  },
+  {
+    "label": "Valença - RJ",
+    "id": 3679
+  },
+  {
+    "label": "Areia Branca - RN",
+    "id": 3693
+  },
+  {
+    "label": "João Câmara - RN",
+    "id": 3745
+  },
+  {
+    "label": "Macaíba - RN",
+    "id": 3759
+  },
+  {
+    "label": "Serra do Mel - RN",
+    "id": 3827
+  },
+  {
+    "label": "Barão de Cotegipe - RS",
+    "id": 3882
+  },
+  {
+    "label": "Caçapava do Sul - RS",
+    "id": 3908
+  },
+  {
+    "label": "Camaquã - RS",
+    "id": 3915
+  },
+  {
+    "label": "Campo Bom - RS",
+    "id": 3921
+  },
+  {
+    "label": "Candiota - RS",
+    "id": 3926
+  },
+  {
+    "label": "Canela - RS",
+    "id": 3927
+  },
+  {
+    "label": "Carlos Barbosa - RS",
+    "id": 3940
+  },
+  {
+    "label": "Constantina - RS",
+    "id": 3963
+  },
+  {
+    "label": "Cruz Alta - RS",
+    "id": 3974
+  },
+  {
+    "label": "David Canabarro - RS",
+    "id": 3977
+  },
+  {
+    "label": "Erechim - RS",
+    "id": 3997
+  },
+  {
+    "label": "Estância Velha - RS",
+    "id": 4005
+  },
+  {
+    "label": "Estrela - RS",
+    "id": 4007
+  },
+  {
+    "label": "Feliz - RS",
+    "id": 4015
+  },
+  {
+    "label": "Gramado - RS",
+    "id": 4031
+  },
+  {
+    "label": "Ijuí - RS",
+    "id": 4051
+  },
+  {
+    "label": "Ivoti - RS",
+    "id": 4067
+  },
+  {
+    "label": "Marcelino Ramos - RS",
+    "id": 4094
+  },
+  {
+    "label": "Nova Araçá - RS",
+    "id": 4121
+  },
+  {
+    "label": "Nova Hartz - RS",
+    "id": 4127
+  },
+  {
+    "label": "Panambi - RS",
+    "id": 4146
+  },
+  {
+    "label": "Santa Bárbara do Sul - RS",
+    "id": 4209
+  },
+  {
+    "label": "Santana do Livramento - RS",
+    "id": 4220
+  },
+  {
+    "label": "Santiago - RS",
+    "id": 4221
+  },
+  {
+    "label": "Santo Antônio da Patrulha - RS",
+    "id": 4223
+  },
+  {
+    "label": "São Borja - RS",
+    "id": 4230
+  },
+  {
+    "label": "São José do Norte - RS",
+    "id": 4243
+  },
+  {
+    "label": "Torres - RS",
+    "id": 4300
+  },
+  {
+    "label": "Três Coroas - RS",
+    "id": 4305
+  },
+  {
+    "label": "Três de Maio - RS",
+    "id": 4306
+  },
+  {
+    "label": "Alvorada d`Oeste - RO",
+    "id": 4349
+  },
+  {
+    "label": "Candeias do Jamari - RO",
+    "id": 4356
+  },
+  {
+    "label": "Ji-Paraná - RO",
+    "id": 4369
+  },
+  {
+    "label": "Vilhena - RO",
+    "id": 4397
+  },
+  {
+    "label": "Araranguá - SC",
+    "id": 4431
+  },
+  {
+    "label": "Aurora - SC",
+    "id": 4437
+  },
+  {
+    "label": "Balneário Arroio do Silva - SC",
+    "id": 4438
+  },
+  {
+    "label": "Barra Velha - SC",
+    "id": 4444
+  },
+  {
+    "label": "Caçador - SC",
+    "id": 4461
+  },
+  {
+    "label": "Capivari de Baixo - SC",
+    "id": 4473
+  },
+  {
+    "label": "Correia Pinto - SC",
+    "id": 4485
+  },
+  {
+    "label": "Guaramirim - SC",
+    "id": 4514
+  },
+  {
+    "label": "Ibirama - SC",
+    "id": 4520
+  },
+  {
+    "label": "Imbituba - SC",
+    "id": 4524
+  },
+  {
+    "label": "Itaiópolis - SC",
+    "id": 4537
+  },
+  {
+    "label": "Morro da Fumaça - SC",
+    "id": 4579
+  },
+  {
+    "label": "Ponte Alta do Norte - SC",
+    "id": 4613
+  },
+  {
+    "label": "Rio Negrinho - SC",
+    "id": 4631
+  },
+  {
+    "label": "Santa Cecília - SC",
+    "id": 4640
+  },
+  {
+    "label": "Santo Amaro da Imperatriz - SC",
+    "id": 4647
+  },
+  {
+    "label": "São Lourenço do Oeste - SC",
+    "id": 4663
+  },
+  {
+    "label": "Tijucas - SC",
+    "id": 4679
+  },
+  {
+    "label": "Videira - SC",
+    "id": 4699
+  },
+  {
+    "label": "Aguaí - SP",
+    "id": 4708
+  },
+  {
+    "label": "Águas da Prata - SP",
+    "id": 4709
+  },
+  {
+    "label": "Alambari - SP",
+    "id": 4714
+  },
+  {
+    "label": "Álvares Machado - SP",
+    "id": 4721
+  },
+  {
+    "label": "Angatuba - SP",
+    "id": 4730
+  },
+  {
+    "label": "Araçariguama - SP",
+    "id": 4736
+  },
+  {
+    "label": "Artur Nogueira - SP",
+    "id": 4749
+  },
+  {
+    "label": "Bady Bassitt - SP",
+    "id": 4758
+  },
+  {
+    "label": "Barra Bonita - SP",
+    "id": 4765
+  },
+  {
+    "label": "Bertioga - SP",
+    "id": 4777
+  },
+  {
+    "label": "Biritiba-Mirim - SP",
+    "id": 4780
+  },
+  {
+    "label": "Borborema - SP",
+    "id": 4789
+  },
+  {
+    "label": "Brotas - SP",
+    "id": 4796
+  },
+  {
+    "label": "Buritama - SP",
+    "id": 4798
+  },
+  {
+    "label": "Cachoeira Paulista - SP",
+    "id": 4803
+  },
+  {
+    "label": "Caconde - SP",
+    "id": 4804
+  },
+  {
+    "label": "Caiabu - SP",
+    "id": 4806
+  },
+  {
+    "label": "Cajati - SP",
+    "id": 4810
+  },
+  {
+    "label": "Campos do Jordão - SP",
+    "id": 4816
+  },
+  {
+    "label": "Canitar - SP",
+    "id": 4822
+  },
+  {
+    "label": "Castilho - SP",
+    "id": 4831
+  },
+  {
+    "label": "Conchal - SP",
+    "id": 4843
+  },
+  {
+    "label": "Conchas - SP",
+    "id": 4844
+  },
+  {
+    "label": "Divinolândia - SP",
+    "id": 4861
+  },
+  {
+    "label": "Dracena - SP",
+    "id": 4866
+  },
+  {
+    "label": "Eldorado - SP",
+    "id": 4870
+  },
+  {
+    "label": "Estiva Gerbi - SP",
+    "id": 4880
+  },
+  {
+    "label": "Fernandópolis - SP",
+    "id": 4886
+  },
+  {
+    "label": "Gabriel Monteiro - SP",
+    "id": 4896
+  },
+  {
+    "label": "Guaimbê - SP",
+    "id": 4905
+  },
+  {
+    "label": "Guaíra - SP",
+    "id": 4906
+  },
+  {
+    "label": "Guapiaçu - SP",
+    "id": 4907
+  },
+  {
+    "label": "Ibitinga - SP",
+    "id": 4932
+  },
+  {
+    "label": "Igaraçu do Tietê - SP",
+    "id": 4936
+  },
+  {
+    "label": "Iracemápolis - SP",
+    "id": 4953
+  },
+  {
+    "label": "Irapuru - SP",
+    "id": 4955
+  },
+  {
+    "label": "Itaí - SP",
+    "id": 4957
+  },
+  {
+    "label": "Jales - SP",
+    "id": 4989
+  },
+  {
+    "label": "Laranjal Paulista - SP",
+    "id": 5006
+  },
+  {
+    "label": "Lençóis Paulista - SP",
+    "id": 5010
+  },
+  {
+    "label": "Lins - SP",
+    "id": 5013
+  },
+  {
+    "label": "Maracaí - SP",
+    "id": 5031
+  },
+  {
+    "label": "Martinópolis - SP",
+    "id": 5036
+  },
+  {
+    "label": "Mirandópolis - SP",
+    "id": 5046
+  },
+  {
+    "label": "Monte Azul Paulista - SP",
+    "id": 5060
+  },
+  {
+    "label": "Murutinga do Sul - SP",
+    "id": 5067
+  },
+  {
+    "label": "Nova Granada - SP",
+    "id": 5080
+  },
+  {
+    "label": "Osvaldo Cruz - SP",
+    "id": 5097
+  },
+  {
+    "label": "Ouro Verde - SP",
+    "id": 5099
+  },
+  {
+    "label": "Palmital - SP",
+    "id": 5105
+  },
+  {
+    "label": "Paranapanema - SP",
+    "id": 5110
+  },
+  {
+    "label": "Parapuã - SP",
+    "id": 5112
+  },
+  {
+    "label": "Pederneiras - SP",
+    "id": 5121
+  },
+  {
+    "label": "Penápolis - SP",
+    "id": 5128
+  },
+  {
+    "label": "Pereiras - SP",
+    "id": 5130
+  },
+  {
+    "label": "Pindorama - SP",
+    "id": 5136
+  },
+  {
+    "label": "Piracaia - SP",
+    "id": 5140
+  },
+  {
+    "label": "Piratininga - SP",
+    "id": 5148
+  },
+  {
+    "label": "Pompéia - SP",
+    "id": 5154
+  },
+  {
+    "label": "Potim - SP",
+    "id": 5163
+  },
+  {
+    "label": "Pradópolis - SP",
+    "id": 5166
+  },
+  {
+    "label": "Promissão - SP",
+    "id": 5174
+  },
+  {
+    "label": "Rincão - SP",
+    "id": 5197
+  },
+  {
+    "label": "Roseira - SP",
+    "id": 5205
+  },
+  {
+    "label": "Salto de Pirapora - SP",
+    "id": 5216
+  },
+  {
+    "label": "Santa Adélia - SP",
+    "id": 5219
+  },
+  {
+    "label": "Santa Cruz das Palmeiras - SP",
+    "id": 5226
+  },
+  {
+    "label": "Santa Cruz do Rio Pardo - SP",
+    "id": 5227
+  },
+  {
+    "label": "Santa Lúcia - SP",
+    "id": 5232
+  },
+  {
+    "label": "Santo Antônio do Jardim - SP",
+    "id": 5246
+  },
+  {
+    "label": "São Bento do Sapucaí - SP",
+    "id": 5251
+  },
+  {
+    "label": "São Francisco - SP",
+    "id": 5255
+  },
+  {
+    "label": "São João da Boa Vista - SP",
+    "id": 5256
+  },
+  {
+    "label": "Serra Azul - SP",
+    "id": 5281
+  },
+  {
+    "label": "Socorro - SP",
+    "id": 5288
+  },
+  {
+    "label": "Taciba - SP",
+    "id": 5297
+  },
+  {
+    "label": "Tanabi - SP",
+    "id": 5302
+  },
+  {
+    "label": "Taquaritinga - SP",
+    "id": 5306
+  },
+  {
+    "label": "Tuiuti - SP",
+    "id": 5323
+  },
+  {
+    "label": "Ubirajara - SP",
+    "id": 5330
+  },
+  {
+    "label": "Valentim Gentil - SP",
+    "id": 5336
+  },
+  {
+    "label": "Viradouro - SP",
+    "id": 5345
+  },
+  {
+    "label": "Capela - SE",
+    "id": 5362
+  },
+  {
+    "label": "Carmópolis - SE",
+    "id": 5364
+  },
+  {
+    "label": "Estância - SE",
+    "id": 5369
+  },
+  {
+    "label": "Itabaianinha - SE",
+    "id": 5378
+  },
+  {
+    "label": "Lagarto - SE",
+    "id": 5383
+  },
+  {
+    "label": "Maruim - SE",
+    "id": 5388
+  },
+  {
+    "label": "Ribeirópolis - SE",
+    "id": 5409
+  },
+  {
+    "label": "Araguaína - TO",
+    "id": 5437
+  },
+  {
+    "label": "Araguatins - TO",
+    "id": 5439
+  },
+  {
+    "label": "Miranorte - TO",
+    "id": 5502
+  },
+  {
+    "label": "Paraíso do Tocantins - TO",
+    "id": 5518
+  },
+  {
+    "label": "Porto Nacional - TO",
+    "id": 5530
+  },
+  {
+    "label": "Tocantínia - TO",
+    "id": 5559
+  },
+  {
+    "label": "Núcleo Bandeirante - DF",
+    "id": 5581
+  },
+  {
+    "label": "Lago Norte - DF",
+    "id": 5591
+  },
+  {
+    "label": "Sudoeste/Octogonal - DF",
+    "id": 5595
+  },
+  {
+    "label": "Varjão - DF",
+    "id": 5596
+  },
+  {
+    "label": "SCIA - DF",
+    "id": 5598
+  },
+  {
+    "label": "Vicente Pires - DF",
+    "id": 5603
+  },
+  {
+    "label": "Fercal - DF",
+    "id": 5604
+  },
+  {
+    "label": "Nazária - PI",
+    "id": 5605
+  },
+  {
+    "label": "Balneário Rincão - SC",
+    "id": 5608
+  }
+]
