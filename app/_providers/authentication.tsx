@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useEffect, useMemo } from "react";
+import { createContext, useContext, useMemo } from "react";
 import { useLocalStorage } from "app/_hooks/useLocalStorage";
 import { UserData } from "app/_types";
 
