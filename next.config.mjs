@@ -7,12 +7,15 @@ import { env } from "./env.mjs";
  */
 const config = withPlugins([[withBundleAnalyzer({ enabled: env.ANALYZE })]], {
   reactStrictMode: true,
-  experimental: { instrumentationHook: true },
-  rewrites() {
-    return [
-      { source: "/", destination: "/pagina-inicial" }
-    ]
+  experimental: {
+    instrumentationHook: true,
+    serverComponents: true
   },
+  // rewrites() {
+  //   return [
+  //     { source: "/", destination: "/pagina-inicial" }
+  //   ]
+  // },
   images: {
     remotePatterns: [
       {
