@@ -1,0 +1,16 @@
+@use "/app/_styles/theme.scss" as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: $space-xxs;
+
+  p {
+    font-size: $space-sm;
+    color: $color-inst-primary-800;
+  }
+  input::placeholder {
+    font-weight: 500;
+  }
+}

@@ -8,7 +8,8 @@ import { env } from "./env.mjs";
 const config = withPlugins([[withBundleAnalyzer({ enabled: env.ANALYZE })]], {
   reactStrictMode: true,
   experimental: {
-    instrumentationHook: true
+    instrumentationHook: true,
+    serverActions: true,
   },
   // rewrites() {
   //   return [

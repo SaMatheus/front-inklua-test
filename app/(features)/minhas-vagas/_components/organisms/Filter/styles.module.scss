@@ -1,0 +1,10 @@
+@use "/app/_styles/theme.scss" as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: $space-md;
+  width: 22rem;
+  background-color: $color-inst-primary-200;
+  border-radius: $space-xxxs 0 0 $space-xxxs;
+}

@@ -1,0 +1,11 @@
+@use "/app/_styles/theme.scss" as *;
+
+.buttonsBox {
+  gap: $space-xs;
+  width: 100%;
+
+  @media screen and (min-width: 430px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

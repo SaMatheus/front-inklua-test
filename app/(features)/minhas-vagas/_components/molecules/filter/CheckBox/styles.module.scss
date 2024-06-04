@@ -1,0 +1,32 @@
+@use "/app/_styles/theme.scss" as *;
+
+@mixin flex-column($gap) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+.checkboxWrapper {
+  @include flex-column($space-xxs);
+  width: 100%;
+
+  p {
+    font-size: $space-sm;
+    color: $color-inst-primary-800;
+  }
+}
+
+.checkboxContent {
+  @include flex-column($space-xs);
+  align-items: flex-start;
+  color: $color-basic-800;
+  
+  td {
+    padding: 0;
+  }
+}
+
+.checkboxInput {
+  display: flex;
+  gap: $space-xxxxs
+}

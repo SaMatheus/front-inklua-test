@@ -1,4 +1,4 @@
-# 💻 Nextjs Boilerplate
+# 💻 Inklua Front-end Test
 
 O seguinte projeto é um boilerplate de aplicação NextJs desenvolvido para iniciar novos projetos, com o objetivo de criar uma aplicação escalável e fácil de manter baseada nas boas práticas da biblioteca React e do framework Nextjs.
 

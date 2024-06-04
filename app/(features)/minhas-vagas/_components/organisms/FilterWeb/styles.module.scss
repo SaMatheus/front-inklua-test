@@ -1,0 +1,18 @@
+@use "/app/_styles/theme.scss" as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  gap: $space-md;
+
+ & > div::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: $color-basic-500;
+    margin-top: $space-xxs;
+  }
+};
