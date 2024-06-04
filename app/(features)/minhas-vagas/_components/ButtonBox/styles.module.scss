@@ -2,7 +2,12 @@
 
 .buttonsBox {
   gap: $space-xs;
+  padding: $space-xs 0;
   width: 100%;
+  position: sticky;
+  bottom: $space-xxxxs;
+  box-shadow: 0 -10px 38px 0 $color-inst-primary-200;
+  background: linear-gradient(to bottom, rgba(240, 247, 247, 0.7) 0, rgba(240,247,247,1) 60%);
 
   @media screen and (min-width: 430px) {
     flex-direction: row;
