@@ -19,14 +19,23 @@
 .checkboxContent {
   @include flex-column($space-xs);
   align-items: flex-start;
-  color: $color-basic-800;
-  
-  td {
-    padding: 0;
+
+  button {
+    width: 50%;
+    padding: $space-xxxs;
   }
 }
 
 .checkboxInput {
   display: flex;
-  gap: $space-xxxxs
+  gap: $space-xxxxs;
+
+  td {
+    padding: 0;
+  }
+
+  label {
+    font-weight: normal !important;
+    color: $color-basic-800;
+  }
 }

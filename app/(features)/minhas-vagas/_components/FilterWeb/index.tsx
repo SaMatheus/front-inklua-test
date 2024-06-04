@@ -1,7 +1,7 @@
 'use client'
 import styles from './styles.module.scss'
 import ButtonBox from '../ButtonBox';
-import CheckBox from '../CheckBox'
+import CheckBoxList from '../CheckBoxList'
 import Search from '../Search';
 
 const FilterWeb = () => {
@@ -147,9 +147,9 @@ const FilterWeb = () => {
         placeholder='Digite o cargo/função que deseja'
         onChange={() => console.log}
       />
-      <CheckBox title='Local' data={locationMock} multiCheck />
-      <CheckBox title='Modelo de trabalho' data={workModelMock} />
-      <CheckBox title='Pretensão salarial' data={salaryMock} />
+      <CheckBoxList title='Local' data={locationMock} multiCheck />
+      <CheckBoxList title='Modelo de trabalho' data={workModelMock} />
+      <CheckBoxList title='Pretensão salarial' data={salaryMock} />
       <ButtonBox />
     </div>
   )
