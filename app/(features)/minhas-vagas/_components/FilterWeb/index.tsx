@@ -1,8 +1,8 @@
 'use client'
 import styles from './styles.module.scss'
-import ButtonBox from '../../molecules/filter/ButtonBox';
-import CheckBox from '../../molecules/filter/CheckBox'
-import Search from '../../molecules/filter/Search';
+import ButtonBox from '../ButtonBox';
+import CheckBox from '../CheckBox'
+import Search from '../Search';
 
 const FilterWeb = () => {
   const locationMock = [
@@ -147,7 +147,7 @@ const FilterWeb = () => {
         placeholder='Digite o cargo/função que deseja'
         onChange={() => console.log}
       />
-      <CheckBox title='Local' data={locationMock} />
+      <CheckBox title='Local' data={locationMock} multiCheck />
       <CheckBox title='Modelo de trabalho' data={workModelMock} />
       <CheckBox title='Pretensão salarial' data={salaryMock} />
       <ButtonBox />

@@ -1,8 +1,8 @@
 'use client'
 import styles from './styles.module.scss'
-import SearchJobsTitle from '../../molecules/SearchJobsTitle'
-import Filter from '../../organisms/Filter'
-import JobList from '../../organisms/JobList'
+import Filter from '../Filter'
+import JobList from '../JobList'
+import SearchJobsTitle from '../SearchJobsTitle'
 
 const MyJobs = () => {
   return (

@@ -1,5 +1,5 @@
 'use server'
-import MyJobs from './_components/templates/MyJobs'
+import MyJobs from './_components/MyJobs'
 
 const MyJobsPage = () => <MyJobs />
 
