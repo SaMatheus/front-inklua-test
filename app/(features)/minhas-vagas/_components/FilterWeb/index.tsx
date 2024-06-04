@@ -100,7 +100,7 @@ const FilterWeb = () => {
         selected: false
     }
   ]
-  
+
   const salaryMock = [
     {
       label: "Até R$ 1.000,00",
@@ -145,7 +145,7 @@ const FilterWeb = () => {
       <Search
         label='Cargo/função'
         placeholder='Digite o cargo/função que deseja'
-        onChange={() => console.log}
+        onChange={({ target }) => console.log(target.value)}
       />
       <CheckBoxList title='Local' data={locationMock} multiCheck />
       <CheckBoxList title='Modelo de trabalho' data={workModelMock} />

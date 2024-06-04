@@ -18,10 +18,10 @@ interface CheckBoxListProps {
 }
 
 const CheckBoxList = ({ data, title, increment = 5, multiCheck = false }: CheckBoxListProps) => {
-  const [checkedItems, setCheckedItems] = useState({} as { [key: number | string]: boolean });
+  const [checkedItems, setCheckedItems] = useState<{ [key: number | string]: boolean }>({});
   const [singleCheckedItem, setSingleCheckedItem] = useState<string | number | null>(null);
-  const [itemCount, setItemCount] = useState(5);
-  const [showMore, setShowMore] = useState(true);
+  const [itemCount, setItemCount] = useState<number>(5);
+  const [showMore, setShowMore] = useState<boolean>(true);
 
   const handleCheckChange = (value: DataProps['value']): void => {
     if (!multiCheck) setSingleCheckedItem(prevValue => prevValue === value ? null : value);
