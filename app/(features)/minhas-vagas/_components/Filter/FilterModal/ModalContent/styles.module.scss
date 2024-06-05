@@ -1,0 +1,21 @@
+@use "/app/_styles/theme.scss" as *;
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+  padding: $space-md $space-xl;
+  overflow-y: auto !important;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+  width: 100%;
+
+  div[data-testid="splitter"] {
+    width: 80%;
+    align-self: center;
+  }
+}

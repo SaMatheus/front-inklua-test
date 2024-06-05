@@ -1,19 +1,33 @@
 'use client'
+import { useQuery } from '@tanstack/react-query'
+import { axios } from 'app/_lib/axios'
 import styles from './styles.module.scss'
+import { Filters } from '../../_types/filter'
 import Filter from '../Filter'
 import JobList from '../JobList'
+import Loading from '../Loading'
 import SearchJobsTitle from '../SearchJobsTitle'
 
 const MyJobs = () => {
-  return (
-    <div className={styles.wrapper}>
-      <SearchJobsTitle />
-      <div className={styles.content}>
-        <Filter />
-        <JobList />
-      </div>
-    </div>
+  const { data, isPending, error } = useQuery({
+    queryKey: ['filter'],
+    queryFn: () => axios.get<{ filters: Filters }>('/test-search').then((res) => res.data)
+  });
 
+  return (
+    <>
+      {isPending && <Loading />}
+      {error && <p>Ocorreu um erro ao carregar os dados.</p>}
+      {data && !isPending && !error && (
+        <div className={styles.wrapper}>
+          <SearchJobsTitle />
+          <div className={styles.content}>
+            <Filter />
+            <JobList />
+          </div>
+        </div>
+      )}
+    </>
   )
 }
 

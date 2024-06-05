@@ -1,0 +1,12 @@
+@use "/app/_styles/theme.scss" as *;
+
+.ascBox {
+  display: flex;
+  gap: $space-xl;
+}
+
+.gridItems {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-sm;
+}

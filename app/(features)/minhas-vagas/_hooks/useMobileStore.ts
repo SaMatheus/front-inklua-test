@@ -1,11 +1,11 @@
-import create from 'zustand';
+import { create } from 'zustand';
 
-type State = {
+type ViewProps = {
   isMobile: boolean;
   setIsMobile: (value: boolean) => void;
 };
 
-export const useMobileStore = create<State>((set) => ({
+export const useMobileStore = create<ViewProps>((set) => ({
   isMobile: false,
   setIsMobile: (value: boolean) => set(() => ({ isMobile: value })),
 }));

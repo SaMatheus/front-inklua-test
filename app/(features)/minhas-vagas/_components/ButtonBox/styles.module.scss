@@ -1,16 +1,29 @@
 @use "/app/_styles/theme.scss" as *;
 
-.buttonsBox {
-  gap: $space-xs;
-  padding: $space-xs 0;
+@mixin button-style {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xxs;
   width: 100%;
   position: sticky;
-  bottom: $space-xxxxs;
-  box-shadow: 0 -10px 38px 0 $color-inst-primary-200;
-  background: linear-gradient(to bottom, rgba(240, 247, 247, 0.7) 0, rgba(240,247,247,1) 60%);
+  bottom: 0;
 
-  @media screen and (min-width: 430px) {
-    flex-direction: row;
-    justify-content: space-between;
+  &::after, &::before {
+    display: none;
   }
+}
+
+.modalButtonsBox {
+  @include button-style;
+  flex-direction: row-reverse;
+  width: 95%;
+  padding: $space-sm;
+  box-shadow: 20px -20px 28px 0 $color-white;
+  background-color: $color-white;
+}
+
+.buttonsBox {
+  @include button-style;
+  box-shadow: 0 -10px 28px 20px $color-inst-primary-200;
+  background: linear-gradient(to bottom, rgba(240, 247, 247, 0.7) 0, rgba(240,247,247,1) 40%);
 }

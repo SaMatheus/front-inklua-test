@@ -1,0 +1,13 @@
+@use "/app/_styles/theme.scss" as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xs;
+}
+
+.checkboxLoading {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: $space-xs;
+}

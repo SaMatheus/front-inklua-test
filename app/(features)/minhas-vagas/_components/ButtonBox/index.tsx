@@ -2,11 +2,15 @@
 import { Button } from '@Inklua/components-library'
 import styles from './styles.module.scss'
 
-const ButtonBox = () => {
+interface ButtonBoxProps {
+  isModal?: boolean;
+}
+
+const ButtonBox = ({ isModal = false }: ButtonBoxProps) => {
   return (
-    <div className={styles.buttonsBox}>
-      <Button size='small'>Filtrar</Button>
-      <Button variant='ghost'>Desfazer todos os filtros</Button>
+    <div className={isModal ? styles.modalButtonsBox : styles.buttonsBox}>
+      <Button size={isModal ? 'medium' :'small'}>Filtrar</Button>
+      <Button variant='ghost'>{isModal ? 'Voltar' : 'Desfazer todos os filtros'}</Button>
     </div>
   )
 }

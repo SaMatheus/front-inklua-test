@@ -4,7 +4,8 @@
   display: flex;
   flex-direction: column;
   padding: $space-md;
-  width: 22rem;
+  gap: $space-md;
   background-color: $color-inst-primary-200;
   border-radius: $space-xxxs 0 0 $space-xxxs;
+  width: 22rem;
 }
