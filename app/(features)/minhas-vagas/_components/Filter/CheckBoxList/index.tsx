@@ -2,13 +2,20 @@
 'use client'
 import { Button, CheckboxCell, Paragraph } from '@Inklua/components-library';
 import { useEffect, useMemo, useState } from 'react';
+import { DataProps } from 'app/(features)/minhas-vagas/_types/filter';
 import styles from './styles.module.scss';
-import { DataProps } from '../../../_types/filter';
+import { useFilterStore } from '../../../_store/FilterStore';
 import FilterModal from '../FilterWeb/FilterModal';
 
+enum KeyEnum {
+  city = 'city',
+  salary = 'salary',
+  workModel = 'workModel'
+}
+
 interface CheckBoxListProps {
-  data: DataProps[] ;
   title: string;
+  keyFilter: KeyEnum;
   increment?: number;
   multiCheck?: boolean;
   viewQnt?: number;
@@ -16,26 +23,32 @@ interface CheckBoxListProps {
 }
 
 const CheckBoxList = ({
-    data,
     title,
+    keyFilter,
     multiCheck = false,
     viewQnt = 5,
     showMoreBtn = false
   }: CheckBoxListProps) => {
-  const [checkedItems, setCheckedItems] = useState<{ [key: number | string]: boolean }>({});
-  const [singleCheckedItem, setSingleCheckedItem] = useState<string | number | null>(null);
-  const [showMore, setShowMore] = useState<boolean>(true);
-  const [openModal, setOpenModal] = useState<boolean>(false);
+    const [showMore, setShowMore] = useState<boolean>(true);
+    const [openModal, setOpenModal] = useState<boolean>(false);
+    const {
+      filters,
+      checkedItems,
+      setCheckedItems,
+      singleCheckedItem,
+      setSingleCheckedItem
+    } = useFilterStore();
 
+  const data = filters[keyFilter];
 
-  const handleCheckChange = (value: DataProps['value']): void => {
-    if (data && !multiCheck) setSingleCheckedItem(prevValue => prevValue === value ? null : value);
-    else setCheckedItems((prevState) => ({ ...prevState, [value]: !prevState[value] }));
-  };
+  const checkChange = (value: string | number) => multiCheck ? setCheckedItems(value) : setSingleCheckedItem(value);
 
   const orderedData = useMemo(() => {
-    return data?.sort((a, b) => (checkedItems[b.value] ? 1 : -1) - (checkedItems[a.value] ? 1 : -1)).slice(0, viewQnt);
-  }, [data, checkedItems, viewQnt]);
+    if (keyFilter !== 'salary') data?.sort((a, b) => b.amount - a.amount);
+    return data
+      ?.sort((a, b) => (checkedItems[b.value] ? 1 : -1) - (checkedItems[a.value] ? 1 : -1))
+      ?.slice(0, viewQnt);
+  }, [data, viewQnt, checkChange]);
 
   const renderCheckBoxList = () => (
     orderedData?.map((item, index) => (
@@ -43,7 +56,7 @@ const CheckBoxList = ({
         <CheckboxCell
           label={item.label}
           checked={multiCheck ? checkedItems[item.value] : item.value === singleCheckedItem}
-          onChange={() => handleCheckChange(item.value)}
+          onChange={() => checkChange(item.value)}
         />
         ({item.amount && item.amount})
       </div>
@@ -55,23 +68,6 @@ const CheckBoxList = ({
       {showMore ? 'Mostrar mais' : 'Mostrar menos'}
     </Button>
   )
-
-  const selectionData = () => {
-    return data?.reduce((acc, item) => {
-      const obj = {
-        ...acc,
-        [item.value]: item.selected
-      }
-      return obj
-    }, {} as { [key: number | string]: boolean });
-  }
-
-  useEffect(() => {
-    if (data) {
-      const initialCheckedItems = selectionData()
-      initialCheckedItems && setCheckedItems(initialCheckedItems);
-    }
-  }, [])
 
   useEffect(() => {
     setShowMore(true);

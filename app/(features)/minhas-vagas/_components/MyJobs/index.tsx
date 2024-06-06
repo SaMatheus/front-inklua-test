@@ -1,11 +1,11 @@
 'use client'
 import { useQuery } from '@tanstack/react-query'
 import { axios } from 'app/_lib/axios'
+import JobList from './JobList'
+import JobsTitle from './JobsTitle'
 import styles from './styles.module.scss'
 import { Filters } from '../../_types/filter'
 import Filter from '../Filter'
-import JobList from '../JobList'
-import JobsTitle from '../JobsTitle'
 import Loading from '../Loading'
 
 const MyJobs = () => {

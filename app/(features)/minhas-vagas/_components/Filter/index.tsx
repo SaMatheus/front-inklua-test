@@ -3,7 +3,7 @@ import { Heading } from '@Inklua/components-library';
 import FilterMobile from './FilterMobile';
 import FilterWeb from './FilterWeb';
 import styles from './styles.module.scss';
-import { useMobileStore } from '../../_hooks/useMobileStore'
+import { useMobileStore } from '../../_store/MobileStore'
 
 const Filter = () => {
   const isMobile = useMobileStore((state) => state.isMobile);

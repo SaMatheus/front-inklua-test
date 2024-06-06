@@ -1,21 +1,21 @@
 type City = {
   label: string,
   value: number,
-  amount?: number,
+  amount: number,
   selected: boolean
 };
 
 type Salary = {
   label: string,
   value: number,
-  amount?: number,
+  amount: number,
   selected: boolean
 };
 
 type WorkModel = {
   label: string,
   value: number,
-  amount?: number,
+  amount: number,
   selected: boolean
 };
 
