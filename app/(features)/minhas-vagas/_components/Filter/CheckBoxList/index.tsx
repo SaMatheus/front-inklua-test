@@ -2,8 +2,8 @@
 import { Button, CheckboxCell, Paragraph } from '@Inklua/components-library';
 import { useEffect, useMemo, useState } from 'react';
 import styles from './styles.module.scss';
-import { DataProps } from '../../_types/filter';
-import FilterModal from '../Filter/FilterModal';
+import { DataProps } from '../../../_types/filter';
+import FilterModal from '../FilterWeb/FilterModal';
 
 interface CheckBoxListProps {
   data: DataProps[] ;

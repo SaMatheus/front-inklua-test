@@ -5,8 +5,8 @@ import styles from './styles.module.scss'
 import { Filters } from '../../_types/filter'
 import Filter from '../Filter'
 import JobList from '../JobList'
+import JobsTitle from '../JobsTitle'
 import Loading from '../Loading'
-import SearchJobsTitle from '../SearchJobsTitle'
 
 const MyJobs = () => {
   const { data, isPending, error } = useQuery({
@@ -20,7 +20,7 @@ const MyJobs = () => {
       {error && <p>Ocorreu um erro ao carregar os dados.</p>}
       {data && !isPending && !error && (
         <div className={styles.wrapper}>
-          <SearchJobsTitle />
+          <JobsTitle />
           <div className={styles.content}>
             <Filter />
             <JobList />

@@ -1,7 +1,7 @@
 import { CheckboxCell } from '@Inklua/components-library';
 import React from 'react';
 import styles from './styles.module.scss';
-import { DataProps } from '../../../../_types/filter';
+import { DataProps } from '../../../../../_types/filter';
 
 interface ModalList {
   items: DataProps[];

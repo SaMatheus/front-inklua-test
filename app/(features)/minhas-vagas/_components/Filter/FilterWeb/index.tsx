@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 import { axios } from 'app/_lib/axios';
 import styles from './styles.module.scss'
 import { Filters } from '../../../_types/filter';
-import ButtonBox from '../../ButtonBox';
-import CheckBoxList from '../../CheckBoxList'
 import Search from '../../Search';
+import ButtonBox from '../ButtonBox';
+import CheckBoxList from '../CheckBoxList'
 import FilterSkeleton from '../FilterSkeleton';
 
 const FilterWeb = () => {
@@ -26,6 +26,9 @@ const FilterWeb = () => {
       {isPending && <FilterSkeleton />}
       {data && !isPending && !error && (
         <div className={styles.wrapper}>
+          <div className={styles.chipBox}>
+            
+          </div>
           <Search
             label='Cargo/função'
             placeholder='Digite o cargo/função que deseja'

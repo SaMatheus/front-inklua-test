@@ -1,6 +1,6 @@
 import { Input } from '@Inklua/components-library';
 import styles from './styles.module.scss';
-import { DataProps } from '../../../../_types/filter';
+import { DataProps } from '../../../../../_types/filter';
 import ModalGroup from '../ModalGroup';
 
 interface ModalContentProps {

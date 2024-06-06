@@ -1,7 +1,7 @@
 'use client'
 import { Heading, Paragraph, Span, Title } from '@Inklua/components-library';
 
-const SearchJobsTitle = () => {
+const JobsTitle = () => {
   return (
     <Title>
         <Heading tag='h1'>
@@ -22,4 +22,4 @@ const SearchJobsTitle = () => {
   )
 }
 
-export default SearchJobsTitle
+export default JobsTitle

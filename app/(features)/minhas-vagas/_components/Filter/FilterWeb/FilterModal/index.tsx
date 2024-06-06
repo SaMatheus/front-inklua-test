@@ -1,10 +1,10 @@
 import { Modal } from '@Inklua/components-library';
 import React, { useCallback, useMemo, useState } from 'react';
 import ModalContent from './ModalContent';
-import ModalHeader from './ModalHeader';
 import styles from './styles.module.scss';
-import { DataProps } from '../../../_types/filter';
+import { DataProps } from '../../../../_types/filter';
 import ButtonBox from '../../ButtonBox';
+import ModalHeader from './ModalHeader';
 
 type GroupedData = { [key: string]: DataProps[] };
 
