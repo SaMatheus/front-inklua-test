@@ -8,5 +8,7 @@
 .gridItems {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  align-items: center;
   gap: $space-sm;
+  width: 100%;
 }

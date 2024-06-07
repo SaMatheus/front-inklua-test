@@ -11,7 +11,15 @@ import ChipBox from '../ChipBox';
 import FilterSkeleton from '../FilterSkeleton';
 
 const FilterWeb = () => {
-  const { cityFilter, workModelFilter, salaryFilter, filters, setFilters, clearFilters } = useFilterStore();
+  const {
+    cityFilter,
+    workModelFilter,
+    salaryFilter,
+    filters,
+    setFilters,
+    clearFilters,
+    setPositionInput
+  } = useFilterStore();
 
   const { data, isPending, error } = useQuery({
     queryKey: ['filter'],
@@ -33,7 +41,7 @@ const FilterWeb = () => {
           <Search
             label='Cargo/função'
             placeholder='Digite o cargo/função que deseja'
-            onChange={({ target }) => console.log(target.value)}
+            onChange={({ target }) => setPositionInput(target.value)}
           />
           <CheckBoxList title='Local' keyFilter='city' multiCheck showMoreBtn />
           <CheckBoxList title='Modelo de trabalho' keyFilter='workModel' multiCheck />

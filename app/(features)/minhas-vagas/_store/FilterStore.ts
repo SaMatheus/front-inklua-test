@@ -11,11 +11,15 @@ interface FilterStore {
   salaryFilter: FilterDataProps[],
   setSalaryFilter: (salary: FilterDataProps) => void,
   clearFilters: () => void,
+  positionInput: string,
+  setPositionInput: (search: string) => void,
 }
 
 export const useFilterStore = create<FilterStore>((set) => ({
   filters: {} as Filters,
   setFilters: (filters) => set({ filters }),
+  positionInput: '',
+  setPositionInput: (search) => set({ positionInput: search }),
   cityFilter: [],
   setCityFilter: (city) => set((state) => state.cityFilter.includes(city)
     ? ({ cityFilter: state.cityFilter.filter((item) => item !== city) })

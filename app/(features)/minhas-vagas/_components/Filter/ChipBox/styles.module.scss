@@ -5,7 +5,6 @@
   flex-direction: column;
   gap: $space-xxxs;
   width: 100%;
-  min-height: 104px;
 
   &::after, &::before {
     display: none;
@@ -16,4 +15,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: $space-xxxs;
+
+  span {
+    line-height: $space-xs;
+  }
 }
