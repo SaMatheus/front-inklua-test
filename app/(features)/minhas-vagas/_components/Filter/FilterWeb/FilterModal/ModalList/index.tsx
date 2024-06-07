@@ -1,28 +1,36 @@
 import { CheckboxCell } from '@Inklua/components-library';
 import React from 'react';
+import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
 import styles from './styles.module.scss';
-import { DataProps } from '../../../../../_types/filter';
+import { FilterDataProps, KeyEnum } from '../../../../../_types/filter';
 
 interface ModalList {
-  items: DataProps[];
-  checkedItems: { [key: number | string]: boolean };
-  handleCheckChange: (value: DataProps['value']) => void;
-  multiCheck?: boolean;
-  singleCheckedItem: string | number | null;
-  keyFilter: string;
+  items: FilterDataProps[];
+  handleCheckChange: (key: KeyEnum, item: FilterDataProps) => void;
+  keyFilter: KeyEnum;
 }
 
-const FilterList: React.FC<ModalList> = ({ items, checkedItems, handleCheckChange, multiCheck, singleCheckedItem, keyFilter }) => (
-  items.map((item) => (
-    <div key={item.value} className={styles.checkboxInput}>
-      <CheckboxCell
-        label={item.label}
-        checked={multiCheck ? checkedItems[`${keyFilter}-${item.value}`] : `${keyFilter}-${item.value}` === singleCheckedItem}
-        onChange={() => handleCheckChange(item.value)}
-      />
-      ({item.amount && item.amount})
-    </div>
-  ))
-);
+
+const FilterList: React.FC<ModalList> = ({ items, handleCheckChange, keyFilter }) => {
+  const {
+    cityFilter
+  } = useFilterStore();
+
+  return (
+    items.map((item) => {
+      const isChecked = cityFilter.find((filter) => filter.value === item.value)
+      return (
+        <div key={item.value} className={styles.checkboxInput}>
+          <CheckboxCell
+            label={item.label}
+            checked={isChecked}
+            onChange={() => handleCheckChange(keyFilter, item)}
+          />
+          ({item.amount && item.amount})
+        </div>
+      )
+    })
+  )
+};
 
 export default FilterList;

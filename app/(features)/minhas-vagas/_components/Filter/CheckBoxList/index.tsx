@@ -2,7 +2,7 @@
 'use client'
 import { Button, CheckboxCell, Paragraph } from '@Inklua/components-library';
 import { useEffect, useMemo, useState } from 'react';
-import { KeyEnum } from 'app/(features)/minhas-vagas/_types/filter';
+import { FilterDataProps, KeyEnum } from 'app/(features)/minhas-vagas/_types/filter';
 import styles from './styles.module.scss';
 import { useFilterStore } from '../../../_store/FilterStore';
 import FilterModal from '../FilterWeb/FilterModal';
@@ -11,7 +11,6 @@ interface CheckBoxListProps {
   title: string;
   keyFilter: KeyEnum;
   increment?: number;
-  multiCheck?: boolean;
   viewQnt?: number;
   showMoreBtn?:boolean;
 }
@@ -19,7 +18,6 @@ interface CheckBoxListProps {
 const CheckBoxList = ({
     title,
     keyFilter,
-    multiCheck = false,
     viewQnt = 5,
     showMoreBtn = false
   }: CheckBoxListProps) => {
@@ -27,36 +25,54 @@ const CheckBoxList = ({
     const [openModal, setOpenModal] = useState<boolean>(false);
     const {
       filters,
-      checkedItems,
-      singleCheckedItem,
-      setCheckedItems,
-      setSingleCheckedItem
+      cityFilter,
+      workModelFilter,
+      salaryFilter,
+      setCityFilter,
+      setWorkModelFilter,
+      setSalaryFilter
     } = useFilterStore();
 
   const data = filters[keyFilter];
 
-  const onCheck = (value: string | number) => multiCheck
-    ? setCheckedItems(value, keyFilter)
-    : setSingleCheckedItem(value, keyFilter);
+  const filterCheckMachine = {
+    city: (item: FilterDataProps) => setCityFilter(item),
+    workModel: (item: FilterDataProps) => setWorkModelFilter(item),
+    salary: (item: FilterDataProps) => setSalaryFilter(item)
+  }
+
+  const filterDataMachine = {
+    city: cityFilter,
+    workModel: workModelFilter,
+    salary: salaryFilter
+  }
+
+  const filterData = filterDataMachine[keyFilter]
+
+  const onCheck = (key: KeyEnum, item: FilterDataProps) => filterCheckMachine[key](item)
 
   const orderedData = useMemo(() => {
     if (keyFilter !== 'salary') data?.sort((a, b) => b.amount - a.amount);
+    const findData = (item: FilterDataProps) => keyFilter !== 'salary' && filterData.find((filter) => filter.value === item.value)
     return data
-      ?.sort((a, b) => (checkedItems[`${keyFilter}-${b.value}`] ? 1 : -1) - (checkedItems[`${keyFilter}-${a.value}`] ? 1 : -1))
+      ?.sort((a, b) => (findData(b) ? 1 : -1) - (findData(a) ? 1 : -1))
       ?.slice(0, viewQnt);
   }, [data, viewQnt, onCheck]);
 
   const renderCheckBoxList = () => (
-    orderedData?.map((item, index) => (
-      <div key={index} className={styles.checkboxInput}>
-        <CheckboxCell
-          label={item.label}
-          checked={multiCheck ? checkedItems[`${keyFilter}-${item.value}`] : `${keyFilter}-${item.value}` === singleCheckedItem}
-          onChange={() => onCheck(item.value)}
-        />
-        ({item.amount && item.amount})
-      </div>
-    ))
+    orderedData?.map((item, index) => {
+      const isChecked = filterData.find((filter) => filter.value === item.value)
+      return (
+        <div key={index} className={styles.checkboxInput}>
+          <CheckboxCell
+            label={item.label}
+            checked={isChecked}
+            onChange={() => onCheck(keyFilter, item)}
+          />
+          ({item.amount && item.amount})
+        </div>
+      )
+    })
   );
 
   const renderShowMoreButton = () => (
@@ -82,7 +98,6 @@ const CheckBoxList = ({
           isOpen={openModal}
           onClose={() => setOpenModal(!openModal)}
           onChange={onCheck}
-          multiCheck={multiCheck}
           keyFilter={keyFilter}
         />
       }

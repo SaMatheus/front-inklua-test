@@ -1,26 +1,20 @@
 import { Splitter } from '@Inklua/components-library';
 import React from 'react';
 import styles from './styles.module.scss';
-import { DataProps } from '../../../../../_types/filter';
+import { FilterDataProps, KeyEnum } from '../../../../../_types/filter';
 import ModalList from '../ModalList';
 
 interface ModalGroupProps {
   letter: string;
-  keyFilter: string;
-  data: DataProps[];
-  multiCheck?: boolean;
-  checkedItems: { [key: number | string]: boolean };
-  handleCheckChange: (value: DataProps['value']) => void;
-  singleCheckedItem: string | number | null;
+  keyFilter: KeyEnum;
+  data: FilterDataProps[];
+  handleCheckChange: (key: KeyEnum, item: FilterDataProps) => void;
 }
 
 const ModalGroup = ({
     letter,
     data,
-    checkedItems,
     handleCheckChange,
-    multiCheck,
-    singleCheckedItem,
     keyFilter
   }: ModalGroupProps) => (
   <>
@@ -29,10 +23,7 @@ const ModalGroup = ({
       <div className={styles.gridItems}>
         <ModalList
           items={data}
-          checkedItems={checkedItems}
           handleCheckChange={handleCheckChange}
-          multiCheck={multiCheck}
-          singleCheckedItem={singleCheckedItem}
           keyFilter={keyFilter}
         />
       </div>

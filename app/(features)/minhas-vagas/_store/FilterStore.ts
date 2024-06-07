@@ -1,24 +1,35 @@
 import { create } from 'zustand';
-import { DataProps, Filters } from '../_types/filter';
+import { FilterDataProps, Filters } from '../_types/filter';
 
-type FilterStore = {
+interface FilterStore {
   filters: Filters;
-  checkedItems: { [key: number | string]: boolean };
-  singleCheckedItem: string | number | null;
   setFilters: (filters: Filters) => void;
-  setCheckedItems: (value: DataProps['value'], keyFilter: string) => void;
-  setSingleCheckedItem: (value: string | number | null, keyFilter: string) => void;
-};
+  cityFilter: FilterDataProps[],
+  setCityFilter: (city: FilterDataProps) => void,
+  workModelFilter: FilterDataProps[],
+  setWorkModelFilter: (workModel: FilterDataProps) => void,
+  salaryFilter: FilterDataProps[],
+  setSalaryFilter: (salary: FilterDataProps) => void,
+  clearFilters: () => void,
+}
 
 export const useFilterStore = create<FilterStore>((set) => ({
   filters: {} as Filters,
-  checkedItems: {},
-  singleCheckedItem: null,
   setFilters: (filters) => set({ filters }),
-  setCheckedItems: (value, keyFilter) => set(({ checkedItems }) => (
-    { checkedItems: { ...checkedItems, [`${keyFilter}-${value}`]: !checkedItems[`${keyFilter}-${value}`]} }
-  )),
-  setSingleCheckedItem: (value,keyFilter) => set(({ singleCheckedItem }) => (
-    singleCheckedItem === `${keyFilter}-${value}` ? { singleCheckedItem: null } : { singleCheckedItem: `${keyFilter}-${value}` }
-  ))
+  cityFilter: [],
+  setCityFilter: (city) => set((state) => state.cityFilter.includes(city)
+    ? ({ cityFilter: state.cityFilter.filter((item) => item !== city) })
+    : ({ cityFilter: [ ...state.cityFilter, city ] })
+  ),
+  workModelFilter: [],
+  setWorkModelFilter: (workModel) => set((state) => state.workModelFilter.includes(workModel)
+    ? ({ workModelFilter: state.workModelFilter.filter((item) => item !== workModel) })
+    : ({ workModelFilter: [ ...state.workModelFilter, workModel ] })
+  ),
+  salaryFilter: [],
+  setSalaryFilter: (salary) => set((state) => state.salaryFilter.includes(salary)
+    ? ({ salaryFilter: state.salaryFilter.filter((item) => item !== salary) })
+    : ({ salaryFilter: [ salary ] })
+  ),
+  clearFilters: () => set({ cityFilter: [], workModelFilter: [], salaryFilter: [] }),
 }));

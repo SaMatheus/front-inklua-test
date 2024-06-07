@@ -4,37 +4,16 @@ export enum KeyEnum {
   workModel = 'workModel'
 }
 
-type City = {
-  label: string,
-  value: number,
-  amount: number,
-  selected: boolean
-};
-
-type Salary = {
-  label: string,
-  value: number,
-  amount: number,
-  selected: boolean
-};
-
-type WorkModel = {
-  label: string,
-  value: number,
-  amount: number,
-  selected: boolean
-};
-
-export interface Filters {
-  city: City[];
-  salary: Salary[];
-  search: string | null;
-  workModel: WorkModel[];
-}
-
-export interface DataProps {
+export interface FilterDataProps {
   label: string;
   value: number | string;
-  amount?: number;
+  amount: number;
   selected: boolean;
+}
+
+export interface Filters {
+  city: FilterDataProps[];
+  salary: FilterDataProps[];
+  search: string | null;
+  workModel: FilterDataProps[];
 }

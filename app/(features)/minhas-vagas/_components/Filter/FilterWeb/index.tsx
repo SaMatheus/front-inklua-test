@@ -11,12 +11,14 @@ import ChipBox from '../ChipBox';
 import FilterSkeleton from '../FilterSkeleton';
 
 const FilterWeb = () => {
-  const { filters, setFilters } = useFilterStore();
+  const { cityFilter, workModelFilter, salaryFilter, filters, setFilters, clearFilters } = useFilterStore();
 
   const { data, isPending, error } = useQuery({
     queryKey: ['filter'],
     queryFn: () => axios.get('/test-search').then((res) => res.data)
   });
+
+  const renderChipValidation = !!cityFilter.length || !!workModelFilter.length || !!salaryFilter.length
 
   useEffect(() => {
     if (!isPending && data) setFilters(data.filters)
@@ -27,7 +29,7 @@ const FilterWeb = () => {
       {isPending && <FilterSkeleton />}
       {data && !isPending && !error && (
         <div className={styles.wrapper}>
-           <ChipBox />
+          {renderChipValidation && <ChipBox />}
           <Search
             label='Cargo/função'
             placeholder='Digite o cargo/função que deseja'
@@ -36,7 +38,7 @@ const FilterWeb = () => {
           <CheckBoxList title='Local' keyFilter='city' multiCheck showMoreBtn />
           <CheckBoxList title='Modelo de trabalho' keyFilter='workModel' multiCheck />
           <CheckBoxList title='Pretensão salarial' keyFilter='salary' viewQnt={filters.salary?.length} />
-          <ButtonBox />
+          <ButtonBox onClick={clearFilters} />
         </div> 
       )}
     </>

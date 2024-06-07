@@ -4,21 +4,20 @@ import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
 import ModalContent from './ModalContent';
 import ModalHeader from './ModalHeader';
 import styles from './styles.module.scss';
-import { DataProps, KeyEnum } from '../../../../_types/filter';
+import { FilterDataProps, KeyEnum } from '../../../../_types/filter';
 import ButtonBox from '../../ButtonBox';
 
-type GroupedData = { [key: string]: DataProps[] };
+type GroupedData = { [key: string]: FilterDataProps[] };
 
 interface FilterModalProps {
   title: string;
   isOpen: boolean;
-  multiCheck?: boolean;
   keyFilter: KeyEnum
   onClose: () => void;
-  onChange: (value: string | number) => void;
+  onChange: (key: KeyEnum, item: FilterDataProps) => void;
 }
 
-const groupData = (data: DataProps[]): GroupedData => {
+const groupData = (data: FilterDataProps[]): GroupedData => {
   return data.reduce<GroupedData>((groups, item) => {
     const letter = item.label.normalize('NFD')[0].toUpperCase();
     groups[letter] = groups[letter] || [];
@@ -27,12 +26,8 @@ const groupData = (data: DataProps[]): GroupedData => {
   }, {});
 };
 
-const FilterModal: React.FC<FilterModalProps> = ({ title, isOpen, multiCheck, keyFilter, onClose, onChange }) => {
-  const {
-    filters,
-    checkedItems,
-    singleCheckedItem
-  } = useFilterStore();
+const FilterModal = ({ title, isOpen, keyFilter, onClose, onChange }: FilterModalProps) => {
+  const { filters } = useFilterStore();
 
   const data = filters[keyFilter];
 
@@ -45,14 +40,11 @@ const FilterModal: React.FC<FilterModalProps> = ({ title, isOpen, multiCheck, ke
       <div className={styles.wrapper}>
         <ModalHeader title={title} onClose={onClose} />
         <ModalContent
-          checkedItems={checkedItems}
           data={groupedData}
           handleCheckChange={onChange}
-          multiCheck={multiCheck}
-          singleCheckedItem={singleCheckedItem}
           keyFilter={keyFilter}
         />
-        <ButtonBox isModal />
+        <ButtonBox onClick={onClose} isModal />
       </div>
     </Modal>
   );

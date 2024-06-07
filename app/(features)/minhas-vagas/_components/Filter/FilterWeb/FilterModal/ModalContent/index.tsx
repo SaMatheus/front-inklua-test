@@ -1,23 +1,17 @@
 import { Input } from '@Inklua/components-library';
 import { useState } from 'react';
 import styles from './styles.module.scss';
-import { DataProps } from '../../../../../_types/filter';
+import { FilterDataProps, KeyEnum } from '../../../../../_types/filter';
 import ModalGroup from '../ModalGroup';
 
 interface ModalContentProps {
-  data: { [key: string]: DataProps[] };
-  multiCheck?: boolean;
-  checkedItems: { [key: number | string]: boolean };
-  handleCheckChange: (value: DataProps['value']) => void;
-  singleCheckedItem: string | number | null;
-  keyFilter: string;
+  data: { [key: string]: FilterDataProps[] };
+  handleCheckChange: (key: KeyEnum, item: FilterDataProps) => void;
+  keyFilter: KeyEnum;
 }
 
 const ModalContent = ({
     data,
-    multiCheck,
-    checkedItems,
-    singleCheckedItem,
     handleCheckChange,
     keyFilter
   }: ModalContentProps) => {
@@ -27,7 +21,7 @@ const ModalContent = ({
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   }
 
-  const filterItems = Object.entries(data).reduce<{ [key: string]: DataProps[] }>((acc, [letter, items]) => {
+  const filterItems = Object.entries(data).reduce<{ [key: string]: FilterDataProps[] }>((acc, [letter, items]) => {
     const filteredItems = items.filter(
       (item) => removeAccents(item.label.toLowerCase()).includes(removeAccents(inputValue.toLowerCase()))
     );
@@ -39,18 +33,13 @@ const ModalContent = ({
     const originData = Object.entries(inputValue ? filterItems : data)
     return (
       originData.map(([letter, items]) => (
-        <>
-          <ModalGroup
-            key={letter}
-            letter={letter}
-            data={items}
-            checkedItems={checkedItems}
-            handleCheckChange={handleCheckChange}
-            multiCheck={multiCheck}
-            singleCheckedItem={singleCheckedItem}
-            keyFilter={keyFilter}
-          />
-        </>
+        <ModalGroup
+          key={letter}
+          letter={letter}
+          data={items}
+          handleCheckChange={handleCheckChange}
+          keyFilter={keyFilter}
+        />
       ))
     )
   };
@@ -69,7 +58,5 @@ const ModalContent = ({
     </div>
   )
 };
-
-ModalContent.displayName = 'ModalContent';
 
 export default ModalContent;
