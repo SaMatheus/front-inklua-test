@@ -1,19 +1,21 @@
 import { Modal } from '@Inklua/components-library';
-import React, { useCallback, useMemo, useState } from 'react';
+import { useMemo } from 'react';
+import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
 import ModalContent from './ModalContent';
-import styles from './styles.module.scss';
-import { DataProps } from '../../../../_types/filter';
-import ButtonBox from '../../ButtonBox';
 import ModalHeader from './ModalHeader';
+import styles from './styles.module.scss';
+import { DataProps, KeyEnum } from '../../../../_types/filter';
+import ButtonBox from '../../ButtonBox';
 
 type GroupedData = { [key: string]: DataProps[] };
 
 interface FilterModalProps {
-  data: DataProps[];
   title: string;
   isOpen: boolean;
   multiCheck?: boolean;
+  keyFilter: KeyEnum
   onClose: () => void;
+  onChange: (value: string | number) => void;
 }
 
 const groupData = (data: DataProps[]): GroupedData => {
@@ -25,18 +27,18 @@ const groupData = (data: DataProps[]): GroupedData => {
   }, {});
 };
 
-const FilterModal: React.FC<FilterModalProps> = ({ data, title, isOpen, multiCheck, onClose }) => {
-  const [inputValue, setInputValue] = useState<string>();
-  const [checkedItems, setCheckedItems] = useState<{ [key: number | string]: boolean }>({});
-  const [singleCheckedItem, setSingleCheckedItem] = useState<string | number | null>(null);
+const FilterModal: React.FC<FilterModalProps> = ({ title, isOpen, multiCheck, keyFilter, onClose, onChange }) => {
+  const {
+    filters,
+    checkedItems,
+    singleCheckedItem
+  } = useFilterStore();
 
-  const handleCheckChange = useCallback((value: DataProps['value']): void => {
-    if (!multiCheck) setSingleCheckedItem((prevValue) => prevValue === value ? null : value);
-    else setCheckedItems((prevState) => ({ ...prevState, [value]: !prevState[value] }));
-  }, [multiCheck]);
+  const data = filters[keyFilter];
 
   const sortedData = useMemo(() => data.sort((a, b) => a.label.localeCompare(b.label)), [data]);
   const groupedData = useMemo(() => groupData(sortedData), [sortedData]);
+  
 
   return isOpen && (
     <Modal closeModal={onClose}>
@@ -45,11 +47,10 @@ const FilterModal: React.FC<FilterModalProps> = ({ data, title, isOpen, multiChe
         <ModalContent
           checkedItems={checkedItems}
           data={groupedData}
-          handleCheckChange={handleCheckChange}
-          inputValue={inputValue}
-          onChange={setInputValue}
+          handleCheckChange={onChange}
           multiCheck={multiCheck}
           singleCheckedItem={singleCheckedItem}
+          keyFilter={keyFilter}
         />
         <ButtonBox isModal />
       </div>

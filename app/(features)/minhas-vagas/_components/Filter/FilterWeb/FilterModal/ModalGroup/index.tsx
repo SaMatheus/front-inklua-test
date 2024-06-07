@@ -6,6 +6,7 @@ import ModalList from '../ModalList';
 
 interface ModalGroupProps {
   letter: string;
+  keyFilter: string;
   data: DataProps[];
   multiCheck?: boolean;
   checkedItems: { [key: number | string]: boolean };
@@ -19,13 +20,21 @@ const ModalGroup = ({
     checkedItems,
     handleCheckChange,
     multiCheck,
-    singleCheckedItem
+    singleCheckedItem,
+    keyFilter
   }: ModalGroupProps) => (
   <>
     <div className={styles.ascBox}>
       <h2>{letter}</h2>
       <div className={styles.gridItems}>
-        <ModalList items={data} checkedItems={checkedItems} handleCheckChange={handleCheckChange} multiCheck={multiCheck} singleCheckedItem={singleCheckedItem} />
+        <ModalList
+          items={data}
+          checkedItems={checkedItems}
+          handleCheckChange={handleCheckChange}
+          multiCheck={multiCheck}
+          singleCheckedItem={singleCheckedItem}
+          keyFilter={keyFilter}
+        />
       </div>
     </div>
     <Splitter />

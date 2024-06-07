@@ -1,3 +1,9 @@
+export enum KeyEnum {
+  city = 'city',
+  salary = 'salary',
+  workModel = 'workModel'
+}
+
 type City = {
   label: string,
   value: number,

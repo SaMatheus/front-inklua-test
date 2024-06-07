@@ -1,5 +1,4 @@
 'use client'
-import { Chip, Icon, Paragraph } from '@Inklua/components-library';
 import { useQuery } from '@tanstack/react-query';
 import { useEffect } from 'react';
 import { axios } from 'app/_lib/axios';
@@ -8,6 +7,7 @@ import styles from './styles.module.scss'
 import { useFilterStore } from '../../../_store/FilterStore';
 import ButtonBox from '../ButtonBox';
 import CheckBoxList from '../CheckBoxList'
+import ChipBox from '../ChipBox';
 import FilterSkeleton from '../FilterSkeleton';
 
 const FilterWeb = () => {
@@ -27,15 +27,7 @@ const FilterWeb = () => {
       {isPending && <FilterSkeleton />}
       {data && !isPending && !error && (
         <div className={styles.wrapper}>
-           <div className={styles.chipBox}>
-              <Paragraph weight={600}>Filtros ativos:</Paragraph>
-              <Chip 
-                icon={<Icon name='icon-close' size='small'/>}
-                text='teste'
-                palette='business'
-                onClick={() => console.log('click')}
-              />
-            </div>
+           <ChipBox />
           <Search
             label='Cargo/função'
             placeholder='Digite o cargo/função que deseja'

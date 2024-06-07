@@ -2,16 +2,10 @@
 'use client'
 import { Button, CheckboxCell, Paragraph } from '@Inklua/components-library';
 import { useEffect, useMemo, useState } from 'react';
-import { DataProps } from 'app/(features)/minhas-vagas/_types/filter';
+import { KeyEnum } from 'app/(features)/minhas-vagas/_types/filter';
 import styles from './styles.module.scss';
 import { useFilterStore } from '../../../_store/FilterStore';
 import FilterModal from '../FilterWeb/FilterModal';
-
-enum KeyEnum {
-  city = 'city',
-  salary = 'salary',
-  workModel = 'workModel'
-}
 
 interface CheckBoxListProps {
   title: string;
@@ -34,29 +28,31 @@ const CheckBoxList = ({
     const {
       filters,
       checkedItems,
-      setCheckedItems,
       singleCheckedItem,
+      setCheckedItems,
       setSingleCheckedItem
     } = useFilterStore();
 
   const data = filters[keyFilter];
 
-  const checkChange = (value: string | number) => multiCheck ? setCheckedItems(value) : setSingleCheckedItem(value);
+  const onCheck = (value: string | number) => multiCheck
+    ? setCheckedItems(value, keyFilter)
+    : setSingleCheckedItem(value, keyFilter);
 
   const orderedData = useMemo(() => {
     if (keyFilter !== 'salary') data?.sort((a, b) => b.amount - a.amount);
     return data
-      ?.sort((a, b) => (checkedItems[b.value] ? 1 : -1) - (checkedItems[a.value] ? 1 : -1))
+      ?.sort((a, b) => (checkedItems[`${keyFilter}-${b.value}`] ? 1 : -1) - (checkedItems[`${keyFilter}-${a.value}`] ? 1 : -1))
       ?.slice(0, viewQnt);
-  }, [data, viewQnt, checkChange]);
+  }, [data, viewQnt, onCheck]);
 
   const renderCheckBoxList = () => (
     orderedData?.map((item, index) => (
       <div key={index} className={styles.checkboxInput}>
         <CheckboxCell
           label={item.label}
-          checked={multiCheck ? checkedItems[item.value] : item.value === singleCheckedItem}
-          onChange={() => checkChange(item.value)}
+          checked={multiCheck ? checkedItems[`${keyFilter}-${item.value}`] : `${keyFilter}-${item.value}` === singleCheckedItem}
+          onChange={() => onCheck(item.value)}
         />
         ({item.amount && item.amount})
       </div>
@@ -83,10 +79,11 @@ const CheckBoxList = ({
       {openModal &&
         <FilterModal
           title={title}
-          data={data}
           isOpen={openModal}
           onClose={() => setOpenModal(!openModal)}
+          onChange={onCheck}
           multiCheck={multiCheck}
+          keyFilter={keyFilter}
         />
       }
     </div>

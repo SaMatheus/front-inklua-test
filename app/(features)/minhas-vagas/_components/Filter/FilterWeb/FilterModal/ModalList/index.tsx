@@ -9,14 +9,15 @@ interface ModalList {
   handleCheckChange: (value: DataProps['value']) => void;
   multiCheck?: boolean;
   singleCheckedItem: string | number | null;
+  keyFilter: string;
 }
 
-const FilterList: React.FC<ModalList> = ({ items, checkedItems, handleCheckChange, multiCheck, singleCheckedItem }) => (
+const FilterList: React.FC<ModalList> = ({ items, checkedItems, handleCheckChange, multiCheck, singleCheckedItem, keyFilter }) => (
   items.map((item) => (
     <div key={item.value} className={styles.checkboxInput}>
       <CheckboxCell
         label={item.label}
-        checked={multiCheck ? checkedItems[item.value] : item.value === singleCheckedItem}
+        checked={multiCheck ? checkedItems[`${keyFilter}-${item.value}`] : `${keyFilter}-${item.value}` === singleCheckedItem}
         onChange={() => handleCheckChange(item.value)}
       />
       ({item.amount && item.amount})
