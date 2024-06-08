@@ -13,6 +13,8 @@ interface FilterStore {
   clearFilters: () => void,
   positionInput: string,
   setPositionInput: (search: string) => void,
+  cityInput: string,
+  setCityInput: (search: string) => void,
 }
 
 export const useFilterStore = create<FilterStore>((set) => ({
@@ -20,6 +22,8 @@ export const useFilterStore = create<FilterStore>((set) => ({
   setFilters: (filters) => set({ filters }),
   positionInput: '',
   setPositionInput: (search) => set({ positionInput: search }),
+  cityInput: '',
+  setCityInput: (search) => set({ cityInput: search }),
   cityFilter: [],
   setCityFilter: (city) => set((state) => state.cityFilter.includes(city)
     ? ({ cityFilter: state.cityFilter.filter((item) => item !== city) })

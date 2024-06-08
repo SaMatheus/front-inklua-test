@@ -6,13 +6,13 @@ import styles from './styles.module.scss';
 import { useMobileStore } from '../../_store/MobileStore'
 
 const Filter = () => {
-  const isMobile = useMobileStore((state) => state.isMobile);
+  const { isMobile } = useMobileStore();
 
   return (
-      <div className={styles.wrapper}>
-        <Heading tag='h6'>{ isMobile ? 'Selecione as opções' : 'Filtrar'}</Heading>
-        { isMobile ? <FilterMobile /> : <FilterWeb /> }
-      </div>
+    <div className={isMobile ? styles.wrapperMobile : styles.wrapper}>
+      <Heading tag='h6'>{ !isMobile && 'Filtrar'}</Heading>
+      { isMobile ? <FilterMobile /> : <FilterWeb /> }
+    </div>
   )
 };
 

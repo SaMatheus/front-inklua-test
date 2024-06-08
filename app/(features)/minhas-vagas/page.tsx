@@ -1,15 +1,15 @@
 'use client'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import MyJobs from './_components/MyJobs/index'
+import SearchJobs from './_components/SearchJobs/index'
 
-const MyJobsPage = () => {
+const SearchJobsPage = () => {
   const queryClient = new QueryClient();
   
   return (
     <QueryClientProvider client={queryClient}>
-      <MyJobs />
+      <SearchJobs />
     </QueryClientProvider>
 )
 }
 
-export default MyJobsPage
+export default SearchJobsPage

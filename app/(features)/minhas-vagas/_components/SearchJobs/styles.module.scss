@@ -1,0 +1,43 @@
+@use "/app/_styles/theme.scss" as *;
+
+@mixin flex-web {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin flex-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  @include flex-web;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.content {
+  @include flex-web;
+}
+
+.wrapperMobile {
+  @include flex-mobile;
+  padding: $space-lg 0;
+  gap: $space-md;
+
+  div {
+    gap: $space-xxxs !important;
+  }
+
+  .content {
+    @include flex-mobile;
+  }
+}

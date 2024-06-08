@@ -5,7 +5,7 @@ import ModalContent from './ModalContent';
 import ModalHeader from './ModalHeader';
 import styles from './styles.module.scss';
 import { FilterDataProps, KeyEnum } from '../../../../_types/filter';
-import ButtonBox from '../../ButtonBox';
+import ButtonBox from '../ButtonBox';
 
 type GroupedData = { [key: string]: FilterDataProps[] };
 

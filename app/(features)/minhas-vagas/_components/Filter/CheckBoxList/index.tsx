@@ -13,13 +13,15 @@ interface CheckBoxListProps {
   increment?: number;
   viewQnt?: number;
   showMoreBtn?:boolean;
+  isMobile?:boolean;
 }
 
 const CheckBoxList = ({
     title,
     keyFilter,
     viewQnt = 5,
-    showMoreBtn = false
+    showMoreBtn = false,
+    isMobile = false
   }: CheckBoxListProps) => {
     const [showMore, setShowMore] = useState<boolean>(true);
     const [openModal, setOpenModal] = useState<boolean>(false);
@@ -87,7 +89,7 @@ const CheckBoxList = ({
 
   return (
     <div className={styles.checkboxWrapper}>
-      <Paragraph weight={700}>{title}</Paragraph>
+      {!isMobile && <Paragraph weight={700}>{title}</Paragraph>}
       <div className={styles.checkboxContent}>
         { data && renderCheckBoxList() }
         { showMoreBtn && renderShowMoreButton() }

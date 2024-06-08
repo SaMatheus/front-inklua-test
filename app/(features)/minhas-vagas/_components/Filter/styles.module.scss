@@ -9,3 +9,9 @@
   border-radius: $space-xxxs 0 0 $space-xxxs;
   width: 22rem;
 }
+
+.wrapperMobile {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

@@ -1,0 +1,34 @@
+@use "/app/_styles/theme.scss" as *;
+
+@mixin flex-mobile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-inst-primary-200;
+  padding: $space-md $space-lg;
+  transition: padding-top 0.75s ease;
+}
+
+.wrapperClosed {
+  @include flex-mobile;
+  animation: fadeIn 0.5s ease-in-out;
+
+  .openFilterBtn {
+    width: 100%;
+    margin-bottom: $space-xxxxs;
+  }
+}
+
+.wrapperOpened {
+  @include flex-mobile;
+  padding: $space-xl $space-lg;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
