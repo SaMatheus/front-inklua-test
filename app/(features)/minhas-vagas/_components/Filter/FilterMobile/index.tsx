@@ -34,6 +34,8 @@ const FilterMobile = () => {
 
   const params = paramsBuilder(positionData, cityInput, workModelFilter, salaryFilter)
 
+  console.log(params)
+
   const mutation = useMutation({
     mutationFn: () => getApiData(params),
     onSuccess: (data) => {

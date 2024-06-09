@@ -25,19 +25,31 @@ export const useFilterStore = create<FilterStore>((set) => ({
   cityInput: '',
   setCityInput: (search) => set({ cityInput: search }),
   cityFilter: [],
-  setCityFilter: (city) => set((state) => state.cityFilter.includes(city)
-    ? ({ cityFilter: state.cityFilter.filter((item) => item !== city) })
-    : ({ cityFilter: [ ...state.cityFilter, city ] })
-  ),
+  setCityFilter: (city) => set((state) => {
+    const exists = state.cityFilter.some((item) => item.value === city.value);
+    const updatedCityFilter = state.cityFilter.filter((item) => item.value !== city.value);
+  
+    return {
+      cityFilter: exists ? updatedCityFilter : [...updatedCityFilter, city]
+    };
+  }),
   workModelFilter: [],
-  setWorkModelFilter: (workModel) => set((state) => state.workModelFilter.includes(workModel)
-    ? ({ workModelFilter: state.workModelFilter.filter((item) => item !== workModel) })
-    : ({ workModelFilter: [ ...state.workModelFilter, workModel ] })
-  ),
+  setWorkModelFilter: (workModel) => set((state) => {
+    const exists = state.workModelFilter.some((item) => item.value === workModel.value);
+    const updatedWorkModelFilter = state.workModelFilter.filter((item) => item.value !== workModel.value);
+
+    return {
+      workModelFilter: exists ? updatedWorkModelFilter : [...updatedWorkModelFilter, workModel]
+    };
+  }),
   salaryFilter: [],
-  setSalaryFilter: (salary) => set((state) => state.salaryFilter.includes(salary)
-    ? ({ salaryFilter: state.salaryFilter.filter((item) => item !== salary) })
-    : ({ salaryFilter: [ salary ] })
-  ),
+  setSalaryFilter: (salary) => set((state) => {
+    const exists = state.salaryFilter.some((item) => item.value === salary.value);
+    const updatedSalaryFilter = state.salaryFilter.filter((item) => item.value !== salary.value);
+
+    return {
+      salaryFilter: exists ? updatedSalaryFilter : [...updatedSalaryFilter, salary]
+    };
+  }),
   clearFilters: () => set({ cityFilter: [], workModelFilter: [], salaryFilter: [] }),
 }));

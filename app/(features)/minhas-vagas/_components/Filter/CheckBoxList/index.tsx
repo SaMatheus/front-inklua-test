@@ -40,7 +40,7 @@ const CheckBoxList = ({
   const data = filters[keyFilter];
 
   const filterCheckMachine = {
-    city: (item: FilterDataProps) => setCityFilter(item),
+    city: (item: FilterDataProps) => {setCityFilter(item)},
     workModel: (item: FilterDataProps) => setWorkModelFilter(item),
     salary: (item: FilterDataProps) => setSalaryFilter(item)
   }
