@@ -10,11 +10,14 @@ interface FilterStore {
   setWorkModelFilter: (workModel: FilterDataProps) => void,
   salaryFilter: FilterDataProps[],
   setSalaryFilter: (salary: FilterDataProps) => void,
+  removeSalaryFilter: () => void,
   clearFilters: () => void,
   positionInput: string,
   setPositionInput: (search: string) => void,
   cityInput: string,
   setCityInput: (search: string) => void,
+  fetchData: Filters,
+  setFetchData: (data: Filters) => void
 }
 
 export const useFilterStore = create<FilterStore>((set) => ({
@@ -43,13 +46,9 @@ export const useFilterStore = create<FilterStore>((set) => ({
     };
   }),
   salaryFilter: [],
-  setSalaryFilter: (salary) => set((state) => {
-    const exists = state.salaryFilter.some((item) => item.value === salary.value);
-    const updatedSalaryFilter = state.salaryFilter.filter((item) => item.value !== salary.value);
-
-    return {
-      salaryFilter: exists ? updatedSalaryFilter : [...updatedSalaryFilter, salary]
-    };
-  }),
+  setSalaryFilter: (salary) => set({ salaryFilter: [salary] }),
+  removeSalaryFilter: () => set({ salaryFilter: [] }),
   clearFilters: () => set({ cityFilter: [], workModelFilter: [], salaryFilter: [] }),
+  fetchData: {} as Filters,
+  setFetchData: (fetchData) => set({ fetchData })
 }));

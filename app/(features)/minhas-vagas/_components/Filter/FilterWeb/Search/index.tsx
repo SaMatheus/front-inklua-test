@@ -6,10 +6,7 @@ import styles from './styles.module.scss';
 interface SearchProps {
   label: string;
   placeholder: string;
-  error?: string;
   name?: string;
-  // onClick: () => void;
-  // onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Search = ({ label, placeholder, name }: SearchProps) =>  {
@@ -23,19 +20,13 @@ const Search = ({ label, placeholder, name }: SearchProps) =>  {
   return (
     <div className={styles.wrapper}>
       <Paragraph weight={700}>{label}</Paragraph>
-      <div className={styles.input}>
-        <Input
-          name={name || 'input'}
-          onChange={({ target }) => setData(target.value)}
-          placeholder={placeholder}
-          value={data}
-        />
-        <IconButton
-          style={{ paddingTop: '0.25rem' }}
-          icon={<Icon name='icon-search' size='medium' color='#7DD1CC' />}
-          onClick={() => setPositionInput(data)}
-        />
-      </div>
+      <Input
+        name={name || 'input'}
+        onChange={({ target }) => setData(target.value)}
+        placeholder={placeholder}
+        onBlur={() => setPositionInput(data)}
+        value={data}
+      />
     </div>
   )
 }

@@ -27,6 +27,7 @@ const CheckBoxList = ({
   }: CheckBoxListProps) => {
     const [showMore, setShowMore] = useState<boolean>(true);
     const [openModal, setOpenModal] = useState<boolean>(false);
+    const [filterData, setFilterData] = useState<FilterDataProps[]>([]);
     const {
       filters,
       cityFilter,
@@ -40,7 +41,7 @@ const CheckBoxList = ({
   const data = filters[keyFilter];
 
   const filterCheckMachine = {
-    city: (item: FilterDataProps) => {setCityFilter(item)},
+    city: (item: FilterDataProps) => setCityFilter(item),
     workModel: (item: FilterDataProps) => setWorkModelFilter(item),
     salary: (item: FilterDataProps) => setSalaryFilter(item)
   }
@@ -50,8 +51,6 @@ const CheckBoxList = ({
     workModel: workModelFilter,
     salary: salaryFilter
   }
-
-  const filterData = filterDataMachine[keyFilter]
 
   const onCheck = (key: KeyEnum, item: FilterDataProps) => filterCheckMachine[key](item)
 
@@ -63,9 +62,13 @@ const CheckBoxList = ({
       ?.slice(0, viewQnt);
   }, [data, viewQnt, onCheck]);
 
+  useEffect(() => {
+    setFilterData(filterDataMachine[keyFilter])
+  }, [cityFilter, workModelFilter, salaryFilter])
+
   const renderCheckBoxList = () => (
     orderedData?.map((item, index) => {
-      const isChecked = filterData.find((filter) => filter.value === item.value)
+      const isChecked = filterData && filterData?.find((filter) => filter.value === item.value)
       return (
         <div key={index} className={styles.checkboxInput}>
           <CheckboxCell

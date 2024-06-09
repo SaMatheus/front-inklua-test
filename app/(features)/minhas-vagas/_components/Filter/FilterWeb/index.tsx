@@ -1,6 +1,6 @@
 'use client'
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import getApiData from 'app/(features)/minhas-vagas/_providers/getApiData';
 import { useJobsStore } from 'app/(features)/minhas-vagas/_store/JobsStore';
 import paramsBuilder from 'app/(features)/minhas-vagas/_utils/buildingFetchParams';
@@ -13,6 +13,7 @@ import ChipBox from '../ChipBox';
 import FilterSkeleton from '../FilterSkeleton';
 
 const FilterWeb = () => {
+  const [showChips, setShowChips] = useState(false)
   const { setJobs } = useJobsStore()
   const {
     cityFilter,
@@ -20,8 +21,8 @@ const FilterWeb = () => {
     salaryFilter,
     filters,
     positionInput,
-    cityInput,
     setFilters,
+    setFetchData,
     clearFilters
   } = useFilterStore();
 
@@ -35,12 +36,15 @@ const FilterWeb = () => {
   const mutation = useMutation({
     mutationFn: () => getApiData(params),
     onSuccess: (data) => {
-      setFilters(data.filters);
+      setShowChips(true)
+      setFetchData(data.filters);
       setJobs(data.jobs)
     },
+    onError: (error) => {
+      setShowChips(false)
+      console.log(error)
+    }
   });
-
-  const renderChipValidation = !!cityFilter.length || !!workModelFilter.length || !!salaryFilter.length || !!positionInput || !!cityInput
 
   useEffect(() => {
     if (!query.isPending && !query.error && query.data) {
@@ -53,7 +57,7 @@ const FilterWeb = () => {
       {query.isPending && <FilterSkeleton />}
       {query.data && !query.isPending && !query.error && (
         <div className={styles.wrapper}>
-          {renderChipValidation && <ChipBox />}
+          {showChips && <ChipBox />}
           <Search
             label='Cargo/função'
             placeholder='Digite o cargo/função que deseja'

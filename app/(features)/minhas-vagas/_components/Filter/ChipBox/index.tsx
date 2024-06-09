@@ -4,6 +4,10 @@ import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
 import { useMobileStore } from 'app/(features)/minhas-vagas/_store/MobileStore';
 import { FilterDataProps } from 'app/(features)/minhas-vagas/_types/filter';
 import styles from './styles.module.scss'
+import paramsBuilder from 'app/(features)/minhas-vagas/_utils/buildingFetchParams';
+import { useMutation } from '@tanstack/react-query';
+import getApiData from 'app/(features)/minhas-vagas/_providers/getApiData';
+import { useJobsStore } from 'app/(features)/minhas-vagas/_store/JobsStore';
 
 const ChipBox = () => {
   const [filtersData, setFiltersData] = useState<(FilterDataProps | string)[]>([])
@@ -13,50 +17,62 @@ const ChipBox = () => {
     workModelFilter,
     salaryFilter,
     positionInput,
-    cityInput,
+    fetchData,
+    setFetchData,
     setPositionInput,
     setCityInput,
     setCityFilter,
     setWorkModelFilter,
-    setSalaryFilter
+    removeSalaryFilter
   } = useFilterStore();
   const { isMobile } = useMobileStore()
+  const { setJobs } = useJobsStore()
 
-  const handleRemoveCheckFilter = (item: FilterDataProps | string) => {
-    if (typeof item === 'string') return
-    if (cityFilter.includes(item)) setCityFilter(item)
-    if (workModelFilter.includes(item)) setWorkModelFilter(item)
-    if (salaryFilter.includes(item)) setSalaryFilter(item)
+  const params = paramsBuilder(positionInput, cityFilter, workModelFilter, salaryFilter)
+
+  const mutation = useMutation({
+    mutationFn: () => getApiData(params),
+    onSuccess: (data) => {
+      setFetchData(data.filters);
+      setJobs(data.jobs)
+    },
+    onError: (error) => {
+      console.log(error)
+    }
+  });
+
+  const removeChipStr = (str: string) => {
+    str === positionInput ? setPositionInput('') : setCityInput('')
+    const removeStr = filtersData.filter((item) => item !== str)
+    setFiltersData(removeStr)
   }
 
-  const removeChipObj = (obj: FilterDataProps | string) => {
-    if (typeof obj === 'string') return obj === positionInput ? setPositionInput('') : setCityInput('')
-    return filtersData.forEach((item) => {
-      if (typeof item !== 'string' && item.label === obj.label) {
-        handleRemoveCheckFilter(item);
-      }
-    })
+  const removeChipObj = (chipData: FilterDataProps) => {
+    const hasDataInFilter = (store: FilterDataProps[] ) => store.find((item) => item.value === chipData.value)
+  
+    if (hasDataInFilter(cityFilter)) setCityFilter(chipData)
+    if (hasDataInFilter(workModelFilter)) setWorkModelFilter(chipData)
+    if (hasDataInFilter(salaryFilter)) removeSalaryFilter()
+
+    const removeObj = filtersData.filter((item) => typeof item !== 'string' && item.label !== chipData.label)
+    return setFiltersData(removeObj)
+  }
+
+  const removeChip = (chipData: FilterDataProps | string) => {
+    if (typeof chipData === 'string') removeChipStr(chipData)
+    if (typeof chipData !== 'string') removeChipObj(chipData)
+    return mutation.mutate()
   };
 
   useEffect(() => {
-    const data = [...cityFilter, ...workModelFilter, ...salaryFilter];
-    const addInputToData = (input: { label: string } | string) => {
-      const inputValue = typeof input === 'string' ? input : input.label;
-      if (inputValue.trim() !== '') {
-        data.push(input as FilterDataProps);
-      }
-    };
-
-    addInputToData(positionInput);
-    addInputToData(cityInput);
-
-    setFiltersData(data);
-  }, [positionInput, cityInput, cityFilter, workModelFilter, salaryFilter])
+    const fetchedData = Object.values(fetchData).flat().filter((item) => item?.selected || typeof item === 'string')
+    setFiltersData(fetchedData)
+  }, [fetchData])
 
   const showChipQnt = isMobile ? 2 : 3
   const displayedChips = showAll ? filtersData : filtersData?.slice(0, showChipQnt)
 
-  return (
+  return !!(filtersData?.length > 0) && (
     <div className={styles.chipBox}>
       <Paragraph weight={600}>Filtros ativos:</Paragraph>
       <div className={styles.chipList}>
@@ -66,7 +82,7 @@ const ChipBox = () => {
           icon={<Icon name='icon-close' size='small'/>}
           text={(typeof item !== 'string') ? item.label : item}
           palette='business'
-          onClick={() => removeChipObj(item)}
+          onClick={() => removeChip(item)}
         />
       ))}
       {filtersData?.length > showChipQnt && (
