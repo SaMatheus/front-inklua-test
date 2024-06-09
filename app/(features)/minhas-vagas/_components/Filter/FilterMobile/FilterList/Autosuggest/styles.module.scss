@@ -1,0 +1,40 @@
+@use "/app/_styles/theme.scss" as *;
+
+.autosuggest {
+  position: relative;
+  width: 100%;
+
+  .input {
+    padding: $space-xs $space-xs;
+    background-color: $color-basic-100;
+    font-weight: 600;
+    font-size: 1.13rem;
+    // color: $color-basic-600;
+    width: 100%;
+    border: 1px solid $color-basic-400;
+    border-radius: $space-xxs $space-xxs;
+
+    &::placeholder {
+      color: $color-basic-600;
+    }
+  }
+
+  .selectOpen {
+    border-radius: $space-xxs $space-xxs 0 0;
+    border-bottom: 1px solid $color-inst-primary-700;
+  }
+
+  .option {
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .options {
+    width: 100%;
+    border-radius: 0 0 $space-xxs $space-xxs;
+    padding: $space-xs $space-xxxs ;
+    background-color: $color-basic-100;
+    z-index: 0;
+    border: 1px solid $color-basic-400;
+  }
+}

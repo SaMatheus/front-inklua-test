@@ -1,12 +1,6 @@
 import { axios } from 'app/_lib/axios'
+import { ParamsProps } from '../_types/filter';
 
-interface ParamsProps {
-  page: number
-  search: string
-  city: string // separado por ; ex: 'São Paulo;Rio de Janeiro'
-  workModel: string // separado por ; ex: 'remote;local'
-  salary: number
-}
 
 const getApiData = async (params?: ParamsProps) => {
   const response = await axios.get('/test-search', { params })

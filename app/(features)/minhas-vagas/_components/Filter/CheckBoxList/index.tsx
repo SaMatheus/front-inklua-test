@@ -14,6 +14,7 @@ interface CheckBoxListProps {
   viewQnt?: number;
   showMoreBtn?:boolean;
   isMobile?:boolean;
+  onFilter?: () => void;
 }
 
 const CheckBoxList = ({
@@ -21,7 +22,8 @@ const CheckBoxList = ({
     keyFilter,
     viewQnt = 5,
     showMoreBtn = false,
-    isMobile = false
+    isMobile = false,
+    onFilter
   }: CheckBoxListProps) => {
     const [showMore, setShowMore] = useState<boolean>(true);
     const [openModal, setOpenModal] = useState<boolean>(false);
@@ -101,6 +103,7 @@ const CheckBoxList = ({
           onClose={() => setOpenModal(!openModal)}
           onChange={onCheck}
           keyFilter={keyFilter}
+          onFilter={onFilter}
         />
       }
     </div>

@@ -1,6 +1,7 @@
 import { Chip, Icon, Paragraph } from '@Inklua/components-library'
 import { useEffect, useState } from 'react';
 import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
+import { useMobileStore } from 'app/(features)/minhas-vagas/_store/MobileStore';
 import { FilterDataProps } from 'app/(features)/minhas-vagas/_types/filter';
 import styles from './styles.module.scss'
 
@@ -19,6 +20,7 @@ const ChipBox = () => {
     setWorkModelFilter,
     setSalaryFilter
   } = useFilterStore();
+  const { isMobile } = useMobileStore()
 
   const handleRemoveCheckFilter = (item: FilterDataProps | string) => {
     if (typeof item === 'string') return
@@ -37,10 +39,11 @@ const ChipBox = () => {
   };
 
   useEffect(() => {
-    const data: (FilterDataProps | string)[] = [...cityFilter, ...workModelFilter, ...salaryFilter];
-    const addInputToData = (input: string) => {
-      if (input.trim() !== '') {
-        data.push(input);
+    const data = [...cityFilter, ...workModelFilter, ...salaryFilter];
+    const addInputToData = (input: { label: string } | string) => {
+      const inputValue = typeof input === 'string' ? input : input.label;
+      if (inputValue.trim() !== '') {
+        data.push(input as FilterDataProps);
       }
     };
 
@@ -50,7 +53,8 @@ const ChipBox = () => {
     setFiltersData(data);
   }, [positionInput, cityInput, cityFilter, workModelFilter, salaryFilter])
 
-  const displayedChips = showAll ? filtersData : filtersData?.slice(0, 4)
+  const showChipQnt = isMobile ? 2 : 3
+  const displayedChips = showAll ? filtersData : filtersData?.slice(0, showChipQnt)
 
   return (
     <div className={styles.chipBox}>
@@ -65,11 +69,11 @@ const ChipBox = () => {
           onClick={() => removeChipObj(item)}
         />
       ))}
-      {filtersData?.length > 4 && (
+      {filtersData?.length > showChipQnt && (
         <Chip
           key="more"
           icon={<Icon name={showAll ? 'icon-minus-outline' : 'icon-plus'} size='small'/>}
-          text={showAll ? `Esconder (${filtersData?.length - 4})` : `Mostrar (${filtersData?.length - 4})`}
+          text={showAll ? `Esconder (${filtersData?.length - showChipQnt})` : `Mostrar (${filtersData?.length - showChipQnt})`}
           palette='business'
           onClick={() => setShowAll(!showAll)}
         />

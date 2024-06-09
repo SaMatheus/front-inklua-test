@@ -1,5 +1,6 @@
 import { Input } from '@Inklua/components-library';
 import { useState } from 'react';
+import instaDataFilter from 'app/(features)/minhas-vagas/_utils/instaDataFilter';
 import styles from './styles.module.scss';
 import { FilterDataProps, KeyEnum } from '../../../../../_types/filter';
 import ModalGroup from '../ModalGroup';
@@ -17,14 +18,8 @@ const ModalContent = ({
   }: ModalContentProps) => {
   const [inputValue, setInputValue] = useState<string>('');
 
-  const removeAccents = (str: string) => {
-    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  }
-
   const filterItems = Object.entries(data).reduce<{ [key: string]: FilterDataProps[] }>((acc, [letter, items]) => {
-    const filteredItems = items.filter(
-      (item) => removeAccents(item.label.toLowerCase()).includes(removeAccents(inputValue.toLowerCase()))
-    );
+    const filteredItems = instaDataFilter(items, inputValue)
     if (filteredItems.length) acc[letter] = filteredItems;
     return acc;
   }, {});

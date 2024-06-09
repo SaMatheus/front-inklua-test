@@ -1,5 +1,5 @@
 import { Modal } from '@Inklua/components-library';
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
 import ModalContent from './ModalContent';
 import ModalHeader from './ModalHeader';
@@ -15,6 +15,7 @@ interface FilterModalProps {
   keyFilter: KeyEnum
   onClose: () => void;
   onChange: (key: KeyEnum, item: FilterDataProps) => void;
+  onFilter?: () => void;
 }
 
 const groupData = (data: FilterDataProps[]): GroupedData => {
@@ -26,17 +27,26 @@ const groupData = (data: FilterDataProps[]): GroupedData => {
   }, {});
 };
 
-const FilterModal = ({ title, isOpen, keyFilter, onClose, onChange }: FilterModalProps) => {
+const FilterModal = ({ title, isOpen, keyFilter, onClose, onChange, onFilter }: FilterModalProps) => {
   const { filters } = useFilterStore();
+  const [closeModal, setCloseModal] = useState<boolean>(false);
+
+  const handleClickFilter = () => {
+    setCloseModal(true);
+    return !!onFilter && onFilter();
+  }
 
   const data = filters[keyFilter];
 
   const sortedData = useMemo(() => data.sort((a, b) => a.label.localeCompare(b.label)), [data]);
   const groupedData = useMemo(() => groupData(sortedData), [sortedData]);
-  
 
-  return isOpen && (
-    <Modal closeModal={onClose}>
+  useEffect(() => {
+    closeModal && setCloseModal(false);
+  }, []);
+
+  return !closeModal && isOpen && (
+    <Modal closeModal={() => onClose}>
       <div className={styles.wrapper}>
         <ModalHeader title={title} onClose={onClose} />
         <ModalContent
@@ -44,7 +54,7 @@ const FilterModal = ({ title, isOpen, keyFilter, onClose, onChange }: FilterModa
           handleCheckChange={onChange}
           keyFilter={keyFilter}
         />
-        <ButtonBox onClick={onClose} isModal />
+        <ButtonBox onFilter={() => handleClickFilter()} onClickSecondaryBtn={onClose} isModal />
       </div>
     </Modal>
   );

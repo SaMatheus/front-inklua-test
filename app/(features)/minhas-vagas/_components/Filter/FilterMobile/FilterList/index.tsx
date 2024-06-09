@@ -1,6 +1,8 @@
-import { Accordion, Heading, Icon, IconButton, Input, Select } from '@Inklua/components-library';
+import { Accordion, Heading, Icon, Input, Select } from '@Inklua/components-library';
 import { useEffect, useState } from 'react';
 import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
+import { FilterDataProps } from 'app/(features)/minhas-vagas/_types/filter';
+import Autosuggest from './Autosuggest';
 import styles from './styles.module.scss';
 import CheckBoxList from '../../CheckBoxList';
 
@@ -11,10 +13,10 @@ interface parsedSalary {
 
 interface FilterListProps {
   setPositionData: (data: string) => void;
-  setCityData: (data: string) => void;
+  onOptionSelect: (options: FilterDataProps | undefined) => void;
 }
 
-const FilterList = ({ setPositionData, setCityData }: FilterListProps) => {
+const FilterList = ({ setPositionData, onOptionSelect }: FilterListProps) => {
   const {
     filters,
     salaryFilter,
@@ -50,10 +52,9 @@ const FilterList = ({ setPositionData, setCityData }: FilterListProps) => {
         expandIcon={<Icon name='icon-arrow-ios-downward' />}
         title={<Heading tag='h6'>Local</Heading>}
       >
-        <Input
-          name='input'
-          placeholder='Digite a cidade ou estado que procura'
-          onChange={({ target }) => setCityData(target.value)}
+        <Autosuggest
+          options={filters.city}
+          onOptionSelect={onOptionSelect}
         />
       </Accordion>
       <Accordion
