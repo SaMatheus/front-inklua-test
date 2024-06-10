@@ -1,22 +1,21 @@
-// Autosuggest.tsx
 import { ChangeEvent, useEffect, useState } from 'react';
 import { FilterDataProps } from 'app/(features)/minhas-vagas/_types/filter';
 import instaDataFilter from 'app/(features)/minhas-vagas/_utils/instaDataFilter';
 import styles from './styles.module.scss';
+import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
 
 interface AutosuggestProps {
   options: FilterDataProps[];
-  setCityData: (options: FilterDataProps | undefined) => void;
 }
 
-const Autosuggest = ({ options: data, setCityData }: AutosuggestProps) => {
+const Autosuggest = ({ options: data }: AutosuggestProps) => {
   const [selectedOption, setSelectedOption] = useState<FilterDataProps['label']>();
   const [options, setOptions] = useState<FilterDataProps[]>();
   const [inputValue, setInputValue] = useState('');
   const [isOpen, setIsOpen] = useState<boolean>();
+  const { cityFilter, setCityFilter } = useFilterStore();
 
   const handleInputChange = ({ target }:  ChangeEvent<HTMLInputElement>) => {
-    setSelectedOption('');
     setInputValue(target.value);
     const filterCityOptions = instaDataFilter(data, target.value)
     setOptions(filterCityOptions);
@@ -24,7 +23,7 @@ const Autosuggest = ({ options: data, setCityData }: AutosuggestProps) => {
 
   const handleOptionClick = (option: FilterDataProps) => {
     setSelectedOption(option.label);
-    setCityData(option);
+    setCityFilter(option, true);
     setIsOpen(false)
   };
 

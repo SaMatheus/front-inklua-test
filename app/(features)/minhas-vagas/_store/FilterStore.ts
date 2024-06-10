@@ -5,7 +5,7 @@ interface FilterStore {
   filters: Filters;
   setFilters: (filters: Filters) => void;
   cityFilter: FilterDataProps[],
-  setCityFilter: (city: FilterDataProps) => void,
+  setCityFilter: (city: FilterDataProps, replace?: boolean) => void,
   workModelFilter: FilterDataProps[],
   setWorkModelFilter: (workModel: FilterDataProps) => void,
   salaryFilter: FilterDataProps[],
@@ -28,10 +28,16 @@ export const useFilterStore = create<FilterStore>((set) => ({
   cityInput: '',
   setCityInput: (search) => set({ cityInput: search }),
   cityFilter: [],
-  setCityFilter: (city) => set((state) => {
+  setCityFilter: (city, replace = false) => set((state) => {
     const exists = state.cityFilter.some((item) => item.value === city.value);
     const updatedCityFilter = state.cityFilter.filter((item) => item.value !== city.value);
-  
+
+    if (replace) {
+      return {
+        cityFilter: [city]
+      };
+    }
+
     return {
       cityFilter: exists ? updatedCityFilter : [...updatedCityFilter, city]
     };

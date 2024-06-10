@@ -1,7 +1,7 @@
 import { Accordion, Heading, Icon, Input, Select } from '@Inklua/components-library';
 import { useEffect, useState } from 'react';
 import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
-import { FilterDataProps, KeyEnum } from 'app/(features)/minhas-vagas/_types/filter';
+import { KeyEnum } from 'app/(features)/minhas-vagas/_types/filter';
 import Autosuggest from './Autosuggest';
 import styles from './styles.module.scss';
 import CheckBoxList from '../../CheckBoxList';
@@ -11,20 +11,16 @@ interface parsedSalary {
   value: string | number;
 }
 
-interface FilterListProps {
-  positionData?: string;
-  setPositionData: (data: string) => void;
-  setCityData: (options: FilterDataProps | undefined) => void;
-}
-
-const FilterList = ({ positionData, setPositionData, setCityData }: FilterListProps) => {
+const FilterList = () => {
   const {
     filters,
     salaryFilter,
-    setSalaryFilter
+    setSalaryFilter,
+    setPositionInput
   } = useFilterStore();
   const [salaryData, setSalaryData] = useState<parsedSalary[]>()
   const [selected, setSelected] = useState<string | number>('' as string | number)
+  const [positionData, setPositionData] = useState<string>()
 
   const handleSalarySelect = (salary: { label: string, value: number | string }) => {
     const salarySelected = filters.salary.find(item => item.value === salary.value)
@@ -47,16 +43,15 @@ const FilterList = ({ positionData, setPositionData, setCityData }: FilterListPr
           name='input'
           placeholder='Digite o cargo/função que deseja'
           onChange={({ target }) => setPositionData(target.value)}
+          value={positionData}
+          onBlur={() => positionData && setPositionInput(positionData)}
         />
       </Accordion>
       <Accordion
         expandIcon={<Icon name='icon-arrow-ios-downward' />}
         title={<Heading tag='h6'>Local</Heading>}
       >
-        <Autosuggest
-          options={filters.city}
-          setCityData={setCityData}
-        />
+        <Autosuggest options={filters.city} />
       </Accordion>
       <Accordion
         expandIcon={<Icon name='icon-arrow-ios-downward' />}

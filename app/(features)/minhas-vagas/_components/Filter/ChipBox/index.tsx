@@ -21,7 +21,6 @@ const ChipBox = () => {
     cityInput,
     setFetchData,
     setPositionInput,
-    setCityInput,
     setCityFilter,
     setWorkModelFilter,
     removeSalaryFilter
@@ -50,19 +49,15 @@ const ChipBox = () => {
 
   const removeChipObj = (chipData: FilterDataProps) => {
     const hasDataInFilter = (store: FilterDataProps[] ) => store.find((item) => item.value === chipData.value)
-  
     if (hasDataInFilter(cityFilter)) setCityFilter(chipData)
     if (hasDataInFilter(workModelFilter)) setWorkModelFilter(chipData)
     if (hasDataInFilter(salaryFilter)) removeSalaryFilter()
-    else setCityInput('')
-
-    const removeObj = filtersData.filter((item) => typeof item !== 'string' && item.label !== chipData.label)
-    return setFiltersData(removeObj)
   }
 
   const removeChip = (chipData: FilterDataProps | string) => {
     if (typeof chipData === 'string') removeChipStr(chipData)
     if (typeof chipData !== 'string') removeChipObj(chipData)
+
     return mutation.mutate()
   };
 
@@ -71,31 +66,31 @@ const ChipBox = () => {
     setFiltersData(fetchedData)
   }, [fetchData])
 
-  const showChipQnt = isMobile ? 3 : 4
+  const showChipQnt = isMobile ? 10 : 4
   const displayedChips = showAll ? filtersData : filtersData?.slice(0, showChipQnt)
 
   return !!(filtersData?.length > 0) && (
     <div className={styles.chipBox}>
       <Paragraph weight={600}>Filtros ativos:</Paragraph>
       <div className={styles.chipList}>
-      {displayedChips?.map((item: FilterDataProps | string, index) => (
-        <Chip
-          key={index}
-          icon={<Icon name='icon-close' size='small'/>}
-          text={(typeof item !== 'string') ? item.label : item}
-          palette='business'
-          onClick={() => removeChip(item)}
-        />
-      ))}
-      {filtersData?.length > showChipQnt && (
-        <Chip
-          key="more"
-          icon={<Icon name={showAll ? 'icon-minus-outline' : 'icon-plus'} size='small'/>}
-          text={showAll ? `Esconder (${filtersData?.length - showChipQnt})` : `Mostrar (${filtersData?.length - showChipQnt})`}
-          palette='business'
-          onClick={() => setShowAll(!showAll)}
-        />
-      )}
+        {displayedChips?.map((item: FilterDataProps | string, index) => (
+          <Chip
+            key={index}
+            icon={<Icon name='icon-close' size='small'/>}
+            text={(typeof item !== 'string') ? item.label : item}
+            palette='business'
+            onClick={() => removeChip(item)}
+          />
+        ))}
+        {filtersData?.length > showChipQnt && (
+          <Chip
+            key="more"
+            icon={<Icon name={showAll ? 'icon-minus-outline' : 'icon-plus'} size='small'/>}
+            text={showAll ? `Esconder (${filtersData?.length - showChipQnt})` : `Mostrar (${filtersData?.length - showChipQnt})`}
+            palette='business'
+            onClick={() => setShowAll(!showAll)}
+          />
+        )}
       </div>
     </div>
   )

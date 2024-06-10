@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react'
 import getApiData from 'app/(features)/minhas-vagas/_providers/getApiData'
 import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore'
 import { useJobsStore } from 'app/(features)/minhas-vagas/_store/JobsStore'
-import { FilterDataProps } from 'app/(features)/minhas-vagas/_types/filter'
 import paramsBuilder from 'app/(features)/minhas-vagas/_utils/buildingFetchParams'
 import ButtonBox from './ButtonBox'
 import FilterList from './FilterList'
@@ -14,18 +13,16 @@ import ChipBox from '../ChipBox'
 
 const FilterMobile = () => {
   const [openFilter, setOpenFilter] = useState(false)
+  const [cityData, setCityData] = useState<string>()
   const [showChips, setShowChips] = useState<boolean>(false)
-  const [positionData, setPositionData] = useState<string>()
-  const [cityData, setCityData] = useState<FilterDataProps>()
   const { setJobs } = useJobsStore()
   const {
-    setFetchData,
     workModelFilter,
     salaryFilter,
-    cityInput,
-    setFilters,
-    setPositionInput,
-    setCityInput,
+    cityFilter,
+    positionInput,
+    setFetchData,
+    setFilters
   } = useFilterStore();
 
   const query = useQuery({
@@ -33,7 +30,7 @@ const FilterMobile = () => {
     queryFn: () => getApiData()
   })
 
-  const params = paramsBuilder(positionData, cityInput, workModelFilter, salaryFilter)
+  const params = paramsBuilder(positionInput, (cityFilter && String(cityFilter[0]?.value)), workModelFilter, salaryFilter)
 
   const mutation = useMutation({
     mutationFn: () => getApiData(params),
@@ -49,8 +46,6 @@ const FilterMobile = () => {
   });
 
   const handleClickFilter = () => {
-    !!positionData && setPositionInput(positionData)
-    !!cityData && setCityInput(String(cityData.value))
     mutation.mutate()
     return setOpenFilter(false)
   }
@@ -64,11 +59,7 @@ const FilterMobile = () => {
   const openedContent = () => (
     <>
       <Header onClick={() => setOpenFilter(false)} />
-      <FilterList
-        positionData={positionData || ''}
-        setPositionData={setPositionData}
-        setCityData={setCityData}
-      />
+      <FilterList />
       <ButtonBox onFilter={() => handleClickFilter()} onCancelFilter={() => setOpenFilter(false)} />
     </>
   )
