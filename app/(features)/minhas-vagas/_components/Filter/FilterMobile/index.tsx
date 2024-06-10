@@ -10,7 +10,6 @@ import FilterList from './FilterList'
 import Header from './Header'
 import styles from './styles.module.scss'
 import ChipBox from '../ChipBox'
-import LoadingPage from '../../Loading'
 
 const FilterMobile = () => {
   const [openFilter, setOpenFilter] = useState(false)
@@ -54,7 +53,6 @@ const FilterMobile = () => {
 
   return (
     <div className={openFilter ? styles.wrapperOpened : styles.wrapperClosed}>
-      {mutation.isPending && <LoadingPage />}
       {openFilter && openedContent()}
       {!openFilter && (
         <>

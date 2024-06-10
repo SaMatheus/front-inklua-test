@@ -10,6 +10,7 @@ export type PaginationData = {
   total: number,
   pages: number,
   current: number,
+  jobsByPage: number
 }
 
 export interface FilterDataProps {

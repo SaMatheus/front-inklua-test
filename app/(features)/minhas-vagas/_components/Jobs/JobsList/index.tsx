@@ -7,7 +7,7 @@ const JobList = () => {
   const { jobs } = useJobsStore();
   const { pagination } = PaginationStore();
 
-  return jobs && jobs?.slice(pagination.pages)?.map((job: JobsProps) => <JobBox data={job} />)
+  return jobs && jobs?.slice(0, pagination.jobsByPage)?.map((job: JobsProps) => <JobBox data={job} />)
 }
 
 export default JobList;

@@ -13,15 +13,17 @@ const Autosuggest = ({ options: data }: AutosuggestProps) => {
   const [options, setOptions] = useState<FilterDataProps[]>();
   const [inputValue, setInputValue] = useState('');
   const [isOpen, setIsOpen] = useState<boolean>();
-  const { cityFilter, setCityFilter } = useFilterStore();
+  const { setCityFilter } = useFilterStore();
 
   const handleInputChange = ({ target }:  ChangeEvent<HTMLInputElement>) => {
+    setSelectedOption('');
     setInputValue(target.value);
     const filterCityOptions = instaDataFilter(data, target.value)
     setOptions(filterCityOptions);
   };
 
   const handleOptionClick = (option: FilterDataProps) => {
+    setInputValue('')
     setSelectedOption(option.label);
     setCityFilter(option, true);
     setIsOpen(false)
@@ -38,7 +40,7 @@ const Autosuggest = ({ options: data }: AutosuggestProps) => {
         className={`${styles.input} ${isOpen && styles.selectOpen}` }
         onChange={handleInputChange}
         placeholder={'Digite a cidade ou estado que procura'}
-        value={selectedOption || inputValue}
+        value={inputValue || selectedOption}
       />
       {isOpen && (
         <div className={styles.options}>

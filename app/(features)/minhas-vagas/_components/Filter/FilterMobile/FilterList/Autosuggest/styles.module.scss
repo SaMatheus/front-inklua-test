@@ -9,7 +9,6 @@
     background-color: $color-basic-100;
     font-weight: 600;
     font-size: 1.13rem;
-    // color: $color-basic-600;
     width: 100%;
     border: 1px solid $color-basic-400;
     border-radius: $space-xxs $space-xxs;
@@ -24,11 +23,6 @@
     border-bottom: 1px solid $color-inst-primary-700;
   }
 
-  .option {
-    padding: 10px;
-    cursor: pointer;
-  }
-
   .options {
     width: 100%;
     border-radius: 0 0 $space-xxs $space-xxs;
@@ -36,5 +30,28 @@
     background-color: $color-basic-100;
     z-index: 0;
     border: 1px solid $color-basic-400;
+    overflow-x: hidden;
+    max-height: 12rem;
+
+    .option {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    /* Estilização da barra de rolagem */
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background: white;
+      border-radius: 12px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $color-basic-500; 
+      border-radius: 12px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: $color-basic-600; 
+    }
   }
 }

@@ -10,8 +10,6 @@ import styles from './styles.module.scss'
 import { useFilterStore } from '../../../_store/FilterStore';
 import CheckBoxList from '../CheckBoxList'
 import ChipBox from '../ChipBox';
-import FilterSkeleton from '../FilterSkeleton';
-import LoadingPage from '../../Loading';
 
 const FilterWeb = () => {
   const [showChips, setShowChips] = useState(false)
@@ -42,20 +40,17 @@ const FilterWeb = () => {
   });
 
   return (
-    <>
-      {mutation.isPending && <LoadingPage />}
-      <div className={styles.wrapper}>
-        {showChips && <ChipBox />}
-        <Search
-          label='Cargo/função'
-          placeholder='Digite o cargo/função que deseja'
-        />
-        <CheckBoxList title='Local' keyFilter='city' multiCheck showMoreBtn onFilter={() => mutation.mutate()} />
-        <CheckBoxList title='Modelo de trabalho' keyFilter='workModel' multiCheck />
-        <CheckBoxList title='Pretensão salarial' keyFilter='salary' viewQnt={filters.salary?.length} />
-        <ButtonBox onFilter={() => mutation.mutate()} onClickSecondaryBtn={clearFilters} />
-      </div> 
-    </>
+    <div className={styles.wrapper}>
+      {showChips && <ChipBox />}
+      <Search
+        label='Cargo/função'
+        placeholder='Digite o cargo/função que deseja'
+      />
+      <CheckBoxList title='Local' keyFilter='city' multiCheck showMoreBtn onFilter={() => mutation.mutate()} />
+      <CheckBoxList title='Modelo de trabalho' keyFilter='workModel' multiCheck />
+      <CheckBoxList title='Pretensão salarial' keyFilter='salary' viewQnt={filters.salary?.length} />
+      <ButtonBox onFilter={() => mutation.mutate()} onClickSecondaryBtn={clearFilters} />
+    </div> 
   )
 }
 

@@ -1,11 +1,12 @@
 'use client'
 import { Heading, Paragraph, Span, Title } from '@Inklua/components-library';
-import { useJobsStore } from 'app/(features)/minhas-vagas/_store/JobsStore';
 import { useMobileStore } from 'app/(features)/minhas-vagas/_store/MobileStore';
+import { PaginationStore } from 'app/(features)/minhas-vagas/_store/PaginationStore';
 
 const PageTitle = () => {
   const { isMobile } = useMobileStore();
-  const { jobs } = useJobsStore();	
+  const { pagination } = PaginationStore();
+
   return (
     <Title>
         <Heading tag='h1'>
@@ -20,7 +21,7 @@ const PageTitle = () => {
         <Paragraph
           weight={400}
         >
-          {jobs.length} vagas encontradas
+          {pagination.total} vagas encontradas
         </Paragraph>
       </Title>
   )
