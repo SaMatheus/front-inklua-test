@@ -18,6 +18,7 @@ const ChipBox = () => {
     salaryFilter,
     positionInput,
     fetchData,
+    cityInput,
     setFetchData,
     setPositionInput,
     setCityInput,
@@ -28,7 +29,7 @@ const ChipBox = () => {
   const { isMobile } = useMobileStore()
   const { setJobs } = useJobsStore()
 
-  const params = paramsBuilder(positionInput, cityFilter, workModelFilter, salaryFilter)
+  const params = paramsBuilder(positionInput, (cityInput || cityFilter), workModelFilter, salaryFilter)
 
   const mutation = useMutation({
     mutationFn: () => getApiData(params),
@@ -42,9 +43,9 @@ const ChipBox = () => {
   });
 
   const removeChipStr = (str: string) => {
-    str === positionInput ? setPositionInput('') : setCityInput('')
     const removeStr = filtersData.filter((item) => item !== str)
-    setFiltersData(removeStr)
+    setPositionInput('')
+    return setFiltersData(removeStr)
   }
 
   const removeChipObj = (chipData: FilterDataProps) => {
@@ -53,6 +54,7 @@ const ChipBox = () => {
     if (hasDataInFilter(cityFilter)) setCityFilter(chipData)
     if (hasDataInFilter(workModelFilter)) setWorkModelFilter(chipData)
     if (hasDataInFilter(salaryFilter)) removeSalaryFilter()
+    else setCityInput('')
 
     const removeObj = filtersData.filter((item) => typeof item !== 'string' && item.label !== chipData.label)
     return setFiltersData(removeObj)
@@ -69,7 +71,7 @@ const ChipBox = () => {
     setFiltersData(fetchedData)
   }, [fetchData])
 
-  const showChipQnt = isMobile ? 2 : 3
+  const showChipQnt = isMobile ? 3 : 4
   const displayedChips = showAll ? filtersData : filtersData?.slice(0, showChipQnt)
 
   return !!(filtersData?.length > 0) && (

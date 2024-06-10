@@ -6,25 +6,25 @@ import styles from './styles.module.scss';
 
 interface AutosuggestProps {
   options: FilterDataProps[];
-  onOptionSelect: (options: FilterDataProps | undefined) => void;
+  setCityData: (options: FilterDataProps | undefined) => void;
 }
 
-const Autosuggest = ({ options, onOptionSelect }: AutosuggestProps) => {
+const Autosuggest = ({ options: data, setCityData }: AutosuggestProps) => {
   const [selectedOption, setSelectedOption] = useState<FilterDataProps['label']>();
-  const [selectOptions, setSelectOptions] = useState<FilterDataProps[]>();
+  const [options, setOptions] = useState<FilterDataProps[]>();
   const [inputValue, setInputValue] = useState('');
   const [isOpen, setIsOpen] = useState<boolean>();
 
   const handleInputChange = ({ target }:  ChangeEvent<HTMLInputElement>) => {
     setSelectedOption('');
     setInputValue(target.value);
-    const filterCityOptions = instaDataFilter(options, target.value)
-    setSelectOptions(filterCityOptions);
+    const filterCityOptions = instaDataFilter(data, target.value)
+    setOptions(filterCityOptions);
   };
 
   const handleOptionClick = (option: FilterDataProps) => {
     setSelectedOption(option.label);
-    onOptionSelect(option);
+    setCityData(option);
     setIsOpen(false)
   };
 
@@ -43,7 +43,7 @@ const Autosuggest = ({ options, onOptionSelect }: AutosuggestProps) => {
       />
       {isOpen && (
         <div className={styles.options}>
-          {selectOptions && selectOptions.map((option, index) => (
+          {options && options.map((option, index) => (
             <div key={index} onClick={() => handleOptionClick(option)} className={styles.option}>
               <p>{option.label}</p>
             </div>

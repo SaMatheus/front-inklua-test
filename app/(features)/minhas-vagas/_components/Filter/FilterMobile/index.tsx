@@ -14,17 +14,18 @@ import ChipBox from '../ChipBox'
 
 const FilterMobile = () => {
   const [openFilter, setOpenFilter] = useState(false)
+  const [showChips, setShowChips] = useState<boolean>(false)
   const [positionData, setPositionData] = useState<string>()
   const [cityData, setCityData] = useState<FilterDataProps>()
   const { setJobs } = useJobsStore()
   const {
-    cityFilter,
+    setFetchData,
     workModelFilter,
     salaryFilter,
     cityInput,
     setFilters,
     setPositionInput,
-    setCityInput
+    setCityInput,
   } = useFilterStore();
 
   const query = useQuery({
@@ -34,14 +35,17 @@ const FilterMobile = () => {
 
   const params = paramsBuilder(positionData, cityInput, workModelFilter, salaryFilter)
 
-  console.log(params)
-
   const mutation = useMutation({
     mutationFn: () => getApiData(params),
     onSuccess: (data) => {
-      setFilters(data.filters);
+      setShowChips(true)
+      setFetchData(data.filters);
       setJobs(data.jobs)
     },
+    onError: (error) => {
+      setShowChips(false)
+      console.log(error)
+    }
   });
 
   const handleClickFilter = () => {
@@ -61,14 +65,13 @@ const FilterMobile = () => {
     <>
       <Header onClick={() => setOpenFilter(false)} />
       <FilterList
+        positionData={positionData || ''}
         setPositionData={setPositionData}
-        onOptionSelect={setCityData}
+        setCityData={setCityData}
       />
       <ButtonBox onFilter={() => handleClickFilter()} onCancelFilter={() => setOpenFilter(false)} />
     </>
   )
-
-  const renderChipValidation = !!cityFilter.length || !!workModelFilter.length || !!salaryFilter.length
 
   return (
     <div className={openFilter ? styles.wrapperOpened : styles.wrapperClosed}>
@@ -83,7 +86,7 @@ const FilterMobile = () => {
           >
             Filtrar Resultados
           </Button>
-          {renderChipValidation && <ChipBox />}
+          {showChips && <ChipBox />}
         </>
       )}
     </div>

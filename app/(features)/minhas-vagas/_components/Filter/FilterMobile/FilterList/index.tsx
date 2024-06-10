@@ -1,7 +1,7 @@
 import { Accordion, Heading, Icon, Input, Select } from '@Inklua/components-library';
 import { useEffect, useState } from 'react';
 import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
-import { FilterDataProps } from 'app/(features)/minhas-vagas/_types/filter';
+import { FilterDataProps, KeyEnum } from 'app/(features)/minhas-vagas/_types/filter';
 import Autosuggest from './Autosuggest';
 import styles from './styles.module.scss';
 import CheckBoxList from '../../CheckBoxList';
@@ -12,11 +12,12 @@ interface parsedSalary {
 }
 
 interface FilterListProps {
+  positionData?: string;
   setPositionData: (data: string) => void;
-  onOptionSelect: (options: FilterDataProps | undefined) => void;
+  setCityData: (options: FilterDataProps | undefined) => void;
 }
 
-const FilterList = ({ setPositionData, onOptionSelect }: FilterListProps) => {
+const FilterList = ({ positionData, setPositionData, setCityData }: FilterListProps) => {
   const {
     filters,
     salaryFilter,
@@ -54,14 +55,14 @@ const FilterList = ({ setPositionData, onOptionSelect }: FilterListProps) => {
       >
         <Autosuggest
           options={filters.city}
-          onOptionSelect={onOptionSelect}
+          setCityData={setCityData}
         />
       </Accordion>
       <Accordion
         expandIcon={<Icon name='icon-arrow-ios-downward' />}
         title={<Heading tag='h6'>Modelo de trabalho</Heading>}
       >
-        <CheckBoxList title='Modelo de trabalho' keyFilter='workModel' isMobile multiCheck />
+        <CheckBoxList title='Modelo de trabalho' keyFilter={KeyEnum.workModel} isMobile />
       </Accordion>
       <Accordion
         expandIcon={<Icon name='icon-arrow-ios-downward' />}

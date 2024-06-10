@@ -48,7 +48,7 @@ export const useFilterStore = create<FilterStore>((set) => ({
   salaryFilter: [],
   setSalaryFilter: (salary) => set({ salaryFilter: [salary] }),
   removeSalaryFilter: () => set({ salaryFilter: [] }),
-  clearFilters: () => set({ cityFilter: [], workModelFilter: [], salaryFilter: [] }),
+  clearFilters: () => set({ cityFilter: [], workModelFilter: [], salaryFilter: [], positionInput: '', cityInput: ''}),
   fetchData: {} as Filters,
   setFetchData: (fetchData) => set({ fetchData })
 }));
