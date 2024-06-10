@@ -1,4 +1,4 @@
-import { FilterDataProps, ParamsProps } from '../_types/filter';
+import { FilterDataProps, ParamsProps } from '../_types';
 
 const paramsBuilder = (
     search?: string,

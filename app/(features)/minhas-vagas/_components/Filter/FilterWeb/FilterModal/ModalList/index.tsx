@@ -2,7 +2,7 @@ import { CheckboxCell } from '@Inklua/components-library';
 import React from 'react';
 import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
 import styles from './styles.module.scss';
-import { FilterDataProps, KeyEnum } from '../../../../../_types/filter';
+import { FilterDataProps, KeyEnum } from '../../../../../_types';
 
 interface ModalList {
   items: FilterDataProps[];

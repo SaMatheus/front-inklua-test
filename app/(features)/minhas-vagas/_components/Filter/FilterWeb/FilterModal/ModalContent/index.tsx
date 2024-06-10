@@ -2,7 +2,7 @@ import { Input } from '@Inklua/components-library';
 import { useState } from 'react';
 import instaDataFilter from 'app/(features)/minhas-vagas/_utils/instaDataFilter';
 import styles from './styles.module.scss';
-import { FilterDataProps, KeyEnum } from '../../../../../_types/filter';
+import { FilterDataProps, KeyEnum } from '../../../../../_types';
 import ModalGroup from '../ModalGroup';
 
 interface ModalContentProps {

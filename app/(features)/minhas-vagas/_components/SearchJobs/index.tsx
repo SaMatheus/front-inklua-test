@@ -7,24 +7,48 @@ import { useMobileStore } from '../../_store/MobileStore'
 import Filter from '../Filter'
 import Jobs from '../Jobs'
 import Loading from '../Loading'
+import { useJobsStore } from '../../_store/JobsStore'
+import { useEffect } from 'react'
+import { useFilterStore } from '../../_store/FilterStore'
+import { Pagination } from '@Inklua/components-library'
+import { PaginationStore } from '../../_store/PaginationStore'
 
 const SearchJobs = () => {
   const { isMobile } = useMobileStore();
-  const { data, isPending } = useQuery({
-    queryKey: ['filter'],
+  const { setJobs } = useJobsStore();
+  const { setFilters } = useFilterStore();
+  const { pagination, setPagination, onPageChange } = PaginationStore();
+
+  const { isPending, error, data } = useQuery({
+    queryKey: ['data'],
     queryFn: () => getApiData()
   });
+
+  useEffect(() => {
+    if (!isPending && !error && data) {
+      setJobs(data.jobs)
+      setFilters(data.filters)
+      setPagination(data.pagination)
+    }
+  }, [isPending, data, error])
 
   return (
     <>
       {isPending && <Loading />}
-      {data && (
+      {!isPending && !error && data && (
         <div className={isMobile ? styles.wrapperMobile : styles.wrapper}>
           <PageTitle />
           <div className={styles.content}>
             <Filter />
             <Jobs />
           </div>
+          <Pagination
+            currentPage={pagination.current}
+            onPageChange={(clickedPage) => onPageChange(Number(clickedPage))}
+            pageSize={pagination.pages}
+            siblingCount={isMobile ? 0 : 1}
+            totalCount={pagination.total}
+          />
         </div>
       )}
     </>

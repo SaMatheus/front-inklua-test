@@ -1,6 +1,9 @@
+@use "/app/_styles/theme.scss" as *;
 @import '../styles.module.scss' ;
 
 .buttonBox {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   animation: fadeIn 1.2s ease;
 }

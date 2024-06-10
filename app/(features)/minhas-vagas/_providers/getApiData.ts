@@ -1,5 +1,5 @@
 import { axios } from 'app/_lib/axios'
-import { ParamsProps } from '../_types/filter';
+import { ParamsProps } from '../_types';
 
 
 const getApiData = async (params?: ParamsProps) => {

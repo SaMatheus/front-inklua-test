@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { FilterDataProps, Filters } from '../_types/filter';
+import { FilterDataProps, Filters } from '../_types';
 
 interface FilterStore {
   filters: Filters;
@@ -28,15 +28,9 @@ export const useFilterStore = create<FilterStore>((set) => ({
   cityInput: '',
   setCityInput: (search) => set({ cityInput: search }),
   cityFilter: [],
-  setCityFilter: (city, replace = false) => set((state) => {
+  setCityFilter: (city) => set((state) => {
     const exists = state.cityFilter.some((item) => item.value === city.value);
     const updatedCityFilter = state.cityFilter.filter((item) => item.value !== city.value);
-
-    if (replace) {
-      return {
-        cityFilter: [city]
-      };
-    }
 
     return {
       cityFilter: exists ? updatedCityFilter : [...updatedCityFilter, city]

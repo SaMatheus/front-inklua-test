@@ -1,5 +1,5 @@
 import { ChangeEvent, useEffect, useState } from 'react';
-import { FilterDataProps } from 'app/(features)/minhas-vagas/_types/filter';
+import { FilterDataProps } from 'app/(features)/minhas-vagas/_types';
 import instaDataFilter from 'app/(features)/minhas-vagas/_utils/instaDataFilter';
 import styles from './styles.module.scss';
 import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';

@@ -1,7 +1,7 @@
 import { Accordion, Heading, Icon, Input, Select } from '@Inklua/components-library';
 import { useEffect, useState } from 'react';
 import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
-import { KeyEnum } from 'app/(features)/minhas-vagas/_types/filter';
+import { KeyEnum } from 'app/(features)/minhas-vagas/_types';
 import Autosuggest from './Autosuggest';
 import styles from './styles.module.scss';
 import CheckBoxList from '../../CheckBoxList';

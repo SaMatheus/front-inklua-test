@@ -1,7 +1,7 @@
 import { Splitter } from '@Inklua/components-library';
 import React from 'react';
 import styles from './styles.module.scss';
-import { FilterDataProps, KeyEnum } from '../../../../../_types/filter';
+import { FilterDataProps, KeyEnum } from '../../../../../_types';
 import ModalList from '../ModalList';
 
 interface ModalGroupProps {

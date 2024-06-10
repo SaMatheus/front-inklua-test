@@ -21,7 +21,7 @@
 
 .wrapperOpened {
   @include flex-mobile;
-  padding: $space-xl $space-lg;
+  padding: $space-xl $space-lg $space-sm;
 }
 
 @keyframes fadeIn {

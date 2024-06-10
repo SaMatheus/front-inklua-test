@@ -4,7 +4,7 @@ import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
 import ModalContent from './ModalContent';
 import ModalHeader from './ModalHeader';
 import styles from './styles.module.scss';
-import { FilterDataProps, KeyEnum } from '../../../../_types/filter';
+import { FilterDataProps, KeyEnum } from '../../../../_types';
 import ButtonBox from '../ButtonBox';
 
 type GroupedData = { [key: string]: FilterDataProps[] };

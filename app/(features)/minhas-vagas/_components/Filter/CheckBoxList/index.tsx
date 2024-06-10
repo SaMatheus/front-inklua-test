@@ -2,7 +2,7 @@
 'use client'
 import { Button, CheckboxCell, Paragraph } from '@Inklua/components-library';
 import { useEffect, useMemo, useState } from 'react';
-import { FilterDataProps, KeyEnum } from 'app/(features)/minhas-vagas/_types/filter';
+import { FilterDataProps, KeyEnum } from 'app/(features)/minhas-vagas/_types';
 import styles from './styles.module.scss';
 import { useFilterStore } from '../../../_store/FilterStore';
 import FilterModal from '../FilterWeb/FilterModal';
@@ -35,7 +35,8 @@ const CheckBoxList = ({
       salaryFilter,
       setCityFilter,
       setWorkModelFilter,
-      setSalaryFilter
+      setSalaryFilter,
+      removeSalaryFilter
     } = useFilterStore();
 
   const data = filters[keyFilter];
@@ -43,7 +44,10 @@ const CheckBoxList = ({
   const filterCheckMachine = {
     city: (item: FilterDataProps) => setCityFilter(item),
     workModel: (item: FilterDataProps) => setWorkModelFilter(item),
-    salary: (item: FilterDataProps) => setSalaryFilter(item)
+    salary: (item: FilterDataProps) => {
+      if (salaryFilter.length && salaryFilter[0].value === item.value) return removeSalaryFilter()
+      setSalaryFilter(item)
+    }
   }
 
   const filterDataMachine = {

@@ -1,6 +1,6 @@
 import { Button, Icon } from '@Inklua/components-library'
-import { useMutation, useQuery } from '@tanstack/react-query'
-import { useEffect, useState } from 'react'
+import { useMutation } from '@tanstack/react-query'
+import { useState } from 'react'
 import getApiData from 'app/(features)/minhas-vagas/_providers/getApiData'
 import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore'
 import { useJobsStore } from 'app/(features)/minhas-vagas/_store/JobsStore'
@@ -10,10 +10,10 @@ import FilterList from './FilterList'
 import Header from './Header'
 import styles from './styles.module.scss'
 import ChipBox from '../ChipBox'
+import LoadingPage from '../../Loading'
 
 const FilterMobile = () => {
   const [openFilter, setOpenFilter] = useState(false)
-  const [cityData, setCityData] = useState<string>()
   const [showChips, setShowChips] = useState<boolean>(false)
   const { setJobs } = useJobsStore()
   const {
@@ -22,13 +22,7 @@ const FilterMobile = () => {
     cityFilter,
     positionInput,
     setFetchData,
-    setFilters
   } = useFilterStore();
-
-  const query = useQuery({
-    queryKey: ['filter'],
-    queryFn: () => getApiData()
-  })
 
   const params = paramsBuilder(positionInput, (cityFilter && String(cityFilter[0]?.value)), workModelFilter, salaryFilter)
 
@@ -50,12 +44,6 @@ const FilterMobile = () => {
     return setOpenFilter(false)
   }
 
-  useEffect(() => {
-    if (!query.isPending && !query.error && query.data) {
-      setFilters(query.data.filters)
-    }
-  }, [query.isPending, query.data, query.error, setFilters])
-
   const openedContent = () => (
     <>
       <Header onClick={() => setOpenFilter(false)} />
@@ -66,6 +54,7 @@ const FilterMobile = () => {
 
   return (
     <div className={openFilter ? styles.wrapperOpened : styles.wrapperClosed}>
+      {mutation.isPending && <LoadingPage />}
       {openFilter && openedContent()}
       {!openFilter && (
         <>

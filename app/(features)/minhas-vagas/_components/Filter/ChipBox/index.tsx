@@ -2,7 +2,7 @@ import { Chip, Icon, Paragraph } from '@Inklua/components-library'
 import { useEffect, useState } from 'react';
 import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
 import { useMobileStore } from 'app/(features)/minhas-vagas/_store/MobileStore';
-import { FilterDataProps } from 'app/(features)/minhas-vagas/_types/filter';
+import { FilterDataProps } from 'app/(features)/minhas-vagas/_types';
 import styles from './styles.module.scss'
 import paramsBuilder from 'app/(features)/minhas-vagas/_utils/buildingFetchParams';
 import { useMutation } from '@tanstack/react-query';
