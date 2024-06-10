@@ -2,6 +2,10 @@ import { Button, Chip, Heading, Icon, Paragraph, Span, Splitter } from '@Inklua/
 import { JobsProps } from 'app/(features)/minhas-vagas/_types'
 import styles from './styles.module.scss'
 import { useMobileStore } from 'app/(features)/minhas-vagas/_store/MobileStore'
+import { MouseEvent } from 'react'
+import { useRouter } from 'next/navigation'
+import { useJobsStore } from 'app/(features)/minhas-vagas/_store/JobsStore'
+import getGranParentPosition from 'app/(features)/minhas-vagas/_utils/getGranParentPosition'
 
 interface JobBoxProps {
   data: JobsProps
@@ -9,6 +13,14 @@ interface JobBoxProps {
 
 const JobBox = ({ data }: JobBoxProps) => {
   const { isMobile } = useMobileStore();
+  const { setJobRectTop } = useJobsStore();
+  const router = useRouter();
+
+  const handleSeeMore = (event: MouseEvent<HTMLButtonElement>) => {
+    const elementPosition = getGranParentPosition(event.target as HTMLElement);
+    if (elementPosition) setJobRectTop(elementPosition);
+    return router.push(`/minhas-vagas/${data.uri}`);
+  }
 
   return (
     <div className={styles.wrapper}>
@@ -54,7 +66,7 @@ const JobBox = ({ data }: JobBoxProps) => {
             )}
           </div>
           <div className={`${isMobile ? styles.buttonBoxMobile : styles.buttonBox}`}>
-            <Button size={isMobile ? 'small' : 'medium'}>Ver detalhes</Button>
+            <Button size={isMobile ? 'small' : 'medium'} onClick={handleSeeMore}>Ver detalhes</Button>
             {!isMobile && (
               <Button className={styles.shareBtn} outlined>
                 <Icon name='icon-share-outline' color='#137784' />

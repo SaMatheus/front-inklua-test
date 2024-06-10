@@ -15,13 +15,13 @@ import LoadingPage from '../LoadingPage'
 
 const SearchJobs = () => {
   const { isMobile } = useMobileStore();
-  const { setJobs } = useJobsStore();
+  const { setJobs, jobRectTop } = useJobsStore();
   const { setFilters, setFetchData } = useFilterStore();
   const { pagination, setPagination, onPageChange } = PaginationStore();
 
   const { isPending, error, data } = useQuery({
     queryKey: ['data'],
-    queryFn: () => getApiData()
+    queryFn: () => getApiData({ page: pagination.current || 1 })
   });
 
   const mutation = useMutation({
@@ -52,6 +52,10 @@ const SearchJobs = () => {
     onPageChange(Number(page))
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+
+  useEffect(() => {
+    jobRectTop && window.scrollTo({ top: jobRectTop, behavior: 'smooth' });
+  }, [isPending, mutation.isPending])
 
   const renderData = (!mutation.isPending || !isPending) && (!mutation.error || !error) && (!!mutation.data || !!data)
 
