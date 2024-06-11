@@ -19,7 +19,9 @@ interface FilterStore {
   fetchData: Filters,
   setFetchData: (data: Filters) => void,
   reFetch: boolean,
-  setReFetch: (reFetch: boolean) => void
+  setReFetch: (reFetch: boolean) => void,
+  loading: boolean,
+  setLoading: (loading: boolean) => void
 }
 
 export const useFilterStore = create<FilterStore>((set) => ({
@@ -60,5 +62,7 @@ export const useFilterStore = create<FilterStore>((set) => ({
   fetchData: {} as Filters,
   setFetchData: (fetchData) => set({ fetchData }),
   reFetch: false,
-  setReFetch: (reFetch) => set({ reFetch })
+  setReFetch: (reFetch) => set({ reFetch }),
+  loading: false,
+  setLoading: (loading) => set({ loading })
 }));

@@ -1,7 +1,7 @@
 'use client'
 import { Button, Icon } from '@Inklua/components-library'
 import { useMutation } from '@tanstack/react-query'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import getApiData from 'app/(features)/minhas-vagas/_providers/getApiData'
 import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore'
 import { useJobsStore } from 'app/(features)/minhas-vagas/_store/JobsStore'
@@ -12,8 +12,12 @@ import Header from './Header'
 import styles from './styles.module.scss'
 import ChipBox from '../ChipBox'
 import { PaginationStore } from 'app/(features)/minhas-vagas/_store/PaginationStore'
+import LoadingPage from '../../LoadingPage'
+import { Filters } from 'app/(features)/minhas-vagas/_types'
+import { useMobileStore } from 'app/(features)/minhas-vagas/_store/MobileStore'
 
 const FilterMobile = () => {
+  const { isMobile } = useMobileStore();
   const [openFilter, setOpenFilter] = useState(false)
   const [showChips, setShowChips] = useState<boolean>(false)
   const { setJobs } = useJobsStore()
@@ -23,27 +27,33 @@ const FilterMobile = () => {
     salaryFilter,
     cityFilter,
     positionInput,
+    reFetch,
+    loading,
+    setLoading,
     setFetchData,
   } = useFilterStore();
 
   const params = paramsBuilder(positionInput, (cityFilter && String(cityFilter[0]?.value)), workModelFilter, salaryFilter)
 
-  const mutation = useMutation({
+  const { isPending, mutate } = useMutation({
     mutationFn: () => getApiData(params),
     onSuccess: (data) => {
+      setLoading(false)
       setShowChips(true)
       setFetchData(data.filters);
       setJobs(data.jobs)
       setPagination(data.pagination)
     },
     onError: (error) => {
+      setLoading(false)
       setShowChips(false)
       console.log(error)
     }
   });
 
   const handleClickFilter = () => {
-    mutation.mutate()
+    console.log(params)
+    mutate()
     return setOpenFilter(false)
   }
 
@@ -55,23 +65,39 @@ const FilterMobile = () => {
     </>
   )
 
+  useEffect(() => {
+    const storedFilters = localStorage.getItem('filters');
+    if (isMobile && reFetch && storedFilters) {
+      setFetchData(JSON.parse(storedFilters) as Filters);
+      mutate();
+      localStorage.removeItem('filters');
+    }
+  }, [reFetch, isMobile])
+
+  useEffect(() => {
+    (isPending) && setLoading(true)
+  }, [isPending])
+
   return (
-    <div className={openFilter ? styles.wrapperOpened : styles.wrapperClosed}>
-      {openFilter && openedContent()}
-      {!openFilter && (
-        <>
-          <Button
-            className={styles.openFilterBtn}
-            icon={<Icon name='icon-options-2-outline'/>}
-            onClick={() => setOpenFilter(true)}
-            outlined
-          >
-            Filtrar Resultados
-          </Button>
-          {showChips && <ChipBox />}
-        </>
-      )}
-    </div>
+    <>
+      {loading && <LoadingPage />}
+      <div className={openFilter ? styles.wrapperOpened : styles.wrapperClosed}>
+        {openFilter && openedContent()}
+        {!openFilter && (
+          <>
+            <Button
+              className={styles.openFilterBtn}
+              icon={<Icon name='icon-options-2-outline'/>}
+              onClick={() => setOpenFilter(true)}
+              outlined
+            >
+              Filtrar Resultados
+            </Button>
+            {showChips && <ChipBox />}
+          </>
+        )}
+      </div>
+    </>
   )
 }
 
