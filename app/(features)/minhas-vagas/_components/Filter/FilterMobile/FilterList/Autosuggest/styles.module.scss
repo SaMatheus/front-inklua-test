@@ -33,6 +33,10 @@
     overflow-x: hidden;
     max-height: 12rem;
 
+    & > p:last-child {
+      padding: $space-xxxs;
+    }
+
     .option {
       padding: 10px;
       cursor: pointer;

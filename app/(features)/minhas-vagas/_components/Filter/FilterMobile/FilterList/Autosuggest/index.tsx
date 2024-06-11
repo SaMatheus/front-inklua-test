@@ -45,11 +45,17 @@ const Autosuggest = ({ options: data }: AutosuggestProps) => {
       />
       {isOpen && (
         <div className={styles.options}>
-          {options && options.map((option, index) => (
-            <div key={index} onClick={() => handleOptionClick(option)} className={styles.option}>
-              <p>{option.label}</p>
-            </div>
-          ))}
+          {
+            options?.length
+            ? (
+                options.map((option, index) => (
+                  <div key={index} onClick={() => handleOptionClick(option)} className={styles.option}>
+                    <p>{option.label}</p>
+                  </div>
+                ))
+              )
+            : <p>Nenhuma cidade encontrada</p>
+          }
         </div>
       )}
     </div>

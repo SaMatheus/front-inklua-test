@@ -8,8 +8,12 @@
   flex-direction: column;
   padding: $space-md 0 ;
 
+  h6 {
+    font-size: $font-size-xs;
+    color: $color-inst-primary-900;
+  }
+
   details {
-    padding-bottom: $space-md;
     &:nth-child(1) {
       animation: fadeIn 0.4s ease-in-out;
     }

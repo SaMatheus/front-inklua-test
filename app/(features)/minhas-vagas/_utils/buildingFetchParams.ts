@@ -11,7 +11,7 @@ const paramsBuilder = (
   const joinData = (data: FilterDataProps[]) => data.map((obj: FilterDataProps) => obj.value).join(';');
 
   if (!!search) params.search = String(search);
-  if (!!city && !!city.length) params.city = typeof city === 'string' ? String(city) : joinData(city);
+  if (city && city !== 'undefined' && !!city.length) params.city = typeof city === 'string' ? String(city) : joinData(city);
   if (workModel && !!workModel.length) params.workModel = joinData(workModel);
   if (salary && !!salary[0]) params.salary = Number(salary[0].value);
 

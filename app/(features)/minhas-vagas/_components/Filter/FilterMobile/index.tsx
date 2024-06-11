@@ -33,7 +33,7 @@ const FilterMobile = () => {
     setFetchData,
   } = useFilterStore();
 
-  const params = paramsBuilder(positionInput, (cityFilter && String(cityFilter[0]?.value)), workModelFilter, salaryFilter)
+  const params = paramsBuilder(positionInput, (String(cityFilter[0]?.value)), workModelFilter, salaryFilter)
 
   const { isPending, mutate } = useMutation({
     mutationFn: () => getApiData(params),

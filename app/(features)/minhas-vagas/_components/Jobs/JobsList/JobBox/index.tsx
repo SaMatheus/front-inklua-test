@@ -16,7 +16,7 @@ interface JobBoxProps {
 const JobBox = ({ data }: JobBoxProps) => {
   const { isMobile } = useMobileStore();
   const { setJobRectTop } = useJobsStore();
-  const { fetchData, setReFetch } = useFilterStore();
+  const { fetchData } = useFilterStore();
   const router = useRouter();
 
   const handleSeeMore = (event: MouseEvent<HTMLButtonElement>) => {

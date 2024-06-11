@@ -9,25 +9,33 @@ export const useMobileStore = create<ViewProps>((set) => {
   const setIsMobile = (value: boolean) => set(() => ({ isMobile: value }));
 
   const checkIsMobile = () => {
-    const width = window.innerWidth;
+    if (typeof window !== 'undefined') {
+      const width = window.innerWidth;
 
-    let mobile = false;
+      let mobile = false;
 
-    if (width <= 980) {
-      mobile = true;
-    } else if (width > 980) {
-      mobile = false;
+      if (width <= 980) {
+        mobile = true;
+      } else if (width > 980) {
+        mobile = false;
+      }
+      setIsMobile(mobile);
     }
-    setIsMobile(mobile);
   };
 
   checkIsMobile();
 
-  window.addEventListener('resize', checkIsMobile);
+  if (typeof window !== 'undefined') {
+    window.addEventListener('resize', checkIsMobile);
+  }
 
   return {
-    isMobile: window.innerWidth <= 820,
+    isMobile: typeof window !== 'undefined' ? window.innerWidth <= 820 : false,
     setIsMobile,
-    removeListener: () => window.removeEventListener('resize', checkIsMobile),
+    removeListener: () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', checkIsMobile);
+      }
+    },
   };
 });
