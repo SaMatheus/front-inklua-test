@@ -1,3 +1,4 @@
+'use client'
 import { CheckboxCell } from '@Inklua/components-library';
 import React from 'react';
 import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';

@@ -1,3 +1,4 @@
+'use client'
 import { Heading, Icon, IconButton } from '@Inklua/components-library';
 import styles from './styles.module.scss';
 

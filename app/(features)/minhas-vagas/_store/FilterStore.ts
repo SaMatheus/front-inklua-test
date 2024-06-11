@@ -17,7 +17,9 @@ interface FilterStore {
   cityInput: string,
   setCityInput: (search: string) => void,
   fetchData: Filters,
-  setFetchData: (data: Filters) => void
+  setFetchData: (data: Filters) => void,
+  reFetch: boolean,
+  setReFetch: (reFetch: boolean) => void
 }
 
 export const useFilterStore = create<FilterStore>((set) => ({
@@ -56,5 +58,7 @@ export const useFilterStore = create<FilterStore>((set) => ({
   removeSalaryFilter: () => set({ salaryFilter: [] }),
   clearFilters: () => set({ cityFilter: [], workModelFilter: [], salaryFilter: [], positionInput: '', cityInput: ''}),
   fetchData: {} as Filters,
-  setFetchData: (fetchData) => set({ fetchData })
+  setFetchData: (fetchData) => set({ fetchData }),
+  reFetch: false,
+  setReFetch: (reFetch) => set({ reFetch })
 }));

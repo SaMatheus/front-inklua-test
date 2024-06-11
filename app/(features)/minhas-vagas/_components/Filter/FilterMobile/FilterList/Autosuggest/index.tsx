@@ -1,3 +1,4 @@
+'use client'
 import { ChangeEvent, useEffect, useState } from 'react';
 import { FilterDataProps } from 'app/(features)/minhas-vagas/_types';
 import instaDataFilter from 'app/(features)/minhas-vagas/_utils/instaDataFilter';

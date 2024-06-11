@@ -1,3 +1,4 @@
+'use client'
 /* eslint-disable react/display-name */
 import { Heading, Icon, IconButton } from '@Inklua/components-library';
 import styles from './styles.module.scss';

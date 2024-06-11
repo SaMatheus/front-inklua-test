@@ -1,3 +1,4 @@
+'use client'
 import { Input } from '@Inklua/components-library';
 import { useState } from 'react';
 import instaDataFilter from 'app/(features)/minhas-vagas/_utils/instaDataFilter';

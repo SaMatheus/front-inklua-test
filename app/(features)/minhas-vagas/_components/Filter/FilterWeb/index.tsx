@@ -1,6 +1,6 @@
 'use client'
 import { useMutation } from '@tanstack/react-query';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import getApiData from 'app/(features)/minhas-vagas/_providers/getApiData';
 import { useJobsStore } from 'app/(features)/minhas-vagas/_store/JobsStore';
 import paramsBuilder from 'app/(features)/minhas-vagas/_utils/buildingFetchParams';
@@ -10,12 +10,16 @@ import styles from './styles.module.scss'
 import { useFilterStore } from '../../../_store/FilterStore';
 import CheckBoxList from '../CheckBoxList'
 import ChipBox from '../ChipBox';
+import { PaginationStore } from 'app/(features)/minhas-vagas/_store/PaginationStore';
+import { Filters } from 'app/(features)/minhas-vagas/_types';
 
 const FilterWeb = () => {
   const [showChips, setShowChips] = useState(false)
   const { setJobs } = useJobsStore()
+  const { setPagination } = PaginationStore();
   const {
     filters,
+    reFetch,
     cityFilter,
     workModelFilter,
     salaryFilter,
@@ -32,12 +36,22 @@ const FilterWeb = () => {
       setShowChips(true)
       setFetchData(data.filters);
       setJobs(data.jobs)
+      setPagination(data.pagination)
     },
     onError: (error) => {
       setShowChips(false)
       console.log(error)
     }
   });
+
+  useEffect(() => {
+    const storedFilters = localStorage.getItem('filters');
+    if (!!reFetch && !!storedFilters) {
+      setFetchData(JSON.parse(storedFilters) as Filters);
+      mutation.mutate();
+      localStorage.removeItem('filters');
+    }
+  }, [reFetch])
 
   return (
     <div className={styles.wrapper}>

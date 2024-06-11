@@ -1,3 +1,4 @@
+'use client'
 import { Accordion, Heading, Icon, Input, Select } from '@Inklua/components-library';
 import { useEffect, useState } from 'react';
 import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';

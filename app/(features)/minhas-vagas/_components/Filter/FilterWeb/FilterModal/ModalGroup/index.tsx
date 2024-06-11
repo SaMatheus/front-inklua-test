@@ -1,3 +1,4 @@
+'use client'
 import { Splitter } from '@Inklua/components-library';
 import React from 'react';
 import styles from './styles.module.scss';

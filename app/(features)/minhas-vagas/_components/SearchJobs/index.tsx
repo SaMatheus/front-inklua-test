@@ -16,7 +16,7 @@ import LoadingPage from '../LoadingPage'
 const SearchJobs = () => {
   const { isMobile } = useMobileStore();
   const { setJobs, jobRectTop } = useJobsStore();
-  const { setFilters, setFetchData } = useFilterStore();
+  const { setReFetch, setFilters, setFetchData } = useFilterStore();
   const { pagination, setPagination, onPageChange } = PaginationStore();
 
   const { isPending, error, data } = useQuery({
@@ -36,6 +36,13 @@ const SearchJobs = () => {
     }
   });
 
+  const handleChangePage = (page: number | string) => {
+    onPageChange(Number(page))
+    typeof window !== 'undefined' && window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  const renderData = (!mutation.isPending || !isPending) && (!mutation.error || !error) && (!!mutation.data || !!data)
+
   useEffect(() => {
     if (!mutation.data && !isPending && !error && data) {
       setJobs(data.jobs)
@@ -48,16 +55,12 @@ const SearchJobs = () => {
     (!isPending && pagination.current) && mutation.mutate()
   }, [pagination.current])
 
-  const handleChangePage = (page: number | string) => {
-    onPageChange(Number(page))
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
   useEffect(() => {
-    jobRectTop && window.scrollTo({ top: jobRectTop, behavior: 'smooth' });
+    if(jobRectTop) {
+      typeof window !== 'undefined' && window.scrollTo({ top: jobRectTop, behavior: 'smooth' })
+      setReFetch(true);
+    };
   }, [isPending, mutation.isPending])
-
-  const renderData = (!mutation.isPending || !isPending) && (!mutation.error || !error) && (!!mutation.data || !!data)
 
   return (
     <>

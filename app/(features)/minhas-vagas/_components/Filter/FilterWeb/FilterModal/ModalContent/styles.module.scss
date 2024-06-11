@@ -13,9 +13,4 @@
   flex-direction: column;
   gap: $space-lg;
   width: 100%;
-
-  div[data-testid="splitter"] {
-    width: 80%;
-    align-self: center;
-  }
 }

@@ -1,3 +1,4 @@
+'use client'
 import { Button } from '@Inklua/components-library';
 import styles from './styles.module.scss';
 

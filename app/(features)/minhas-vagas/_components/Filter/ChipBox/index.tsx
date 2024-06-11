@@ -1,3 +1,4 @@
+'use client'
 import { Chip, Icon, Paragraph } from '@Inklua/components-library'
 import { useEffect, useState } from 'react';
 import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
@@ -8,10 +9,12 @@ import paramsBuilder from 'app/(features)/minhas-vagas/_utils/buildingFetchParam
 import { useMutation } from '@tanstack/react-query';
 import getApiData from 'app/(features)/minhas-vagas/_providers/getApiData';
 import { useJobsStore } from 'app/(features)/minhas-vagas/_store/JobsStore';
+import { PaginationStore } from 'app/(features)/minhas-vagas/_store/PaginationStore';
 
 const ChipBox = () => {
   const [filtersData, setFiltersData] = useState<(FilterDataProps | string)[]>([])
   const [showAll, setShowAll] = useState(false)
+  const { setPagination } = PaginationStore();
   const {
     cityFilter,
     workModelFilter,
@@ -35,6 +38,7 @@ const ChipBox = () => {
     onSuccess: (data) => {
       setFetchData(data.filters);
       setJobs(data.jobs)
+      setPagination(data.pagination)
     },
     onError: (error) => {
       console.log(error)

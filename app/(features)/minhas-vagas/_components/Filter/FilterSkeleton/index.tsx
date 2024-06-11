@@ -1,3 +1,4 @@
+'use client'
 import { Skeleton } from '@Inklua/components-library'
 import { ReactElement } from 'react';
 import styles from './styles.module.scss'

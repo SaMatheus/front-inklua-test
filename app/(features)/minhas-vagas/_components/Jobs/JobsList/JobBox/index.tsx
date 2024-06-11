@@ -1,3 +1,4 @@
+'use client'
 import { Button, Chip, Heading, Icon, Paragraph, Span, Splitter } from '@Inklua/components-library'
 import { JobsProps } from 'app/(features)/minhas-vagas/_types'
 import styles from './styles.module.scss'
@@ -6,6 +7,7 @@ import { MouseEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import { useJobsStore } from 'app/(features)/minhas-vagas/_store/JobsStore'
 import getGranParentPosition from 'app/(features)/minhas-vagas/_utils/getGranParentPosition'
+import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore'
 
 interface JobBoxProps {
   data: JobsProps
@@ -14,11 +16,15 @@ interface JobBoxProps {
 const JobBox = ({ data }: JobBoxProps) => {
   const { isMobile } = useMobileStore();
   const { setJobRectTop } = useJobsStore();
+  const { fetchData, setReFetch } = useFilterStore();
   const router = useRouter();
 
   const handleSeeMore = (event: MouseEvent<HTMLButtonElement>) => {
     const elementPosition = getGranParentPosition(event.target as HTMLElement);
     if (elementPosition) setJobRectTop(elementPosition);
+    if (fetchData) {
+      localStorage.setItem('filters', JSON.stringify(fetchData));
+    }
     return router.push(`/minhas-vagas/${data.uri}`);
   }
 

@@ -7,6 +7,8 @@ const PageTitle = () => {
   const { isMobile } = useMobileStore();
   const { pagination } = PaginationStore();
 
+  // console.log(pagination.total)
+
   return (
     <Title>
         <Heading tag='h1'>

@@ -1,3 +1,4 @@
+'use client'
 import { Button, Icon } from '@Inklua/components-library'
 import { useMutation } from '@tanstack/react-query'
 import { useState } from 'react'
@@ -10,11 +11,13 @@ import FilterList from './FilterList'
 import Header from './Header'
 import styles from './styles.module.scss'
 import ChipBox from '../ChipBox'
+import { PaginationStore } from 'app/(features)/minhas-vagas/_store/PaginationStore'
 
 const FilterMobile = () => {
   const [openFilter, setOpenFilter] = useState(false)
   const [showChips, setShowChips] = useState<boolean>(false)
   const { setJobs } = useJobsStore()
+  const { setPagination } = PaginationStore();
   const {
     workModelFilter,
     salaryFilter,
@@ -31,6 +34,7 @@ const FilterMobile = () => {
       setShowChips(true)
       setFetchData(data.filters);
       setJobs(data.jobs)
+      setPagination(data.pagination)
     },
     onError: (error) => {
       setShowChips(false)
