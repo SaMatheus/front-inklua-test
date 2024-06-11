@@ -1,20 +1,17 @@
 'use client'
 import { Chip, Icon, Paragraph } from '@Inklua/components-library'
 import { useEffect, useState } from 'react';
+import useGlobalMutation from 'app/(features)/minhas-vagas/_hook/useGlobalMutation';
 import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
 import { useMobileStore } from 'app/(features)/minhas-vagas/_store/MobileStore';
+import { useMutationStore } from 'app/(features)/minhas-vagas/_store/MutationStore';
 import { FilterDataProps } from 'app/(features)/minhas-vagas/_types';
-import styles from './styles.module.scss'
 import paramsBuilder from 'app/(features)/minhas-vagas/_utils/buildingFetchParams';
-import { useMutation } from '@tanstack/react-query';
-import getApiData from 'app/(features)/minhas-vagas/_providers/getApiData';
-import { useJobsStore } from 'app/(features)/minhas-vagas/_store/JobsStore';
-import { PaginationStore } from 'app/(features)/minhas-vagas/_store/PaginationStore';
+import styles from './styles.module.scss'
 
 const ChipBox = () => {
   const [filtersData, setFiltersData] = useState<(FilterDataProps | string)[]>([])
   const [showAll, setShowAll] = useState(false)
-  const { setPagination } = PaginationStore();
   const {
     cityFilter,
     workModelFilter,
@@ -22,27 +19,20 @@ const ChipBox = () => {
     positionInput,
     fetchData,
     cityInput,
-    setFetchData,
+    setLoading,
     setPositionInput,
     setCityFilter,
     setWorkModelFilter,
     removeSalaryFilter
   } = useFilterStore();
   const { isMobile } = useMobileStore()
-  const { setJobs } = useJobsStore()
+  const { componentName, setComponentName } = useMutationStore();
 
   const params = paramsBuilder(positionInput, (cityInput || cityFilter), workModelFilter, salaryFilter)
 
-  const mutation = useMutation({
-    mutationFn: () => getApiData(params),
-    onSuccess: (data) => {
-      setFetchData(data.filters);
-      setJobs(data.jobs)
-      setPagination(data.pagination)
-    },
-    onError: (error) => {
-      console.log(error)
-    }
+  const mutation = useGlobalMutation({
+    params,
+    fn: [() => console.log('ChipBox')]
   });
 
   const removeChipStr = (str: string) => {
@@ -59,10 +49,14 @@ const ChipBox = () => {
   }
 
   const removeChip = (chipData: FilterDataProps | string) => {
+    setLoading(true)
+    const isFilter = componentName === 'FilterWeb' || componentName === 'FilterMobile'
     if (typeof chipData === 'string') removeChipStr(chipData)
     if (typeof chipData !== 'string') removeChipObj(chipData)
-
-    return mutation.mutate()
+    if (isFilter) {
+      setComponentName(null)
+      return mutation.mutate()
+    }
   };
 
   useEffect(() => {

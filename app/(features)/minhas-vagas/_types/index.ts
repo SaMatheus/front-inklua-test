@@ -52,3 +52,9 @@ export interface ParamsProps {
   workModel?: string;
   salary?: number;
 }
+
+export interface MutationDataProps {
+  jobs: JobsProps[];
+  filters: Filters;
+  pagination: PaginationData;
+}

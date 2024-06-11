@@ -1,66 +1,85 @@
 'use client'
-import { useMutation } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
-import getApiData from 'app/(features)/minhas-vagas/_providers/getApiData';
+import useGlobalMutation from 'app/(features)/minhas-vagas/_hook/useGlobalMutation';
 import { useJobsStore } from 'app/(features)/minhas-vagas/_store/JobsStore';
+import { useMutationStore } from 'app/(features)/minhas-vagas/_store/MutationStore';
+import { usePaginationStore } from 'app/(features)/minhas-vagas/_store/PaginationStore';
+import { Filters } from 'app/(features)/minhas-vagas/_types';
 import paramsBuilder from 'app/(features)/minhas-vagas/_utils/buildingFetchParams';
 import ButtonBox from './ButtonBox';
 import Search from './Search';
 import styles from './styles.module.scss'
 import { useFilterStore } from '../../../_store/FilterStore';
+import LoadingPage from '../../LoadingPage';
 import CheckBoxList from '../CheckBoxList'
 import ChipBox from '../ChipBox';
-import { PaginationStore } from 'app/(features)/minhas-vagas/_store/PaginationStore';
-import { Filters } from 'app/(features)/minhas-vagas/_types';
-import LoadingPage from '../../LoadingPage';
 
 const FilterWeb = () => {
   const [showChips, setShowChips] = useState(false)
-  const { setJobs } = useJobsStore()
-  const { setPagination } = PaginationStore();
   const {
     filters,
     reFetch,
+    fetchData,
     cityFilter,
     workModelFilter,
     salaryFilter,
     positionInput,
     loading,
+    setReFetch,
     setLoading,
     setFetchData,
     clearFilters
   } = useFilterStore();
+  const { componentName, setComponentName } = useMutationStore();
+  const { setJobRectTop } = useJobsStore();
+  const { pagination } = usePaginationStore();
+  // const [params, setParams] = useState(paramsBuilder(positionInput, cityFilter, workModelFilter, salaryFilter, pagination.current))
 
-  const params = paramsBuilder(positionInput, cityFilter, workModelFilter, salaryFilter)
+  const params = paramsBuilder(positionInput, cityFilter, workModelFilter, salaryFilter, pagination.current)
 
-  const { isPending, mutate } = useMutation({
-    mutationFn: () => getApiData(params),
-    onSuccess: (data) => {
-      setLoading(false)
-      setShowChips(true)
-      setFetchData(data.filters);
-      setJobs(data.jobs)
-      setPagination(data.pagination)
-    },
-    onError: (error) => {
-      setShowChips(false)
-      setLoading(false)
-      console.log(error)
-    }
+  const mutation = useGlobalMutation({
+    params,
+    fn: [() => setShowChips(true), () => console.log('FilterWeb')]
   });
 
-  useEffect(() => {
-    const storedFilters = localStorage.getItem('filters');
-    if (!!reFetch && !!storedFilters) {
-      setFetchData(JSON.parse(storedFilters) as Filters);
-      mutate();
-      localStorage.removeItem('filters');
-    }
-  }, [reFetch])
+  const handleClickFilter = () => {
+    setComponentName('FilterWeb')
+    mutation.mutate()
+    typeof window !== 'undefined' && window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  const handleClearFilter = () => {
+    setComponentName('FilterWeb')
+    clearFilters()
+    mutation.mutate()
+  }
 
   useEffect(() => {
-    (isPending) && setLoading(true)
-  }, [isPending])
+    // const storedFilters = localStorage.getItem('filters');
+    if (fetchData && reFetch && componentName === 'FilterWeb') {
+      // params.page = pagination.current
+      // setFetchData(JSON.parse(storedFilters) as Filters);
+      // console.log('PRIMEIRO', JSON.parse(storedFilters) as Filters)
+      // console.log('PRIMEIRO', fetchData)
+      // console.log('SEGUNDO', reFetch)
+      mutation.mutate();
+      // localStorage.removeItem('filters');
+      setReFetch(false);
+      setJobRectTop(0);
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!mutation.isPending && !reFetch && componentName === 'FilterWeb') {
+      // setParams((prevParams) => ({...prevParams, page: pagination.current}))
+      // params.page = pagination.current
+      return mutation.mutate()
+    }
+  }, [pagination.current])
+
+  useEffect(() => {
+    (mutation.isPending) && setLoading(true)
+  }, [mutation.isPending])
 
   return (
     <>
@@ -71,10 +90,10 @@ const FilterWeb = () => {
           label='Cargo/função'
           placeholder='Digite o cargo/função que deseja'
         />
-        <CheckBoxList title='Local' keyFilter='city' multiCheck showMoreBtn onFilter={() => mutate()} />
+        <CheckBoxList title='Local' keyFilter='city' multiCheck showMoreBtn onFilter={() => handleClickFilter()} />
         <CheckBoxList title='Modelo de trabalho' keyFilter='workModel' multiCheck />
         <CheckBoxList title='Pretensão salarial' keyFilter='salary' viewQnt={filters.salary?.length} />
-        <ButtonBox onFilter={() => mutate()} onClickSecondaryBtn={clearFilters} />
+        <ButtonBox onFilter={() => handleClickFilter()} onClickSecondaryBtn={handleClearFilter} />
       </div> 
     </>
   )

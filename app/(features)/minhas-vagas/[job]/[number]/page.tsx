@@ -1,12 +1,10 @@
  'use client'
 import { Button } from '@Inklua/components-library';
 import { useParams, useRouter } from 'next/navigation';
-import { useMobileStore } from '../../_store/MobileStore';
 
 const DefaultPage = () => {
   const router = useRouter();
   const params = useParams();
-  const { isMobile } = useMobileStore();
 
   const handleGoBack = () => {
     router.back();

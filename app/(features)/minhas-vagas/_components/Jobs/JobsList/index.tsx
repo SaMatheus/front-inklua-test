@@ -1,13 +1,24 @@
 'use client'
+import { useEffect } from 'react';
+import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
 import { useJobsStore } from 'app/(features)/minhas-vagas/_store/JobsStore';
-import JobBox from './JobBox';
+import { usePaginationStore } from 'app/(features)/minhas-vagas/_store/PaginationStore';
 import { JobsProps } from 'app/(features)/minhas-vagas/_types';
-import { PaginationStore } from 'app/(features)/minhas-vagas/_store/PaginationStore';
+import JobBox from './JobBox';
 import JobsNotFound from './JobsNotFound';
 
 const JobList = () => {
-  const { jobs } = useJobsStore();
-  const { pagination } = PaginationStore();
+  const { jobs, jobRectTop, setJobRectTop } = useJobsStore();
+  const { reFetch, setReFetch } = useFilterStore();
+  const { pagination } = usePaginationStore();
+
+  useEffect(() => {
+    if (reFetch && jobRectTop && typeof window !== 'undefined') {
+      typeof window !== 'undefined' && window.scrollTo({ top: jobRectTop, behavior: 'smooth' })
+    }
+    setJobRectTop(0);
+    setReFetch(false);
+  }, [])
 
   return jobs?.length > 0
     ? jobs?.slice(0, pagination.jobsByPage)?.map((job: JobsProps, index) => <JobBox key={index} data={job} />)
