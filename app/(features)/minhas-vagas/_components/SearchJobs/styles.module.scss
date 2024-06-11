@@ -32,6 +32,7 @@
   @include flex-mobile;
   padding: $space-lg 0;
   gap: $space-md;
+  min-width: 20rem;
 
   div {
     gap: $space-xxxs !important;

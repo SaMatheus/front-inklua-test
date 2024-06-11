@@ -5,13 +5,29 @@ type ViewProps = {
   setIsMobile: (value: boolean) => void;
 };
 
-export const useMobileStore = create<ViewProps>((set) => ({
-  isMobile: false,
-  setIsMobile: (value: boolean) => set(() => ({ isMobile: value })),
-}));
+export const useMobileStore = create<ViewProps>((set) => {
+  const setIsMobile = (value: boolean) => set(() => ({ isMobile: value }));
 
-if (typeof window !== 'undefined') {
-  const userAgent = window.navigator.userAgent;
-  const mobile = Boolean(/android|blackberry|iphone|ipod|opera mini|iemobile|wpdesktop/i.test(userAgent));
-  useMobileStore.getState().setIsMobile(mobile);
-}
+  const checkIsMobile = () => {
+    const width = window.innerWidth;
+
+    let mobile = false;
+
+    if (width <= 980) {
+      mobile = true;
+    } else if (width > 980) {
+      mobile = false;
+    }
+    setIsMobile(mobile);
+  };
+
+  checkIsMobile();
+
+  window.addEventListener('resize', checkIsMobile);
+
+  return {
+    isMobile: window.innerWidth <= 820,
+    setIsMobile,
+    removeListener: () => window.removeEventListener('resize', checkIsMobile),
+  };
+});
