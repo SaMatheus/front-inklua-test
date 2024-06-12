@@ -106,12 +106,19 @@
   justify-content: space-between;
   align-items: flex-end;
   padding: $space-xxs 0 $space-sm;
+
   
   .chipBox {
     display: flex;
     flex-wrap: wrap;
     gap: $space-xxxs;
     align-items: center;
+
+    &:nth-child(1) span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 20ch;
+    }
   
     span {
       line-height: $font-size-sm;
