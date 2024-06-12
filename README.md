@@ -15,17 +15,14 @@ Para rodar o projeto, recomendo ter o corepak instalado e utilizar o yarn aparti
 Para mais detalhes [Leia a documentação](https://github.com/nodejs/corepack).
 
 ```bash
-$ git clone <url-do-repositorio>
+$ git clone https://github.com/SaMatheus/front-inklua-test.git
 
-$ cd nome-do-projeto
+$ cd front-inklua-test
 
 $ yarn install
 
 $ yarn dev
 ```
-
-##
-
 
 ## 🛠 Tecnologias
 

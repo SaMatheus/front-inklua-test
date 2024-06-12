@@ -1,4 +1,4 @@
- 'use client'
+'use client'
 import { Button } from '@Inklua/components-library';
 import { useParams, useRouter } from 'next/navigation';
 
