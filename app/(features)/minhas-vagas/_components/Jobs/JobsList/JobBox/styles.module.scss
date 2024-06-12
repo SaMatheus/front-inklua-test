@@ -113,15 +113,12 @@
     flex-wrap: wrap;
     gap: $space-xxxs;
     align-items: center;
-
-    &:nth-child(1) span {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 20ch;
-    }
   
     span {
       line-height: $font-size-sm;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 18ch;
     }
   }
   
