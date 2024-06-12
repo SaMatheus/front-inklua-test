@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-interface MutationStore {
+interface MutationStoreProps {
   isMutationInProgress: boolean;
   startMutation: () => void;
   endMutation: () => void;
@@ -8,10 +8,12 @@ interface MutationStore {
   setComponentName: (componentName: string | null) => void;
 }
 
-export const useMutationStore = create<MutationStore>((set) => ({
+const useMutationStore = create<MutationStoreProps>((set) => ({
   isMutationInProgress: false,
   startMutation: () => set({ isMutationInProgress: true }),
   endMutation: () => set({ isMutationInProgress: false }),
   componentName: null,
   setComponentName: (componentName) => set({ componentName }),
 }));
+
+export default useMutationStore;

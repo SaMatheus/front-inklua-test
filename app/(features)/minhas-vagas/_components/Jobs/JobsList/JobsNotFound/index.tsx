@@ -1,4 +1,4 @@
-import { useMobileStore } from 'app/(features)/minhas-vagas/_store/MobileStore';
+import { useMobileStore } from 'app/(features)/minhas-vagas/_store';
 
 const JobsNotFound = () => {
   const { isMobile } = useMobileStore();

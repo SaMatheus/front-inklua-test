@@ -1,7 +1,7 @@
 'use client'
 import JobList from './JobsList';
 import styles  from './styles.module.scss';
-import { useMobileStore } from '../../_store/MobileStore';
+import { useMobileStore } from '../../_store';
 
 const Jobs = () => {
   const { isMobile } = useMobileStore();

@@ -1,7 +1,7 @@
 'use client'
 import { CheckboxCell } from '@Inklua/components-library';
 import React from 'react';
-import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
+import { useFilterStore } from 'app/(features)/minhas-vagas/_store';
 import styles from './styles.module.scss';
 import { FilterDataProps, KeyEnum } from '../../../../../_types';
 

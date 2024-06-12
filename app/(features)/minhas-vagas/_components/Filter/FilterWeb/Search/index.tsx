@@ -1,7 +1,7 @@
 'use client'
-import { Icon, IconButton, Input, Paragraph } from '@Inklua/components-library';
+import { Input, Paragraph } from '@Inklua/components-library';
 import { useEffect, useState } from 'react';
-import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
+import { useFilterStore } from 'app/(features)/minhas-vagas/_store';
 import styles from './styles.module.scss';
 
 interface SearchProps {

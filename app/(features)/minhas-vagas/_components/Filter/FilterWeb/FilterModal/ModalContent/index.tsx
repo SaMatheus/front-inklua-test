@@ -1,7 +1,7 @@
 'use client'
 import { Input } from '@Inklua/components-library';
 import { useState } from 'react';
-import instaDataFilter from 'app/(features)/minhas-vagas/_utils/instaDataFilter';
+import { filterDataWithoutMark } from 'app/(features)/minhas-vagas/_utils';
 import styles from './styles.module.scss';
 import { FilterDataProps, KeyEnum } from '../../../../../_types';
 import ModalGroup from '../ModalGroup';
@@ -20,7 +20,7 @@ const ModalContent = ({
   const [inputValue, setInputValue] = useState<string>('');
 
   const filterItems = Object.entries(data).reduce<{ [key: string]: FilterDataProps[] }>((acc, [letter, items]) => {
-    const filteredItems = instaDataFilter(items, inputValue)
+    const filteredItems = filterDataWithoutMark(items, inputValue)
     if (filteredItems.length) acc[letter] = filteredItems;
     return acc;
   }, {});

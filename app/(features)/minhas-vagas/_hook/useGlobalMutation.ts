@@ -1,20 +1,17 @@
 import { MutationOptions, useMutation } from '@tanstack/react-query';
 import getApiData from '../_providers/getApiData';
-import { useFilterStore } from '../_store/FilterStore';
-import { useJobsStore } from '../_store/JobsStore';
-import { useMutationStore } from '../_store/MutationStore';
-import { usePaginationStore } from '../_store/PaginationStore';
+import { useFilterStore, useJobsStore, useMutationStore, usePaginationStore } from '../_store';
 import { MutationDataProps, ParamsProps } from '../_types';
 
 type fnProps= () => void
 
-interface MutationProp {
+interface GlobalMutationProp {
   params: ParamsProps;
   fn: fnProps[];
   options?: MutationOptions;
 }
 
-const useGlobalMutation = ({ params, fn, options }: MutationProp) => {
+const useGlobalMutation = ({ params, fn, options }: GlobalMutationProp) => {
   const { isMutationInProgress, startMutation, endMutation } = useMutationStore();
   const { setJobs } = useJobsStore();
   const { setFetchData, setLoading } = useFilterStore();

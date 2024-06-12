@@ -2,11 +2,9 @@
 import { Chip, Icon, Paragraph } from '@Inklua/components-library'
 import { useEffect, useState } from 'react';
 import useGlobalMutation from 'app/(features)/minhas-vagas/_hook/useGlobalMutation';
-import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
-import { useMobileStore } from 'app/(features)/minhas-vagas/_store/MobileStore';
-import { useMutationStore } from 'app/(features)/minhas-vagas/_store/MutationStore';
+import { useFilterStore, useMobileStore, useMutationStore } from 'app/(features)/minhas-vagas/_store';
 import { FilterDataProps } from 'app/(features)/minhas-vagas/_types';
-import paramsBuilder from 'app/(features)/minhas-vagas/_utils/buildingFetchParams';
+import { buildingFetchParams } from 'app/(features)/minhas-vagas/_utils';
 import styles from './styles.module.scss'
 
 const ChipBox = () => {
@@ -28,11 +26,11 @@ const ChipBox = () => {
   const { isMobile } = useMobileStore()
   const { componentName, setComponentName } = useMutationStore();
 
-  const params = paramsBuilder(positionInput, (cityInput || cityFilter), workModelFilter, salaryFilter)
+  const params = buildingFetchParams(positionInput, (cityInput || cityFilter), workModelFilter, salaryFilter)
 
   const mutation = useGlobalMutation({
     params,
-    fn: [() => console.log('ChipBox')]
+    fn: []
   });
 
   const removeChipStr = (str: string) => {

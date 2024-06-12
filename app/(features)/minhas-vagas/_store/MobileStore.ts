@@ -1,11 +1,11 @@
 import { create } from 'zustand';
 
-type ViewProps = {
+type MobileStoreProps = {
   isMobile: boolean;
   setIsMobile: (value: boolean) => void;
 };
 
-export const useMobileStore = create<ViewProps>((set) => {
+const useMobileStore = create<MobileStoreProps>((set) => {
   const setIsMobile = (value: boolean) => set(() => ({ isMobile: value }));
 
   const checkIsMobile = () => {
@@ -39,3 +39,5 @@ export const useMobileStore = create<ViewProps>((set) => {
     },
   };
 });
+
+export default useMobileStore;

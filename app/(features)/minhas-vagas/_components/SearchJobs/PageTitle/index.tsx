@@ -1,13 +1,10 @@
 'use client'
 import { Heading, Paragraph, Span, Title } from '@Inklua/components-library';
-import { useMobileStore } from 'app/(features)/minhas-vagas/_store/MobileStore';
-import { usePaginationStore } from 'app/(features)/minhas-vagas/_store/PaginationStore';
+import { useMobileStore, usePaginationStore } from 'app/(features)/minhas-vagas/_store';
 
 const PageTitle = () => {
   const { isMobile } = useMobileStore();
   const { pagination } = usePaginationStore();
-
-  // console.log(pagination.total)
 
   return (
     <Title>

@@ -1,16 +1,16 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 import { Button, Icon } from '@Inklua/components-library'
-import { useMutation } from '@tanstack/react-query'
 import { useEffect, useState } from 'react'
 import useGlobalMutation from 'app/(features)/minhas-vagas/_hook/useGlobalMutation'
-import getApiData from 'app/(features)/minhas-vagas/_providers/getApiData'
-import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore'
-import { useJobsStore } from 'app/(features)/minhas-vagas/_store/JobsStore'
-import { useMobileStore } from 'app/(features)/minhas-vagas/_store/MobileStore'
-import { useMutationStore } from 'app/(features)/minhas-vagas/_store/MutationStore'
-import { usePaginationStore } from 'app/(features)/minhas-vagas/_store/PaginationStore'
-import { Filters } from 'app/(features)/minhas-vagas/_types'
-import paramsBuilder from 'app/(features)/minhas-vagas/_utils/buildingFetchParams'
+import {
+  useFilterStore,
+  useJobsStore,
+  useMobileStore,
+  useMutationStore,
+  usePaginationStore
+} from 'app/(features)/minhas-vagas/_store'
+import { buildingFetchParams } from 'app/(features)/minhas-vagas/_utils'
 import ButtonBox from './ButtonBox'
 import FilterList from './FilterList'
 import Header from './Header'
@@ -22,8 +22,6 @@ const FilterMobile = () => {
   const { isMobile } = useMobileStore();
   const [openFilter, setOpenFilter] = useState(false)
   const [showChips, setShowChips] = useState<boolean>(false)
-  // const { setJobs } = useJobsStore()
-  // const { setPagination } = usePaginationStore();
   const { componentName, setComponentName } = useMutationStore();
   const { pagination } = usePaginationStore();
   const { setJobRectTop } = useJobsStore();
@@ -37,14 +35,13 @@ const FilterMobile = () => {
     loading,
     setReFetch,
     setLoading,
-    setFetchData,
   } = useFilterStore();
 
-  const params = paramsBuilder(positionInput, (String(cityFilter[0]?.value)), workModelFilter, salaryFilter, pagination.current)
+  const params = buildingFetchParams(positionInput, (String(cityFilter[0]?.value)), workModelFilter, salaryFilter, pagination.current)
 
   const mutation = useGlobalMutation({
     params,
-    fn: [() => setShowChips(true), () => console.log('FilterMobile')]
+    fn: [() => setShowChips(true)]
   });
 
   const handleClickFilter = () => {
@@ -61,15 +58,6 @@ const FilterMobile = () => {
     </>
   )
 
-  // useEffect(() => {
-  //   const storedFilters = localStorage.getItem('filters');
-  //   if (isMobile && reFetch && storedFilters) {
-  //     setFetchData(JSON.parse(storedFilters) as Filters);
-  //     mutation.mutate();
-  //     localStorage.removeItem('filters');
-  //   }
-  // }, [reFetch, isMobile])
-
   useEffect(() => {
     if (isMobile && fetchData && reFetch && componentName === 'FilterMobile') {
       mutation.mutate();
@@ -79,7 +67,6 @@ const FilterMobile = () => {
   }, [])
 
   useEffect(() => {
-    console.log(!mutation.isPending && !reFetch && componentName === 'FilterMobile')
     if (!mutation.isPending && !reFetch && componentName === 'FilterMobile') {
       return mutation.mutate()
     }

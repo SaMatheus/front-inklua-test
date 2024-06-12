@@ -1,6 +1,6 @@
 'use client'
-import { useMobileStore } from '../../_store/MobileStore';
 import styles from './styles.module.scss';
+import { useMobileStore } from '../../_store';
 
 const LoadingPage = () => {
   const { isMobile } = useMobileStore();

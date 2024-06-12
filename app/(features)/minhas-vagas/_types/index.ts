@@ -27,7 +27,7 @@ export interface Filters {
   workModel: FilterDataProps[];
 }
 
-export interface PaginationProps {
+export interface PaginationStoreProps {
   pagination: PaginationData;
   setPagination: (data: PaginationData) => void;
   onPageChange: (page: number) => void;

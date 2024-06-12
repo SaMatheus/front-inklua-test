@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 import { Pagination } from '@Inklua/components-library'
 import { useQuery } from '@tanstack/react-query'
@@ -6,11 +7,13 @@ import PageTitle from './PageTitle'
 import styles from './styles.module.scss'
 import useGlobalMutation from '../../_hook/useGlobalMutation'
 import getApiData from '../../_providers/getApiData'
-import { useFilterStore } from '../../_store/FilterStore'
-import { useJobsStore } from '../../_store/JobsStore'
-import { useMobileStore } from '../../_store/MobileStore'
-import { useMutationStore } from '../../_store/MutationStore'
-import { usePaginationStore } from '../../_store/PaginationStore'
+import { 
+  useFilterStore,
+  useJobsStore,
+  useMobileStore,
+  useMutationStore,
+  usePaginationStore
+ } from '../../_store'
 import Filter from '../Filter'
 import Jobs from '../Jobs'
 import LoadingPage from '../LoadingPage'
@@ -29,7 +32,7 @@ const SearchJobs = () => {
 
   const mutation = useGlobalMutation({
     params: { page: pagination.current },
-    fn: [() => console.log('SearchJobs')]
+    fn: []
   });
 
   const handleChangePage = (page: number | string) => {
@@ -48,7 +51,6 @@ const SearchJobs = () => {
   }, [isPending, data, error])
 
   useEffect(() => {
-    console.log(componentName)
     if (!isPending && !reFetch && componentName === null) return mutation.mutate()
   }, [pagination.current])
 

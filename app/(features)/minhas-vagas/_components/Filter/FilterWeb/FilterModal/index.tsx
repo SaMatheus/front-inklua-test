@@ -1,7 +1,7 @@
 'use client'
 import { Modal } from '@Inklua/components-library';
 import { useEffect, useMemo, useState } from 'react';
-import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
+import { useFilterStore } from 'app/(features)/minhas-vagas/_store';
 import ModalContent from './ModalContent';
 import ModalHeader from './ModalHeader';
 import styles from './styles.module.scss';

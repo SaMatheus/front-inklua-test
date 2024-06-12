@@ -1,9 +1,9 @@
 'use client'
 import { ChangeEvent, useEffect, useState } from 'react';
+import { useFilterStore } from 'app/(features)/minhas-vagas/_store';
 import { FilterDataProps } from 'app/(features)/minhas-vagas/_types';
-import instaDataFilter from 'app/(features)/minhas-vagas/_utils/instaDataFilter';
+import { filterDataWithoutMark } from 'app/(features)/minhas-vagas/_utils';
 import styles from './styles.module.scss';
-import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
 
 interface AutosuggestProps {
   options: FilterDataProps[];
@@ -19,7 +19,7 @@ const Autosuggest = ({ options: data }: AutosuggestProps) => {
   const handleInputChange = ({ target }:  ChangeEvent<HTMLInputElement>) => {
     setSelectedOption('');
     setInputValue(target.value);
-    const filterCityOptions = instaDataFilter(data, target.value)
+    const filterCityOptions = filterDataWithoutMark(data, target.value)
     setOptions(filterCityOptions);
   };
 

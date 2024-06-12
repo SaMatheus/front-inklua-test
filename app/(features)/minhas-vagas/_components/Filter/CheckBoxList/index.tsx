@@ -4,7 +4,7 @@ import { Button, CheckboxCell, Paragraph } from '@Inklua/components-library';
 import { useEffect, useMemo, useState } from 'react';
 import { FilterDataProps, KeyEnum } from 'app/(features)/minhas-vagas/_types';
 import styles from './styles.module.scss';
-import { useFilterStore } from '../../../_store/FilterStore';
+import { useFilterStore } from '../../../_store';
 import FilterModal from '../FilterWeb/FilterModal';
 
 interface CheckBoxListProps {

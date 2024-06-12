@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { FilterDataProps, Filters } from '../_types';
 
-interface FilterStore {
+interface FilterStoreProps {
   filters: Filters;
   setFilters: (filters: Filters) => void;
   cityFilter: FilterDataProps[],
@@ -24,7 +24,7 @@ interface FilterStore {
   setLoading: (loading: boolean) => void
 }
 
-export const useFilterStore = create<FilterStore>((set) => ({
+const useFilterStore = create<FilterStoreProps>((set) => ({
   filters: {} as Filters,
   setFilters: (filters) => set({ filters }),
   positionInput: '',
@@ -66,3 +66,5 @@ export const useFilterStore = create<FilterStore>((set) => ({
   loading: false,
   setLoading: (loading) => set({ loading })
 }));
+
+export default useFilterStore;

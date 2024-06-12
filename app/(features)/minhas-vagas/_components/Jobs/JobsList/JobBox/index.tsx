@@ -2,11 +2,9 @@
 import { Button, Chip, Heading, Icon, Paragraph, Span, Splitter } from '@Inklua/components-library'
 import { useRouter } from 'next/navigation'
 import { MouseEvent } from 'react'
-import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore'
-import { useJobsStore } from 'app/(features)/minhas-vagas/_store/JobsStore'
-import { useMobileStore } from 'app/(features)/minhas-vagas/_store/MobileStore'
+import { useFilterStore, useJobsStore, useMobileStore } from 'app/(features)/minhas-vagas/_store'
 import { JobsProps } from 'app/(features)/minhas-vagas/_types'
-import getGranParentPosition from 'app/(features)/minhas-vagas/_utils/getGranParentPosition'
+import { getGranParentPosition } from 'app/(features)/minhas-vagas/_utils'
 import styles from './styles.module.scss'
 
 interface JobBoxProps {
@@ -22,10 +20,8 @@ const JobBox = ({ data }: JobBoxProps) => {
   const handleSeeMore = (event: MouseEvent<HTMLButtonElement>) => {
     const elementPosition = getGranParentPosition(event.target as HTMLElement);
     if (elementPosition) setJobRectTop(elementPosition);
-    if (fetchData) {
-      setFetchData(fetchData)
-      // localStorage.setItem('filters', JSON.stringify(fetchData));
-    }
+    if (fetchData) setFetchData(fetchData);
+
     setReFetch(true);
     return router.push(`/minhas-vagas/${data.uri}`);
   }

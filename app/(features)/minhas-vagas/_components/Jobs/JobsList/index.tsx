@@ -1,8 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 import { useEffect } from 'react';
-import { useFilterStore } from 'app/(features)/minhas-vagas/_store/FilterStore';
-import { useJobsStore } from 'app/(features)/minhas-vagas/_store/JobsStore';
-import { usePaginationStore } from 'app/(features)/minhas-vagas/_store/PaginationStore';
+import { useFilterStore, useJobsStore, usePaginationStore } from 'app/(features)/minhas-vagas/_store';
 import { JobsProps } from 'app/(features)/minhas-vagas/_types';
 import JobBox from './JobBox';
 import JobsNotFound from './JobsNotFound';

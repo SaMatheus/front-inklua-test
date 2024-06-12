@@ -1,6 +1,6 @@
 import { FilterDataProps, ParamsProps } from '../_types';
 
-const paramsBuilder = (
+const buildingFetchParams = (
     search?: string,
     city?: string | FilterDataProps[],
     workModel?: FilterDataProps[],
@@ -18,4 +18,4 @@ const paramsBuilder = (
   return params;
 }
 
-export default paramsBuilder;
+export default buildingFetchParams;
