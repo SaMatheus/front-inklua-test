@@ -13,7 +13,7 @@ const JobList = () => {
 
   useEffect(() => {
     if (reFetch && jobRectTop && typeof window !== 'undefined') {
-      typeof window !== 'undefined' && window.scrollTo({ top: jobRectTop, behavior: 'smooth' })
+      window.scrollTo({ top: jobRectTop, behavior: 'smooth' })
     }
     setJobRectTop(0);
     setReFetch(false);
