@@ -53,7 +53,7 @@ const JobBox = ({ data }: JobBoxProps) => {
                 icon={<Icon name='icon-pin' size='small' color='#137784' />}
               />
             )}
-            {data.workModel.map((model) => (
+            {!data.location && data.workModel.map((model) => (
               <>
                 <Chip
                   key={model}
