@@ -51,10 +51,8 @@ const ChipBox = () => {
     const isFilter = componentName === 'FilterWeb' || componentName === 'FilterMobile'
     if (typeof chipData === 'string') removeChipStr(chipData)
     if (typeof chipData !== 'string') removeChipObj(chipData)
-    if (isFilter) {
-      setComponentName(null)
-      return mutation.mutate()
-    }
+    if (isFilter) mutation.mutate()
+    if (!filtersData.length) return setComponentName(null)
   };
 
   useEffect(() => {
@@ -62,7 +60,7 @@ const ChipBox = () => {
     setFiltersData(fetchedData)
   }, [fetchData])
 
-  const showChipQnt = isMobile ? 10 : 4
+  const showChipQnt = isMobile ? 10 : 6
   const displayedChips = showAll ? filtersData : filtersData?.slice(0, showChipQnt)
 
   return !!(filtersData?.length > 0) && (

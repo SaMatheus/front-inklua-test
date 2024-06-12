@@ -17,7 +17,6 @@ const useGlobalMutation = ({ params, fn, options }: GlobalMutationProp) => {
   const { setFetchData, setLoading } = useFilterStore();
   const { setPagination } = usePaginationStore();
 
-
   const mutation = useMutation({
     mutationFn: () => {
       if (isMutationInProgress) return Promise.resolve()
@@ -35,6 +34,11 @@ const useGlobalMutation = ({ params, fn, options }: GlobalMutationProp) => {
       for (let i = 0; i < fn.length; i++) {
         fn[i]();
       }
+      setLoading(false);
+      endMutation();
+    },
+    onError: (error) => {
+      console.log('Erro', error)
       setLoading(false);
       endMutation();
     },
